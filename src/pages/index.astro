@@ -1,17 +1,164 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
 
+const sections = [
+  { id: 'hero', label: 'Inicio' },
+  { id: 'problema', label: 'Problema' },
+  { id: 'solucion', label: 'Solucion' },
+  { id: 'accesibilidad', label: 'Accesibilidad' },
+  { id: 'funcionalidades', label: 'Funciones' },
+  { id: 'impacto', label: 'Impacto' },
+  { id: 'estado', label: 'Estado' },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Sistema web de gestion de pedidos accesible"
+  description="Landing page del proyecto de titulo sobre gestion de pedidos accesible para pymes del rubro gastronomico."
+>
+  <div class="relative overflow-hidden">
+    <div class="pointer-events-none absolute top-[120px] left-[-140px] z-0 h-80 w-80 rounded-full bg-blue-600/8 blur-lg"></div>
+    <div class="pointer-events-none absolute top-[520px] right-[-120px] z-0 h-72 w-72 rounded-full bg-sky-500/8 blur-lg"></div>
+
+    <header class="sticky top-0 z-10 border-b border-slate-900/5 bg-[rgba(244,247,251,0.72)] backdrop-blur-xl">
+      <div class="relative z-[1] mx-auto flex w-[min(calc(100%-2rem),1180px)] flex-col items-start justify-between gap-5 py-4 lg:flex-row lg:items-center">
+        <a
+          class="inline-flex items-center gap-3.5 font-display text-base font-bold tracking-[-0.03em] text-slate-900"
+          href="#hero"
+          aria-label="Ir al inicio del proyecto"
+        >
+          <span class="grid h-11 w-11 place-items-center rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 font-display text-base font-bold text-white shadow-[0_12px_30px_rgba(37,99,235,0.28)]">LV</span>
+          <span>Sistema de pedidos accesible</span>
+        </a>
+
+        <nav class="flex flex-wrap justify-end gap-2" aria-label="Secciones principales">
+          {
+            sections.map((section) => (
+              <a
+                class="rounded-full px-4 py-3 text-[0.96rem] text-slate-500 transition hover:bg-white/70 hover:text-slate-900 focus-visible:bg-white/70 focus-visible:text-slate-900"
+                href={`#${section.id}`}
+              >
+                {section.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="px-0 pt-12 pb-18 sm:pt-16 sm:pb-18" id="hero">
+        <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
+          <div class="rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-white/78 p-6 shadow-soft backdrop-blur-xl md:p-8">
+            <div class="grid max-w-[42rem] gap-3.5">
+              <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Proyecto de titulo</span>
+              <h1 class="m-0 max-w-[10ch] text-[clamp(3rem,8vw,5.8rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Base de la landing en construccion</h1>
+              <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+                Estructura inicial para presentar un sistema web de gestion de pedidos con
+                enfoque en accesibilidad para pymes del rubro gastronomico.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-0 py-14 sm:py-18" id="problema">
+        <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
+          <div class="grid max-w-[42rem] gap-3.5">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Problema</span>
+            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Bloque listo para el contenido del proceso actual</h2>
+            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+              Aqui desarrollaremos el flujo manual, los errores, la desorganizacion y las
+              dificultades en momentos de alta demanda descritas en la propuesta.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-0 py-14 sm:py-18" id="solucion">
+        <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
+          <div class="grid max-w-[42rem] gap-3.5">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Solucion</span>
+            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Espacio preparado para presentar el sistema propuesto</h2>
+            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+              Esta seccion recibira el resumen del sistema web interno, el seguimiento de
+              pedidos y la integracion con impresion de comandas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-0 py-14 sm:py-18" id="accesibilidad">
+        <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
+          <div class="grid max-w-[42rem] gap-3.5">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Diferenciador</span>
+            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Seccion reservada para accesibilidad y facilidad de uso</h2>
+            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+              La base ya contempla una composicion amplia y limpia para destacar interfaz
+              simple, botones grandes y apoyo visual en proximas partes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-0 py-14 sm:py-18" id="funcionalidades">
+        <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
+          <div class="mb-8 grid max-w-[42rem] gap-3.5">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Funcionalidades</span>
+            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Grid preparado para tarjetas del sistema</h2>
+            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+              Dejamos lista la estructura que luego usaremos para registro de pedidos,
+              historial, inventario y visualizacion en curso.
+            </p>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-2">
+            <article class="rounded-3xl border border-slate-900/8 bg-white/72 p-6">
+              <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-950">Tarjeta 01</h3>
+              <p class="max-w-[34rem] text-[1.05rem] leading-7 text-slate-500">Base lista para contenido funcional resumido y visual.</p>
+            </article>
+            <article class="rounded-3xl border border-slate-900/8 bg-white/72 p-6">
+              <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-950">Tarjeta 02</h3>
+              <p class="max-w-[34rem] text-[1.05rem] leading-7 text-slate-500">La grilla ya es responsive y mantiene la coherencia del layout.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-0 py-14 sm:py-18" id="impacto">
+        <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
+          <div class="grid max-w-[42rem] gap-3.5">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Impacto</span>
+            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Bloque listo para beneficios y resultados esperados</h2>
+            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+              En esta parte mostraremos reduccion de errores, mejora en tiempos de atencion,
+              organizacion interna e inclusion digital.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-0 py-14 sm:py-18" id="estado">
+        <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
+          <div class="grid max-w-[42rem] gap-3.5">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Estado del proyecto</span>
+            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Estructura preparada para avances y proxima evaluacion</h2>
+            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+              La propuesta, el diseno, el desarrollo y la validacion con usuarios se iran
+              incorporando paso a paso sobre esta misma base.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="px-0 pt-8 pb-16">
+      <div class="relative z-[1] mx-auto flex w-[min(calc(100%-2rem),1180px)] flex-col items-start justify-between gap-4 border-t border-slate-900/8 pt-6 text-[0.95rem] text-slate-500 lg:flex-row">
+        <span>Luciano Villanueva Ramirez</span>
+        <span>Ingenieria en Ejecucion en Computacion e Informatica</span>
+        <span>Universidad del Bio-Bio</span>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>
