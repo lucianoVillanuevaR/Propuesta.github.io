@@ -48,6 +48,54 @@ const problemIssues = [
     description: 'Quien atiende debe dividir su atencion entre anotar, coordinar y entregar, reduciendo eficiencia.',
   },
 ];
+
+const solutionSteps = [
+  'Ingreso rapido de pedidos desde una interfaz web interna y clara.',
+  'Registro automatico para mantener seguimiento en tiempo real.',
+  'Organizacion del flujo de preparacion y entrega en un mismo sistema.',
+  'Envio de comandas a impresion para mejorar la coordinacion con cocina.',
+];
+
+const solutionBenefits = [
+  {
+    title: 'Registro digital',
+    description: 'Reemplaza la toma manual por una plataforma de uso interno orientada al trabajo diario del local.',
+  },
+  {
+    title: 'Seguimiento en tiempo real',
+    description: 'Cada pedido queda registrado automaticamente para mantener control claro de lo que esta en curso.',
+  },
+  {
+    title: 'Operacion mas ordenada',
+    description: 'Ayuda a mantener la secuencia de preparacion y entrega con menos confusion entre tareas.',
+  },
+  {
+    title: 'Impresion de comandas',
+    description: 'Integra el sistema con impresoras para enviar pedidos al area de cocina de forma automatica.',
+  },
+];
+
+const accessibilityPoints = [
+  'Interfaz simplificada para reducir complejidad innecesaria.',
+  'Botones grandes para facilitar el uso y la seleccion.',
+  'Menos pasos por tarea para agilizar la operacion diaria.',
+  'Apoyo visual y retroalimentacion clara en cada accion.',
+];
+
+const accessibilityAudience = [
+  {
+    title: 'Adultos mayores',
+    description: 'El proyecto prioriza una experiencia clara y comprensible para personas con menor familiaridad tecnologica.',
+  },
+  {
+    title: 'Baja alfabetizacion digital',
+    description: 'La solucion busca ser facil de adoptar dentro del negocio sin depender de capacitacion compleja.',
+  },
+  {
+    title: 'Inclusividad de uso',
+    description: 'Las decisiones de accesibilidad tambien favorecen a usuarios con necesidades visuales, motoras o cognitivas.',
+  },
+];
 ---
 
 <BaseLayout
@@ -248,26 +296,124 @@ const problemIssues = [
 
       <section class="px-0 py-14 sm:py-18" id="solucion">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="grid max-w-[42rem] gap-3.5">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Solucion</span>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Espacio preparado para presentar el sistema propuesto</h2>
-            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
-              Esta seccion recibira el resumen del sistema web interno, el seguimiento de
-              pedidos y la integracion con impresion de comandas.
-            </p>
+          <div class="grid gap-8 lg:grid-cols-[minmax(0,0.98fr)_minmax(320px,1.02fr)] lg:items-start">
+            <div class="grid gap-5">
+              <div class="grid max-w-[44rem] gap-3.5">
+                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Solucion</span>
+                <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">
+                  Un sistema interno para ordenar cada pedido desde el primer clic.
+                </h2>
+                <p class="m-0 max-w-[40rem] text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+                  La propuesta plantea un sistema web de uso interno para registrar pedidos
+                  presenciales, hacer seguimiento en tiempo real y organizar mejor la operacion
+                  del local, integrando tambien la impresion de comandas.
+                </p>
+              </div>
+
+              <div class="rounded-[28px] border border-slate-900/8 bg-slate-950 p-6 text-white shadow-[0_24px_70px_rgba(15,23,42,0.18)]">
+                <div class="mb-5 flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Como funciona</p>
+                    <h3 class="mt-2 text-2xl leading-tight font-bold tracking-[-0.04em]">
+                      Flujo digital propuesto
+                    </h3>
+                  </div>
+                  <span class="rounded-full border border-blue-400/20 bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-200">
+                    Uso interno
+                  </span>
+                </div>
+
+                <div class="grid gap-4">
+                  {
+                    solutionSteps.map((step, index) => (
+                      <div class="flex gap-4 rounded-3xl border border-white/10 bg-white/5 p-4">
+                        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white text-sm font-bold text-slate-950">
+                          0{index + 1}
+                        </span>
+                        <p class="m-0 text-[0.98rem] leading-7 text-slate-200">{step}</p>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              {
+                solutionBenefits.map((item) => (
+                  <article class="rounded-[28px] border border-slate-900/8 bg-white/72 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)]">
+                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600/10 text-sm font-bold text-blue-700">
+                      +
+                    </div>
+                    <h3 class="text-xl leading-tight font-bold tracking-[-0.04em] text-slate-950">
+                      {item.title}
+                    </h3>
+                    <p class="mt-3 text-[0.98rem] leading-7 text-slate-500">
+                      {item.description}
+                    </p>
+                  </article>
+                ))
+              }
+            </div>
           </div>
         </div>
       </section>
 
       <section class="px-0 py-14 sm:py-18" id="accesibilidad">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="grid max-w-[42rem] gap-3.5">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Diferenciador</span>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Seccion reservada para accesibilidad y facilidad de uso</h2>
-            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
-              La base ya contempla una composicion amplia y limpia para destacar interfaz
-              simple, botones grandes y apoyo visual en proximas partes.
-            </p>
+          <div class="rounded-[32px] border border-slate-900/8 bg-white/76 p-6 shadow-soft md:p-8 lg:p-10">
+            <div class="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:items-start">
+              <div class="grid gap-5">
+                <div class="grid max-w-[44rem] gap-3.5">
+                  <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Diferenciador</span>
+                  <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">
+                    Accesibilidad pensada para personas reales, no solo para cumplir.
+                  </h2>
+                  <p class="m-0 max-w-[41rem] text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+                    El punto diferencial del proyecto es su enfoque en accesibilidad y usabilidad.
+                    Segun el PDF, el sistema se disena para adultos mayores y usuarios con baja
+                    alfabetizacion digital, priorizando una experiencia simple, clara y facil de adoptar.
+                  </p>
+                </div>
+
+                <div class="grid gap-3">
+                  {
+                    accessibilityPoints.map((item) => (
+                      <div class="flex items-start gap-4 rounded-3xl border border-slate-900/8 bg-slate-50/80 p-4">
+                        <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-emerald-500/12 text-sm font-bold text-emerald-700">
+                          OK
+                        </span>
+                        <p class="m-0 text-[0.98rem] leading-7 text-slate-600">{item}</p>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+
+              <div class="grid gap-4">
+                {
+                  accessibilityAudience.map((item) => (
+                    <article class="rounded-[28px] border border-slate-900/8 bg-white p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)]">
+                      <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Accesibilidad</p>
+                      <h3 class="mt-3 text-xl leading-tight font-bold tracking-[-0.04em] text-slate-950">
+                        {item.title}
+                      </h3>
+                      <p class="mt-3 text-[0.98rem] leading-7 text-slate-500">
+                        {item.description}
+                      </p>
+                    </article>
+                  ))
+                }
+
+                <div class="rounded-[28px] border border-blue-200 bg-blue-50/80 p-6">
+                  <p class="text-xs uppercase tracking-[0.24em] text-blue-700">Base conceptual</p>
+                  <p class="mt-3 text-[0.98rem] leading-7 text-slate-700">
+                    La propuesta toma como referencia principios de accesibilidad orientados a
+                    interacciones comprensibles, simples y adaptadas al contexto real del negocio.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
