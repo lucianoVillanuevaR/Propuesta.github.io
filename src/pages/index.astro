@@ -96,6 +96,65 @@ const accessibilityAudience = [
     description: 'Las decisiones de accesibilidad tambien favorecen a usuarios con necesidades visuales, motoras o cognitivas.',
   },
 ];
+
+const features = [
+  {
+    title: 'Registro de pedidos',
+    description: 'Ingreso rapido de pedidos presenciales desde una interfaz clara y de uso interno.',
+  },
+  {
+    title: 'Pedidos en curso',
+    description: 'Visualizacion del estado actual para mantener control del flujo de preparacion y entrega.',
+  },
+  {
+    title: 'Impresion automatica',
+    description: 'Envio de comandas al area de cocina mediante integracion con impresoras del local.',
+  },
+  {
+    title: 'Historial de ventas',
+    description: 'Consulta de pedidos anteriores para revisar actividad y apoyar la organizacion diaria.',
+  },
+  {
+    title: 'Inventario basico',
+    description: 'Control simple de productos e insumos asociados a la operacion del negocio.',
+  },
+  {
+    title: 'Interfaz accesible',
+    description: 'Navegacion sencilla, apoyo visual y menos pasos para facilitar la adopcion del sistema.',
+  },
+];
+
+const impacts = [
+  'Reduccion de errores en la toma de pedidos.',
+  'Mejora en los tiempos de atencion y coordinacion interna.',
+  'Mayor organizacion del negocio durante horas de alta demanda.',
+  'Inclusion digital para usuarios con baja experiencia tecnologica.',
+];
+
+const statusItems = [
+  {
+    phase: 'Propuesta definida',
+    description: 'El problema, los objetivos y el alcance del sistema ya fueron establecidos en el proyecto de titulo.',
+  },
+  {
+    phase: 'Diseno en progreso',
+    description: 'La interfaz se desarrolla con foco en simplicidad, accesibilidad y uso real dentro del local.',
+  },
+  {
+    phase: 'Desarrollo proximo',
+    description: 'La siguiente etapa considera implementar el sistema web, la logica de pedidos y el almacenamiento de datos.',
+  },
+  {
+    phase: 'Evaluacion con usuarios',
+    description: 'Se contemplan pruebas con usuarios reales, incluyendo adultos mayores, para validar facilidad de uso y adopcion.',
+  },
+];
+
+const footerMeta = [
+  'Luciano Villanueva Ramirez',
+  'Ingenieria en Ejecucion en Computacion e Informatica',
+  'Universidad del Bio-Bio',
+];
 ---
 
 <BaseLayout
@@ -409,60 +468,118 @@ const accessibilityAudience = [
 
       <section class="px-0 py-14 sm:py-18" id="funcionalidades">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="mb-8 grid max-w-[42rem] gap-3.5">
+          <div class="mb-8 grid max-w-[46rem] gap-3.5">
             <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Funcionalidades</span>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">Grid preparado para tarjetas del sistema</h2>
+            <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
+              Funciones clave para ordenar la operacion diaria.
+            </h2>
             <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
-              Dejamos lista la estructura que luego usaremos para registro de pedidos,
-              historial, inventario y visualizacion en curso.
+              Estas funcionalidades fueron definidas en la propuesta como base del sistema:
+              registro, seguimiento, impresion, historial e inventario basico.
             </p>
           </div>
 
-          <div class="grid gap-5 md:grid-cols-2">
-            <article class="rounded-3xl border border-white/8 bg-[#0b1120] p-6">
-              <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-50">Tarjeta 01</h3>
-              <p class="max-w-[34rem] text-[1.05rem] leading-7 text-slate-400">Base lista para contenido funcional resumido y visual.</p>
-            </article>
-            <article class="rounded-3xl border border-white/8 bg-[#0b1120] p-6">
-              <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-50">Tarjeta 02</h3>
-              <p class="max-w-[34rem] text-[1.05rem] leading-7 text-slate-400">La grilla ya es responsive y mantiene la coherencia del layout.</p>
-            </article>
+          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {
+              features.map((feature) => (
+                <article class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.26)]">
+                  <div class="mb-4 h-2.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
+                  <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-50">
+                    {feature.title}
+                  </h3>
+                  <p class="max-w-[34rem] text-[1.02rem] leading-7 text-slate-400">
+                    {feature.description}
+                  </p>
+                </article>
+              ))
+            }
           </div>
         </div>
       </section>
 
       <section class="px-0 py-14 sm:py-18" id="impacto">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="grid max-w-[42rem] gap-3.5">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Impacto</span>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">Bloque listo para beneficios y resultados esperados</h2>
-            <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
-              En esta parte mostraremos reduccion de errores, mejora en tiempos de atencion,
-              organizacion interna e inclusion digital.
-            </p>
+          <div class="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(320px,1.08fr)] lg:items-start">
+            <div class="grid max-w-[42rem] gap-3.5">
+              <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Impacto</span>
+              <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
+                Menos errores, mejor ritmo y una adopcion mas inclusiva.
+              </h2>
+              <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
+                De acuerdo con la propuesta, el sistema busca mejorar la eficiencia operativa,
+                reducir fallas del registro manual y facilitar el uso de tecnologia dentro de
+                una pyme gastronomica.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              {
+                impacts.map((item, index) => (
+                  <article class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6">
+                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-400/10 text-sm font-bold text-cyan-300">
+                      0{index + 1}
+                    </div>
+                    <p class="text-[1rem] leading-7 text-slate-300">{item}</p>
+                  </article>
+                ))
+              }
+            </div>
           </div>
         </div>
       </section>
 
       <section class="px-0 py-14 sm:py-18" id="estado">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="grid max-w-[42rem] gap-3.5">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Estado del proyecto</span>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">Estructura preparada para avances y proxima evaluacion</h2>
-            <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
-              La propuesta, el diseno, el desarrollo y la validacion con usuarios se iran
-              incorporando paso a paso sobre esta misma base.
-            </p>
+          <div class="rounded-[32px] border border-white/8 bg-[#0b1120] p-6 shadow-soft md:p-8 lg:p-10">
+            <div class="mb-8 grid max-w-[45rem] gap-3.5">
+              <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Estado del proyecto</span>
+              <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
+                El proyecto ya tiene direccion clara y siguientes pasos definidos.
+              </h2>
+              <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
+                El documento ya establece el problema, la solucion propuesta y la estrategia
+                de evaluacion. Sobre esa base, el proyecto avanza desde el diseno hacia la
+                implementacion y validacion con usuarios reales.
+              </p>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              {
+                statusItems.map((item) => (
+                  <article class="rounded-[28px] border border-white/8 bg-[#0f172a] p-6">
+                    <p class="text-xs uppercase tracking-[0.24em] text-cyan-300">{item.phase}</p>
+                    <p class="mt-4 text-[1rem] leading-7 text-slate-300">{item.description}</p>
+                  </article>
+                ))
+              }
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="px-0 pt-8 pb-16">
-      <div class="relative z-[1] mx-auto flex w-[min(calc(100%-2rem),1180px)] flex-col items-start justify-between gap-4 border-t border-white/8 pt-6 text-[0.95rem] text-slate-400 lg:flex-row">
-        <span>Luciano Villanueva Ramirez</span>
-        <span>Ingenieria en Ejecucion en Computacion e Informatica</span>
-        <span>Universidad del Bio-Bio</span>
+      <div class="relative z-[1] mx-auto grid w-[min(calc(100%-2rem),1180px)] gap-6 border-t border-white/8 pt-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+        <div class="grid gap-3">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
+            Proyecto de titulo
+          </p>
+          <h2 class="max-w-[14ch] text-3xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
+            Sistema de Gestion de Pedidos Accesible
+          </h2>
+          <p class="max-w-[40rem] text-[1rem] leading-7 text-slate-400">
+            Landing informativa del proyecto enfocado en digitalizar la gestion de pedidos
+            para pymes gastronomicas con accesibilidad como eje principal.
+          </p>
+        </div>
+
+        <div class="grid gap-2 text-[0.95rem] text-slate-400 lg:text-right">
+          {
+            footerMeta.map((item) => (
+              <span>{item}</span>
+            ))
+          }
+        </div>
       </div>
     </footer>
   </div>
