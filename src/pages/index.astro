@@ -6,8 +6,7 @@ const sections = [
   { id: 'hero', label: 'Inicio' },
   { id: 'problema', label: 'Problema' },
   { id: 'solucion', label: 'Solucion' },
-  { id: 'accesibilidad', label: 'Adopcion' },
-  { id: 'funcionalidades', label: 'Funciones' },
+  { id: 'demo', label: 'Demo' },
   { id: 'impacto', label: 'Impacto' },
   { id: 'estado', label: 'Estado' },
 ];
@@ -72,55 +71,6 @@ const solutionBenefits = [
   {
     title: 'Impresion de comandas',
     description: 'Integra el sistema con impresoras para enviar pedidos al area de cocina de forma automatica.',
-  },
-];
-
-const accessibilityPoints = [
-  'Botones grandes para reducir errores de seleccion.',
-  'Menos pasos para completar un pedido.',
-  'Lectura clara con jerarquia visual simple.',
-  'Retroalimentacion inmediata para saber que accion se realizo.',
-];
-
-const accessibilityAudience = [
-  {
-    title: 'Adultos mayores',
-    description: 'El proyecto prioriza una experiencia clara y comprensible para personas con menor familiaridad tecnologica.',
-  },
-  {
-    title: 'Baja alfabetizacion digital',
-    description: 'La solucion busca ser facil de adoptar dentro del negocio sin depender de capacitacion compleja.',
-  },
-  {
-    title: 'Inclusividad de uso',
-    description: 'Las decisiones de accesibilidad tambien favorecen a usuarios con necesidades visuales, motoras o cognitivas.',
-  },
-];
-
-const features = [
-  {
-    title: 'Registro de pedidos',
-    description: 'Ingreso rapido de pedidos presenciales desde una interfaz clara y de uso interno.',
-  },
-  {
-    title: 'Pedidos en curso',
-    description: 'Visualizacion del estado actual para mantener control del flujo de preparacion y entrega.',
-  },
-  {
-    title: 'Impresion automatica',
-    description: 'Envio de comandas al area de cocina mediante integracion con impresoras del local.',
-  },
-  {
-    title: 'Historial de ventas',
-    description: 'Consulta de pedidos anteriores para revisar actividad y apoyar la organizacion diaria.',
-  },
-  {
-    title: 'Inventario basico',
-    description: 'Control simple de productos e insumos asociados a la operacion del negocio.',
-  },
-  {
-    title: 'Interfaz accesible',
-    description: 'Navegacion sencilla, apoyo visual y menos pasos para facilitar la adopcion del sistema.',
   },
 ];
 
@@ -412,100 +362,144 @@ const footerMeta = [
         </div>
       </section>
 
-      <section class="px-0 py-14 sm:py-18" id="accesibilidad">
-        <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="rounded-[32px] border border-white/8 bg-[#0b1120] p-6 shadow-soft md:p-8 lg:p-10">
-            <div class="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:items-start">
-              <div class="grid gap-5">
-                <div class="grid max-w-[44rem] gap-3.5">
-                  <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Tecnologia facil de adoptar</span>
-                  <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
-                    Disenado para personas reales en el trabajo diario.
-                  </h2>
-                  <p class="m-0 max-w-[41rem] text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
-                    El punto diferencial del proyecto es su enfoque en accesibilidad y usabilidad.
-                    Segun el PDF, el sistema se disena para adultos mayores y usuarios con baja
-                    alfabetizacion digital, priorizando una experiencia simple, clara y facil de adoptar.
-                  </p>
-                </div>
+      <section id="demo" class="px-0 py-20 text-white">
+        <div class="mx-auto mb-16 max-w-5xl px-6 text-center">
+          <h2 class="mb-4 text-3xl font-bold md:text-4xl">
+            Como funciona el sistema
+          </h2>
+          <p class="text-gray-400">
+            Un flujo simple, pensado para ser utilizado por cualquier persona,
+            incluso sin experiencia tecnologica.
+          </p>
+        </div>
 
-                <div class="grid gap-3">
-                  {
-                    accessibilityPoints.map((item) => (
-                      <div class="flex items-start gap-4 rounded-3xl border border-white/8 bg-white/4 p-4">
-                        <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-emerald-500/12 text-sm font-bold text-emerald-400">
-                          OK
-                        </span>
-                        <p class="m-0 text-[0.98rem] leading-7 text-slate-300">{item}</p>
-                      </div>
-                    ))
-                  }
-                </div>
+        <div class="mx-auto mb-20 grid max-w-6xl gap-10 px-6 md:grid-cols-2">
+          <div class="rounded-xl bg-[#0B1120] p-6 shadow-lg">
+            <h3 class="mb-4 text-xl font-semibold">Ejemplo de pedido</h3>
 
-                <div class="rounded-[28px] border border-white/8 bg-[#0f172a] p-6">
-                  <p class="text-xs uppercase tracking-[0.24em] text-cyan-300">En la practica</p>
-                  <div class="mt-4 grid gap-3">
-                    <p class="text-[0.98rem] leading-7 text-slate-300">Interfaz comprensible para personas con poca familiaridad tecnologica.</p>
-                    <p class="text-[0.98rem] leading-7 text-slate-300">Menos friccion al registrar pedidos durante la operacion diaria.</p>
-                  </div>
-                </div>
-              </div>
+            <div class="mb-4 rounded-lg bg-[#020617] p-4">
+              <p class="text-sm text-gray-400">Pedido</p>
+              <p class="text-lg font-medium">Hamburguesa + bebida</p>
+            </div>
 
-              <div class="grid gap-4">
-                {
-                  accessibilityAudience.map((item) => (
-                    <article class="rounded-[28px] border border-white/8 bg-[#0f172a] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.28)]">
-                      <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Accesibilidad</p>
-                      <h3 class="mt-3 text-xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
-                        {item.title}
-                      </h3>
-                      <p class="mt-3 text-[0.98rem] leading-7 text-slate-400">
-                        {item.description}
-                      </p>
-                    </article>
-                  ))
-                }
+            <div class="rounded-lg bg-[#020617] p-4">
+              <p class="text-sm text-gray-400">Estado</p>
+              <p class="font-semibold text-green-400">En preparacion</p>
+            </div>
 
-                <div class="rounded-[28px] border border-cyan-400/20 bg-cyan-400/10 p-6">
-                  <p class="text-xs uppercase tracking-[0.24em] text-cyan-300">Base conceptual</p>
-                  <p class="mt-3 text-[0.98rem] leading-7 text-slate-200">
-                    La propuesta toma como referencia principios de accesibilidad orientados a
-                    interacciones comprensibles, simples y adaptadas al contexto real del negocio.
-                  </p>
-                </div>
-              </div>
+            <div class="mt-4 text-sm text-gray-400">
+              + Pedido registrado <br />
+              + Enviado a cocina <br />
+              + Listo para entrega
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-[#0B1120] p-6 shadow-lg">
+            <h3 class="mb-4 text-xl font-semibold">Flujo del sistema</h3>
+
+            <ul class="space-y-3 text-gray-300">
+              <li>1. Ingreso del pedido en interfaz simple</li>
+              <li>2. Registro automatico del sistema</li>
+              <li>3. Envio a cocina mediante impresion</li>
+              <li>4. Actualizacion del estado en tiempo real</li>
+              <li>5. Entrega del pedido al cliente</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mx-auto mb-20 max-w-6xl px-6">
+          <h3 class="mb-10 text-center text-2xl font-bold">
+            Funcionalidades del sistema
+          </h3>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
+              <h4 class="mb-2 font-semibold">Registro de pedidos</h4>
+              <p class="text-sm leading-7 text-gray-400">
+                Ingreso rapido y claro de pedidos sin errores manuales.
+              </p>
+            </div>
+
+            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
+              <h4 class="mb-2 font-semibold">Seguimiento en tiempo real</h4>
+              <p class="text-sm leading-7 text-gray-400">
+                Visualizacion del estado de cada pedido durante el proceso.
+              </p>
+            </div>
+
+            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
+              <h4 class="mb-2 font-semibold">Impresion automatica</h4>
+              <p class="text-sm leading-7 text-gray-400">
+                Envio directo de pedidos a cocina mediante comandas.
+              </p>
+            </div>
+
+            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
+              <h4 class="mb-2 font-semibold">Historial de pedidos</h4>
+              <p class="text-sm leading-7 text-gray-400">
+                Registro organizado de ventas realizadas.
+              </p>
+            </div>
+
+            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
+              <h4 class="mb-2 font-semibold">Control basico de inventario</h4>
+              <p class="text-sm leading-7 text-gray-400">
+                Monitoreo simple de productos disponibles.
+              </p>
+            </div>
+
+            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
+              <h4 class="mb-2 font-semibold">Tecnologia facil de adoptar</h4>
+              <p class="text-sm leading-7 text-gray-400">
+                Interfaz comprensible para personas con poca experiencia tecnologica.
+              </p>
             </div>
           </div>
         </div>
-      </section>
 
-      <section class="px-0 py-14 sm:py-18" id="funcionalidades">
-        <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="mb-8 grid max-w-[46rem] gap-3.5">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Funcionalidades</span>
-            <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
-              Funciones clave para ordenar la operacion diaria.
-            </h2>
-            <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
-              Estas funcionalidades fueron definidas en la propuesta como base del sistema:
-              registro, seguimiento, impresion, historial e inventario basico.
-            </p>
-          </div>
+        <div class="mx-auto max-w-6xl px-6">
+          <h3 class="mb-10 text-center text-2xl font-bold">
+            Disenado para ser accesible
+          </h3>
 
-          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {
-              features.map((feature) => (
-                <article class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.26)]">
-                  <div class="mb-4 h-2.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
-                  <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-50">
-                    {feature.title}
-                  </h3>
-                  <p class="max-w-[34rem] text-[1.02rem] leading-7 text-slate-400">
-                    {feature.description}
-                  </p>
-                </article>
-              ))
-            }
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div class="min-h-[150px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 text-center shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">A</div>
+              <p class="font-semibold">Botones grandes</p>
+              <p class="mt-2 text-sm leading-7 text-gray-400">
+                Facilitan la interaccion sin errores.
+              </p>
+            </div>
+
+            <div class="min-h-[150px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 text-center shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">B</div>
+              <p class="font-semibold">Menos pasos</p>
+              <p class="mt-2 text-sm leading-7 text-gray-400">
+                Reduce la complejidad del proceso.
+              </p>
+            </div>
+
+            <div class="min-h-[150px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 text-center shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">C</div>
+              <p class="font-semibold">Interfaz clara</p>
+              <p class="mt-2 text-sm leading-7 text-gray-400">
+                Facil de entender y usar.
+              </p>
+            </div>
+
+            <div class="min-h-[150px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 text-center shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
+              <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">D</div>
+              <p class="font-semibold">Apoyo visual</p>
+              <p class="mt-2 text-sm leading-7 text-gray-400">
+                Mejora la comprension del sistema.
+              </p>
+            </div>
           </div>
         </div>
       </section>
