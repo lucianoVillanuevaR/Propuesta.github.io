@@ -103,17 +103,13 @@ const accessibilityAudience = [
   description="Landing page del proyecto de titulo sobre gestion de pedidos accesible para pymes del rubro gastronomico."
 >
   <div class="relative overflow-hidden">
-    <div class="pointer-events-none absolute top-[120px] left-[-140px] z-0 h-80 w-80 rounded-full bg-blue-600/8 blur-lg"></div>
-    <div class="pointer-events-none absolute top-[520px] right-[-120px] z-0 h-72 w-72 rounded-full bg-sky-500/8 blur-lg"></div>
-
-    <header class="sticky top-0 z-10 border-b border-slate-900/5 bg-[rgba(244,247,251,0.72)] backdrop-blur-xl">
+    <header class="sticky top-0 z-10 border-b border-white/8 bg-[#0f172acc] backdrop-blur-xl">
       <div class="relative z-[1] mx-auto flex w-[min(calc(100%-2rem),1180px)] flex-col items-start justify-between gap-5 py-4 lg:flex-row lg:items-center">
         <a
-          class="inline-flex items-center gap-3.5 font-display text-base font-bold tracking-[-0.03em] text-slate-900"
+          class="inline-flex items-center gap-3.5 font-display text-base font-bold tracking-[-0.03em] text-slate-50"
           href="#hero"
           aria-label="Ir al inicio del proyecto"
         >
-          <span class="grid h-11 w-11 place-items-center rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 font-display text-base font-bold text-white shadow-[0_12px_30px_rgba(37,99,235,0.28)]">LV</span>
           <span>Sistema de pedidos accesible</span>
         </a>
 
@@ -121,7 +117,7 @@ const accessibilityAudience = [
           {
             sections.map((section) => (
               <a
-                class="rounded-full px-4 py-3 text-[0.96rem] text-slate-500 transition hover:bg-white/70 hover:text-slate-900 focus-visible:bg-white/70 focus-visible:text-slate-900"
+                class="rounded-full px-4 py-3 text-[0.96rem] text-slate-400 transition hover:bg-white/8 hover:text-slate-50 focus-visible:bg-white/8 focus-visible:text-slate-50"
                 href={`#${section.id}`}
               >
                 {section.label}
@@ -135,44 +131,37 @@ const accessibilityAudience = [
     <main>
       <section class="px-0 pt-12 pb-18 sm:pt-16 sm:pb-18" id="hero">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-white/78 p-6 shadow-soft backdrop-blur-xl md:p-8 lg:p-10">
+          <div class="rounded-[32px] border border-white/8 bg-[#0b1120] p-6 shadow-soft md:p-8 lg:p-10">
             <div class="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-center">
               <div class="grid max-w-[42rem] gap-5">
-                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">
+                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">
                   Proyecto de titulo 2026
                 </span>
 
                 <div class="grid gap-4">
-                  <h1 class="m-0 max-w-[11ch] text-[clamp(3.3rem,8vw,6.1rem)] leading-[0.95] font-extrabold tracking-[-0.055em] text-slate-950">
-                    Pedidos claros, atencion sin friccion.
+                  <h1 class="m-0 max-w-[11ch] text-[clamp(3.3rem,8vw,6.1rem)] leading-[0.95] font-extrabold tracking-[-0.055em] text-slate-50">
+                    Sistema de Gestion de Pedidos Accesible
                   </h1>
-                  <p class="m-0 max-w-[40rem] text-[1.08rem] leading-7 text-slate-500 sm:text-[1.12rem] sm:leading-8">
-                    Sistema web de gestion de pedidos para pymes del rubro gastronomico,
-                    disenado para digitalizar el registro manual y facilitar su uso a personas
-                    con baja alfabetizacion digital, incluyendo adultos mayores.
+                  <p class="m-0 max-w-[40rem] text-[1.08rem] leading-7 text-slate-400 sm:text-[1.12rem] sm:leading-8">
+                    Optimiza la toma de pedidos en pymes gastronomicas con una solucion
+                    simple, rapida y facil de usar.
                   </p>
                 </div>
 
                 <div class="flex flex-col gap-3 sm:flex-row">
                   <a
-                    class="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-blue-700"
+                    class="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-emerald-400"
                     href="#solucion"
                   >
                     Ver proyecto
-                  </a>
-                  <a
-                    class="inline-flex items-center justify-center rounded-full border border-slate-900/10 bg-white/80 px-6 py-3.5 text-sm font-bold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
-                    href="#problema"
-                  >
-                    Conocer mas
                   </a>
                 </div>
 
                 <div class="grid gap-3 pt-2">
                   {
                     heroHighlights.map((item) => (
-                      <div class="flex items-start gap-3 text-slate-600">
-                        <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-blue-600"></span>
+                      <div class="flex items-start gap-3 text-slate-300">
+                        <span class="mt-1.5 h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
                         <span class="text-[0.98rem] leading-7">{item}</span>
                       </div>
                     ))
@@ -181,8 +170,8 @@ const accessibilityAudience = [
               </div>
 
               <div class="relative">
-                <div class="absolute inset-x-8 top-6 h-24 rounded-full bg-blue-500/12 blur-3xl"></div>
-                <div class="relative overflow-hidden rounded-[30px] border border-slate-900/8 bg-slate-950 p-5 text-white shadow-[0_28px_80px_rgba(15,23,42,0.22)]">
+                <div class="absolute inset-x-8 top-6 h-24 rounded-full bg-cyan-400/12 blur-3xl"></div>
+                <div class="relative overflow-hidden rounded-[30px] border border-white/8 bg-[#0f172a] p-5 text-white shadow-[0_28px_80px_rgba(2,6,23,0.45)]">
                   <div class="mb-5 flex items-center justify-between">
                     <div>
                       <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Sistema interno</p>
@@ -192,7 +181,7 @@ const accessibilityAudience = [
                     </div>
                     <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-right">
                       <p class="text-[0.68rem] uppercase tracking-[0.24em] text-slate-400">Estado</p>
-                      <p class="mt-1 text-sm font-semibold text-emerald-300">Propuesta definida</p>
+                      <p class="mt-1 text-sm font-semibold text-emerald-400">Propuesta definida</p>
                     </div>
                   </div>
 
@@ -214,8 +203,8 @@ const accessibilityAudience = [
                       }
                     </div>
 
-                    <div class="rounded-3xl border border-blue-400/20 bg-blue-500/10 p-4">
-                      <p class="text-xs uppercase tracking-[0.24em] text-blue-200">Objetivo</p>
+                    <div class="rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                      <p class="text-xs uppercase tracking-[0.24em] text-cyan-300">Objetivo</p>
                       <p class="mt-2 text-sm leading-7 text-slate-200">
                         Reducir errores, ordenar la operacion diaria y mejorar la adopcion
                         tecnologica dentro del negocio.
@@ -234,26 +223,26 @@ const accessibilityAudience = [
           <div class="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(320px,1.08fr)] lg:items-start">
             <div class="grid gap-5">
               <div class="grid max-w-[42rem] gap-3.5">
-                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Problema</span>
-                <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">
+                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Problema</span>
+                <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
                   Cuando todo depende del papel, el ritmo se rompe.
                 </h2>
-                <p class="m-0 max-w-[38rem] text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+                <p class="m-0 max-w-[38rem] text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
                   Segun la propuesta, la gestion actual de pedidos se realiza de manera manual.
                   Esto sostiene la operacion diaria, pero genera errores, perdida de informacion
                   y desorden, especialmente en momentos de alta demanda.
                 </p>
               </div>
 
-              <div class="rounded-[28px] border border-slate-900/8 bg-white/72 p-6">
+              <div class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6">
                 <div class="mb-4 flex items-center justify-between gap-4">
                   <div>
                     <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Proceso actual</p>
-                    <h3 class="mt-2 text-2xl leading-tight font-bold tracking-[-0.04em] text-slate-950">
+                    <h3 class="mt-2 text-2xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
                       Flujo manual de atencion
                     </h3>
                   </div>
-                  <span class="rounded-full border border-amber-300/50 bg-amber-100 px-3 py-1 text-xs font-bold text-amber-700">
+                  <span class="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
                     Alto riesgo en horas punta
                   </span>
                 </div>
@@ -261,11 +250,11 @@ const accessibilityAudience = [
                 <div class="grid gap-4">
                   {
                     problemFlow.map((step, index) => (
-                      <div class="flex gap-4 rounded-3xl border border-slate-900/6 bg-slate-50/80 p-4">
-                        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-slate-950 text-sm font-bold text-white">
+                      <div class="flex gap-4 rounded-3xl border border-white/8 bg-white/4 p-4">
+                        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-slate-50 text-sm font-bold text-slate-950">
                           0{index + 1}
                         </span>
-                        <p class="m-0 text-[0.98rem] leading-7 text-slate-600">{step}</p>
+                        <p class="m-0 text-[0.98rem] leading-7 text-slate-300">{step}</p>
                       </div>
                     ))
                   }
@@ -276,14 +265,14 @@ const accessibilityAudience = [
             <div class="grid gap-4 sm:grid-cols-2">
               {
                 problemIssues.map((item) => (
-                  <article class="rounded-[28px] border border-slate-900/8 bg-white/72 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)]">
-                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-red-500/10 text-sm font-bold text-red-600">
+                  <article class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.28)]">
+                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-400/10 text-sm font-bold text-cyan-300">
                       !
                     </div>
-                    <h3 class="text-xl leading-tight font-bold tracking-[-0.04em] text-slate-950">
+                    <h3 class="text-xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
                       {item.title}
                     </h3>
-                    <p class="mt-3 text-[0.98rem] leading-7 text-slate-500">
+                    <p class="mt-3 text-[0.98rem] leading-7 text-slate-400">
                       {item.description}
                     </p>
                   </article>
@@ -299,18 +288,18 @@ const accessibilityAudience = [
           <div class="grid gap-8 lg:grid-cols-[minmax(0,0.98fr)_minmax(320px,1.02fr)] lg:items-start">
             <div class="grid gap-5">
               <div class="grid max-w-[44rem] gap-3.5">
-                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Solucion</span>
-                <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">
+                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Solucion</span>
+                <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
                   Un sistema interno para ordenar cada pedido desde el primer clic.
                 </h2>
-                <p class="m-0 max-w-[40rem] text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+                <p class="m-0 max-w-[40rem] text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
                   La propuesta plantea un sistema web de uso interno para registrar pedidos
                   presenciales, hacer seguimiento en tiempo real y organizar mejor la operacion
                   del local, integrando tambien la impresion de comandas.
                 </p>
               </div>
 
-              <div class="rounded-[28px] border border-slate-900/8 bg-slate-950 p-6 text-white shadow-[0_24px_70px_rgba(15,23,42,0.18)]">
+              <div class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6 text-white shadow-[0_24px_70px_rgba(2,6,23,0.32)]">
                 <div class="mb-5 flex items-center justify-between gap-4">
                   <div>
                     <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Como funciona</p>
@@ -318,7 +307,7 @@ const accessibilityAudience = [
                       Flujo digital propuesto
                     </h3>
                   </div>
-                  <span class="rounded-full border border-blue-400/20 bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-200">
+                  <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300">
                     Uso interno
                   </span>
                 </div>
@@ -327,7 +316,7 @@ const accessibilityAudience = [
                   {
                     solutionSteps.map((step, index) => (
                       <div class="flex gap-4 rounded-3xl border border-white/10 bg-white/5 p-4">
-                        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white text-sm font-bold text-slate-950">
+                        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-emerald-500 text-sm font-bold text-slate-950">
                           0{index + 1}
                         </span>
                         <p class="m-0 text-[0.98rem] leading-7 text-slate-200">{step}</p>
@@ -341,14 +330,14 @@ const accessibilityAudience = [
             <div class="grid gap-4 sm:grid-cols-2">
               {
                 solutionBenefits.map((item) => (
-                  <article class="rounded-[28px] border border-slate-900/8 bg-white/72 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)]">
-                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600/10 text-sm font-bold text-blue-700">
+                  <article class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.28)]">
+                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/12 text-sm font-bold text-emerald-400">
                       +
                     </div>
-                    <h3 class="text-xl leading-tight font-bold tracking-[-0.04em] text-slate-950">
+                    <h3 class="text-xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
                       {item.title}
                     </h3>
-                    <p class="mt-3 text-[0.98rem] leading-7 text-slate-500">
+                    <p class="mt-3 text-[0.98rem] leading-7 text-slate-400">
                       {item.description}
                     </p>
                   </article>
@@ -361,15 +350,15 @@ const accessibilityAudience = [
 
       <section class="px-0 py-14 sm:py-18" id="accesibilidad">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="rounded-[32px] border border-slate-900/8 bg-white/76 p-6 shadow-soft md:p-8 lg:p-10">
+          <div class="rounded-[32px] border border-white/8 bg-[#0b1120] p-6 shadow-soft md:p-8 lg:p-10">
             <div class="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:items-start">
               <div class="grid gap-5">
                 <div class="grid max-w-[44rem] gap-3.5">
-                  <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Diferenciador</span>
-                  <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">
+                  <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Diferenciador</span>
+                  <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
                     Accesibilidad pensada para personas reales, no solo para cumplir.
                   </h2>
-                  <p class="m-0 max-w-[41rem] text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+                  <p class="m-0 max-w-[41rem] text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
                     El punto diferencial del proyecto es su enfoque en accesibilidad y usabilidad.
                     Segun el PDF, el sistema se disena para adultos mayores y usuarios con baja
                     alfabetizacion digital, priorizando una experiencia simple, clara y facil de adoptar.
@@ -379,11 +368,11 @@ const accessibilityAudience = [
                 <div class="grid gap-3">
                   {
                     accessibilityPoints.map((item) => (
-                      <div class="flex items-start gap-4 rounded-3xl border border-slate-900/8 bg-slate-50/80 p-4">
-                        <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-emerald-500/12 text-sm font-bold text-emerald-700">
+                      <div class="flex items-start gap-4 rounded-3xl border border-white/8 bg-white/4 p-4">
+                        <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-emerald-500/12 text-sm font-bold text-emerald-400">
                           OK
                         </span>
-                        <p class="m-0 text-[0.98rem] leading-7 text-slate-600">{item}</p>
+                        <p class="m-0 text-[0.98rem] leading-7 text-slate-300">{item}</p>
                       </div>
                     ))
                   }
@@ -393,21 +382,21 @@ const accessibilityAudience = [
               <div class="grid gap-4">
                 {
                   accessibilityAudience.map((item) => (
-                    <article class="rounded-[28px] border border-slate-900/8 bg-white p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)]">
+                    <article class="rounded-[28px] border border-white/8 bg-[#0f172a] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.28)]">
                       <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Accesibilidad</p>
-                      <h3 class="mt-3 text-xl leading-tight font-bold tracking-[-0.04em] text-slate-950">
+                      <h3 class="mt-3 text-xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
                         {item.title}
                       </h3>
-                      <p class="mt-3 text-[0.98rem] leading-7 text-slate-500">
+                      <p class="mt-3 text-[0.98rem] leading-7 text-slate-400">
                         {item.description}
                       </p>
                     </article>
                   ))
                 }
 
-                <div class="rounded-[28px] border border-blue-200 bg-blue-50/80 p-6">
-                  <p class="text-xs uppercase tracking-[0.24em] text-blue-700">Base conceptual</p>
-                  <p class="mt-3 text-[0.98rem] leading-7 text-slate-700">
+                <div class="rounded-[28px] border border-cyan-400/20 bg-cyan-400/10 p-6">
+                  <p class="text-xs uppercase tracking-[0.24em] text-cyan-300">Base conceptual</p>
+                  <p class="mt-3 text-[0.98rem] leading-7 text-slate-200">
                     La propuesta toma como referencia principios de accesibilidad orientados a
                     interacciones comprensibles, simples y adaptadas al contexto real del negocio.
                   </p>
@@ -421,22 +410,22 @@ const accessibilityAudience = [
       <section class="px-0 py-14 sm:py-18" id="funcionalidades">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
           <div class="mb-8 grid max-w-[42rem] gap-3.5">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Funcionalidades</span>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Grid preparado para tarjetas del sistema</h2>
-            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Funcionalidades</span>
+            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">Grid preparado para tarjetas del sistema</h2>
+            <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
               Dejamos lista la estructura que luego usaremos para registro de pedidos,
               historial, inventario y visualizacion en curso.
             </p>
           </div>
 
           <div class="grid gap-5 md:grid-cols-2">
-            <article class="rounded-3xl border border-slate-900/8 bg-white/72 p-6">
-              <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-950">Tarjeta 01</h3>
-              <p class="max-w-[34rem] text-[1.05rem] leading-7 text-slate-500">Base lista para contenido funcional resumido y visual.</p>
+            <article class="rounded-3xl border border-white/8 bg-[#0b1120] p-6">
+              <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-50">Tarjeta 01</h3>
+              <p class="max-w-[34rem] text-[1.05rem] leading-7 text-slate-400">Base lista para contenido funcional resumido y visual.</p>
             </article>
-            <article class="rounded-3xl border border-slate-900/8 bg-white/72 p-6">
-              <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-950">Tarjeta 02</h3>
-              <p class="max-w-[34rem] text-[1.05rem] leading-7 text-slate-500">La grilla ya es responsive y mantiene la coherencia del layout.</p>
+            <article class="rounded-3xl border border-white/8 bg-[#0b1120] p-6">
+              <h3 class="mb-3 text-xl leading-tight font-bold tracking-[-0.045em] text-slate-50">Tarjeta 02</h3>
+              <p class="max-w-[34rem] text-[1.05rem] leading-7 text-slate-400">La grilla ya es responsive y mantiene la coherencia del layout.</p>
             </article>
           </div>
         </div>
@@ -445,9 +434,9 @@ const accessibilityAudience = [
       <section class="px-0 py-14 sm:py-18" id="impacto">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
           <div class="grid max-w-[42rem] gap-3.5">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Impacto</span>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Bloque listo para beneficios y resultados esperados</h2>
-            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Impacto</span>
+            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">Bloque listo para beneficios y resultados esperados</h2>
+            <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
               En esta parte mostraremos reduccion de errores, mejora en tiempos de atencion,
               organizacion interna e inclusion digital.
             </p>
@@ -458,9 +447,9 @@ const accessibilityAudience = [
       <section class="px-0 py-14 sm:py-18" id="estado">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
           <div class="grid max-w-[42rem] gap-3.5">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Estado del proyecto</span>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Estructura preparada para avances y proxima evaluacion</h2>
-            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Estado del proyecto</span>
+            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">Estructura preparada para avances y proxima evaluacion</h2>
+            <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
               La propuesta, el diseno, el desarrollo y la validacion con usuarios se iran
               incorporando paso a paso sobre esta misma base.
             </p>
@@ -470,7 +459,7 @@ const accessibilityAudience = [
     </main>
 
     <footer class="px-0 pt-8 pb-16">
-      <div class="relative z-[1] mx-auto flex w-[min(calc(100%-2rem),1180px)] flex-col items-start justify-between gap-4 border-t border-slate-900/8 pt-6 text-[0.95rem] text-slate-500 lg:flex-row">
+      <div class="relative z-[1] mx-auto flex w-[min(calc(100%-2rem),1180px)] flex-col items-start justify-between gap-4 border-t border-white/8 pt-6 text-[0.95rem] text-slate-400 lg:flex-row">
         <span>Luciano Villanueva Ramirez</span>
         <span>Ingenieria en Ejecucion en Computacion e Informatica</span>
         <span>Universidad del Bio-Bio</span>

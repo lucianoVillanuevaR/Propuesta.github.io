@@ -3,13 +3,14 @@
 @theme {
   --font-sans: "Manrope", sans-serif;
   --font-display: "Space Grotesk", sans-serif;
-  --color-page: #f4f7fb;
-  --color-ink: #102033;
-  --color-muted: #5c6b7d;
-  --color-line: rgba(15, 23, 42, 0.08);
-  --color-brand: #2563eb;
-  --color-brand-strong: #1d4ed8;
-  --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.08);
+  --color-page: #0f172a;
+  --color-card: #0b1120;
+  --color-ink: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-line: rgba(148, 163, 184, 0.16);
+  --color-brand: #22c55e;
+  --color-brand-strong: #38bdf8;
+  --shadow-soft: 0 24px 80px rgba(2, 6, 23, 0.45);
 }
 
 @layer base {
@@ -25,10 +26,12 @@
     min-width: 320px;
     font-family: var(--font-sans);
     color: var(--color-ink);
-    background:
-      radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 30%),
-      radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 24%),
-      linear-gradient(180deg, #f8fbff 0%, var(--color-page) 45%, #eef3f8 100%);
+    background: linear-gradient(
+      180deg,
+      #020617 0%,
+      #0f172a 50%,
+      #020617 100%
+    );
   }
 
   a {
