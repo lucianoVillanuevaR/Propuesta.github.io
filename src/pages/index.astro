@@ -1,4 +1,5 @@
 ---
+import DemoPreview from '../components/DemoPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 
@@ -6,22 +7,10 @@ const sections = [
   { id: 'inicio', label: 'Inicio' },
   { id: 'problema', label: 'Problema' },
   { id: 'solucion', label: 'Solucion' },
-  { id: 'demo', label: 'Demo' },
+  { id: 'demo-preview', label: 'Demo', href: '/Propuesta.github.io/demo/' },
   { id: 'funciones', label: 'Funciones' },
   { id: 'impacto', label: 'Impacto' },
   { id: 'estado', label: 'Estado' },
-];
-
-const heroHighlights = [
-  'Interfaz clara para usuarios con baja experiencia tecnologica',
-  'Botones grandes, menos pasos y apoyo visual',
-  'Registro y seguimiento digital de pedidos en tiempo real',
-];
-
-const heroStats = [
-  { label: 'Enfoque principal', value: 'Accesibilidad real' },
-  { label: 'Contexto', value: 'Pyme gastronomica' },
-  { label: 'Operacion', value: 'Uso interno en local' },
 ];
 
 const problemFlow = [
@@ -75,13 +64,6 @@ const solutionBenefits = [
   },
 ];
 
-const impacts = [
-  'Reduccion de errores en la toma de pedidos.',
-  'Mejora en los tiempos de atencion y coordinacion interna.',
-  'Mayor organizacion del negocio durante horas de alta demanda.',
-  'Inclusion digital para usuarios con baja experiencia tecnologica.',
-];
-
 const statusItems = [
   {
     phase: 'Propuesta definida',
@@ -128,7 +110,7 @@ const footerMeta = [
             sections.map((section) => (
               <a
                 class="rounded-full px-4 py-3 text-[0.96rem] text-slate-400 transition hover:bg-white/8 hover:text-slate-50 focus-visible:bg-white/8 focus-visible:text-slate-50"
-                href={`#${section.id}`}
+                href={section.href ?? `#${section.id}`}
               >
                 {section.label}
               </a>
@@ -145,7 +127,7 @@ const footerMeta = [
         <div class="relative mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-28">
           <div class="max-w-4xl">
             <p class="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-1 text-sm text-sky-300">
-              Proyecto de titulo · Sistema web accesible
+              Proyecto de titulo - Sistema web accesible
             </p>
 
             <p class="mb-4 text-sm font-medium text-sky-400 md:text-base">
@@ -159,49 +141,39 @@ const footerMeta = [
             </h1>
 
             <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              Interfaz clara, comprensible y facil de usar, disenada para adultos mayores
-              y personas con baja experiencia digital.
+              Interfaz clara y facil de usar, disenada para adultos mayores y usuarios con baja experiencia digital.
             </p>
 
             <div class="mt-8 flex flex-wrap gap-4">
               <a
-                href="#demo"
+                href="/Propuesta.github.io/demo/"
                 class="rounded-full bg-green-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-green-400"
-              >
-                Ver como funciona
-              </a>
-
-              <a
-                href="#demo"
-                class="rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
               >
                 Ver accesibilidad aplicada
               </a>
             </div>
 
-            <div class="mt-5 flex flex-col gap-2 text-sm text-slate-400 sm:flex-row sm:flex-wrap sm:gap-5">
-              <span>+ Facil de aprender en minutos</span>
-              <span>+ Reduce errores en pedidos</span>
-              <span>+ Mejora la organizacion del local</span>
+            <div class="mt-5 text-sm text-slate-400">
+              + Facil de aprender en minutos - + Reduce errores - + Mejora la organizacion del local
             </div>
 
             <div class="mt-10 grid gap-4 md:grid-cols-3">
               <div class="rounded-2xl border border-white/10 bg-[#0B1120] p-5 transition hover:border-sky-400/30">
-                <p class="text-sm font-semibold text-white">Interfaz simplificada</p>
+                <p class="text-sm font-semibold text-white">Interfaz simple y guiada</p>
                 <p class="mt-2 text-sm text-slate-400">
                   Menos pasos y menos decisiones por accion.
                 </p>
               </div>
 
               <div class="rounded-2xl border border-white/10 bg-[#0B1120] p-5 transition hover:border-sky-400/30">
-                <p class="text-sm font-semibold text-white">Pensado para baja experiencia digital</p>
+                <p class="text-sm font-semibold text-white">Pensado para usuarios con poca experiencia digital</p>
                 <p class="mt-2 text-sm text-slate-400">
                   Uso facil para adultos mayores y nuevos usuarios.
                 </p>
               </div>
 
               <div class="rounded-2xl border border-white/10 bg-[#0B1120] p-5 transition hover:border-sky-400/30">
-                <p class="text-sm font-semibold text-white">Estado visible en todo momento</p>
+                <p class="text-sm font-semibold text-white">Estado claro en todo momento</p>
                 <p class="mt-2 text-sm text-slate-400">
                   El usuario siempre sabe que esta pasando.
                 </p>
@@ -346,330 +318,7 @@ const footerMeta = [
         </div>
       </section>
 
-      <section id="demo" class="px-0 py-20 text-white">
-        <div class="mb-12 text-center">
-          <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
-            Comparacion de uso
-          </p>
-          <h2 class="text-4xl font-bold text-white md:text-5xl">
-            Del proceso actual a una solucion más clara y accesible
-          </h2>
-          <p class="mx-auto mt-4 max-w-3xl text-slate-400">
-            La propuesta reemplaza un proceso manual, menos estructurado y propenso a errores, por una interfaz clara, guiada y accesible para distintos niveles de experiencia tecnologica.
-          </p>
-        </div>
-
-        <div class="mx-auto mb-20 grid max-w-6xl gap-10 px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(340px,1.1fr)]">
-          <div class="rounded-[28px] border border-white/10 bg-[#0B1120] p-6 opacity-90 shadow-2xl shadow-black/20">
-            <div class="mb-4">
-              <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
-                Metodo actual
-              </p>
-              <h3 class="text-2xl font-semibold text-white">
-                Registro poco estructurado
-              </h3>
-              <p class="mt-2 text-sm text-slate-400">
-                Forma de trabajo mas manual, con menor claridad visual y mayor riesgo de errores.
-              </p>
-            </div>
-
-            <div class="mb-4 grid gap-3 sm:grid-cols-2">
-              <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-                <p class="text-sm font-medium text-white">Informacion dispersa</p>
-                <p class="mt-1 text-sm text-slate-500">
-                  Datos mezclados en anotaciones breves.
-                </p>
-              </div>
-
-              <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-                <p class="text-sm font-medium text-white">Menor claridad</p>
-                <p class="mt-1 text-sm text-slate-500">
-                  Estado y observaciones poco visibles.
-                </p>
-              </div>
-            </div>
-
-            <div class="rounded-3xl border border-white/5 bg-[#020617] p-5">
-              <div class="mb-4 flex items-center justify-between">
-                <div>
-                  <p class="text-xs uppercase tracking-wide text-slate-500">
-                    Pedido actual
-                  </p>
-                  <p class="text-base font-semibold text-white">
-                    Anotación manual del pedido
-                  </p>
-                </div>
-
-                <span class="rounded-full bg-white/5 px-3 py-1 text-xs text-slate-400">
-                  Sin guía visual
-                </span>
-              </div>
-
-              <div class="space-y-3">
-                <div class="rounded-2xl border border-white/5 bg-[#0B1120] p-4">
-                  <p class="text-xs uppercase tracking-wide text-slate-500">Pedido</p>
-                  <p class="mt-2 text-sm text-slate-300">
-                    Hamb + bebida <br />
-                    papas <br />
-                    s/cebolla
-                  </p>
-                </div>
-
-                <div class="rounded-2xl border border-white/5 bg-[#0B1120] p-4">
-                  <p class="text-xs uppercase tracking-wide text-slate-500">Estado</p>
-                  <p class="mt-2 text-sm font-medium text-amber-300">
-                    Pendiente
-                  </p>
-                </div>
-
-                <div class="rounded-2xl border border-white/5 bg-[#0B1120] p-4">
-                  <p class="text-xs uppercase tracking-wide text-slate-500">Observaciones</p>
-                  <p class="mt-2 text-sm text-slate-400">
-                    Cliente espera. Posibles dudas en la lectura del pedido durante horas de alta demanda.
-                  </p>
-                </div>
-              </div>
-
-              <div class="mt-5 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-4 py-3">
-                <p class="text-sm text-slate-400">
-                  No existe confirmacion inmediata ni una visualizacion clara del flujo del pedido.
-                </p>
-              </div>
-            </div>
-
-            <div class="mt-5 grid gap-3 sm:grid-cols-3">
-              <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-                <p class="text-sm font-semibold text-white">Texto abreviado</p>
-                <p class="mt-1 text-xs text-slate-500">
-                  Puede dificultar la interpretacion.
-                </p>
-              </div>
-
-              <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-                <p class="text-sm font-semibold text-white">Sin confirmacion</p>
-                <p class="mt-1 text-xs text-slate-500">
-                  El usuario no recibe feedback claro.
-                </p>
-              </div>
-
-              <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-                <p class="text-sm font-semibold text-white">Más confusión</p>
-                <p class="mt-1 text-xs text-slate-500">
-                  Aumenta el riesgo de errores operativos.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mx-auto w-full max-w-xl">
-            <div class="rounded-[28px] border border-white/10 bg-[#0B1120] p-5 shadow-2xl shadow-black/30">
-              <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-sky-400">
-                Modo accesible activado
-              </p>
-                <div class="mb-4 flex items-center justify-between">
-                  <div>
-                    <p class="text-sm text-slate-400">Demo del sistema</p>
-                  <h3 class="text-xl font-semibold text-white">Ingreso de pedido accesible</h3>
-                </div>
-                <span class="rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400">
-                  Interfaz accesible
-                </span>
-              </div>
-
-              <div class="mb-5 grid gap-3 sm:grid-cols-2">
-                <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-                  <p class="text-sm font-medium text-white">Botones grandes</p>
-                  <p class="mt-1 text-sm text-slate-400">Facilitan la seleccion sin errores.</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-                  <p class="text-sm font-medium text-white">Lectura clara</p>
-                  <p class="mt-1 text-sm text-slate-400">Texto visible y jerarquia comprensible.</p>
-                </div>
-              </div>
-
-              <div class="rounded-3xl border border-white/10 bg-[#020617] p-4">
-                <div class="mb-4 flex items-center justify-between">
-                  <div>
-                    <p class="text-xs uppercase tracking-wide text-slate-500">Pedido actual</p>
-                    <p class="text-base font-semibold text-white">Selecciona productos</p>
-                  </div>
-                  <span class="rounded-full bg-sky-500/15 px-3 py-1 text-xs text-sky-300">
-                    Paso 1 de 2
-                  </span>
-                </div>
-
-                <div class="space-y-3">
-                  <button class="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-[#1E293B] px-4 py-4 text-left transition hover:bg-[#273449]">
-                    <span class="flex items-center gap-3">
-                      <span class="text-2xl">🍔</span>
-                      <span>
-                        <span class="block text-base font-semibold text-white">Hamburguesa</span>
-                        <span class="block text-sm text-slate-400">Seleccion rapida</span>
-                      </span>
-                    </span>
-                    <span class="text-sm text-slate-300">Agregar</span>
-                  </button>
-
-                  <button class="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-[#1E293B] px-4 py-4 text-left transition hover:bg-[#273449]">
-                    <span class="flex items-center gap-3">
-                      <span class="text-2xl">🥤</span>
-                      <span>
-                        <span class="block text-base font-semibold text-white">Bebida</span>
-                        <span class="block text-sm text-slate-400">Opcion complementaria</span>
-                      </span>
-                    </span>
-                    <span class="text-sm text-slate-300">Agregar</span>
-                  </button>
-                </div>
-
-                <div class="mt-5 rounded-2xl border border-white/10 bg-[#0B1120] p-4">
-                  <div class="flex items-start justify-between gap-4">
-                    <div>
-                      <p class="text-sm font-medium text-white">Resumen visible</p>
-                      <p class="mt-1 text-sm text-slate-400">
-                        Pedido claro, facil de revisar antes de confirmar.
-                      </p>
-                    </div>
-                    <span class="rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400">
-                      Sin errores
-                    </span>
-                  </div>
-
-                  <div class="mt-4 space-y-2 text-sm text-slate-300">
-                    <div class="flex justify-between">
-                      <span>Hamburguesa</span>
-                      <span>1</span>
-                    </div>
-                    <div class="flex justify-between">
-                      <span>Bebida</span>
-                      <span>1</span>
-                    </div>
-                  </div>
-
-                  <button class="mt-5 w-full rounded-2xl bg-green-500 px-4 py-4 text-base font-semibold text-slate-950 shadow-[0_0_20px_rgba(34,197,94,0.3)] transition hover:bg-green-400">
-                    Confirmar pedido
-                  </button>
-
-                  <div class="mt-4 rounded-2xl border border-green-500/20 bg-green-500/10 px-4 py-3 text-sm text-green-300">
-                    + Pedido registrado correctamente
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-5 grid gap-3 sm:grid-cols-3">
-                <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-                  <p class="text-sm font-semibold text-white">Menos pasos</p>
-                  <p class="mt-1 text-xs text-slate-400">Reduce complejidad y tiempo.</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-                  <p class="text-sm font-semibold text-white">Apoyo visual</p>
-                  <p class="mt-1 text-xs text-slate-400">Estados y acciones faciles de entender.</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-                  <p class="text-sm font-semibold text-white">Uso inclusivo</p>
-                  <p class="mt-1 text-xs text-slate-400">Disenado para una mayor diversidad de usuarios.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mx-auto mb-20 max-w-6xl px-6">
-          <h3 class="mb-10 text-center text-2xl font-bold">
-            Funcionalidades del sistema
-          </h3>
-
-          <div class="grid gap-6 md:grid-cols-3">
-            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
-              <h4 class="mb-2 font-semibold">Registro de pedidos</h4>
-              <p class="text-sm leading-7 text-gray-400">
-                Ingreso rapido y claro de pedidos sin errores manuales.
-              </p>
-            </div>
-
-            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
-              <h4 class="mb-2 font-semibold">Seguimiento en tiempo real</h4>
-              <p class="text-sm leading-7 text-gray-400">
-                Visualizacion del estado de cada pedido durante el proceso.
-              </p>
-            </div>
-
-            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
-              <h4 class="mb-2 font-semibold">Impresion automatica</h4>
-              <p class="text-sm leading-7 text-gray-400">
-                Envio directo de pedidos a cocina mediante comandas.
-              </p>
-            </div>
-
-            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
-              <h4 class="mb-2 font-semibold">Historial de pedidos</h4>
-              <p class="text-sm leading-7 text-gray-400">
-                Registro organizado de ventas realizadas.
-              </p>
-            </div>
-
-            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
-              <h4 class="mb-2 font-semibold">Control basico de inventario</h4>
-              <p class="text-sm leading-7 text-gray-400">
-                Monitoreo simple de productos disponibles.
-              </p>
-            </div>
-
-            <div class="min-h-[170px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mb-4 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-400 to-cyan-400"></div>
-              <h4 class="mb-2 font-semibold">Tecnologia facil de adoptar</h4>
-              <p class="text-sm leading-7 text-gray-400">
-                Interfaz comprensible para personas con poca experiencia tecnologica.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="mx-auto max-w-6xl px-6">
-          <h3 class="mb-10 text-center text-2xl font-bold">
-            Disenado para ser accesible
-          </h3>
-
-          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div class="min-h-[150px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 text-center shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">A</div>
-              <p class="font-semibold">Botones grandes</p>
-              <p class="mt-2 text-sm leading-7 text-gray-400">
-                Facilitan la interaccion sin errores.
-              </p>
-            </div>
-
-            <div class="min-h-[150px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 text-center shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">B</div>
-              <p class="font-semibold">Menos pasos</p>
-              <p class="mt-2 text-sm leading-7 text-gray-400">
-                Reduce la complejidad del proceso.
-              </p>
-            </div>
-
-            <div class="min-h-[150px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 text-center shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">C</div>
-              <p class="font-semibold">Interfaz clara</p>
-              <p class="mt-2 text-sm leading-7 text-gray-400">
-                Facil de entender y usar.
-              </p>
-            </div>
-
-            <div class="min-h-[150px] rounded-3xl border border-white/8 bg-[#0B1120] p-7 text-center shadow-[0_18px_50px_rgba(2,6,23,0.22)]">
-              <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">D</div>
-              <p class="font-semibold">Apoyo visual</p>
-              <p class="mt-2 text-sm leading-7 text-gray-400">
-                Mejora la comprension del sistema.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <DemoPreview />
 
       <section id="funciones" class="py-20 text-white">
         <div class="mx-auto max-w-6xl px-6">
@@ -690,7 +339,7 @@ const footerMeta = [
             <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
               <h3 class="mb-2 text-lg font-semibold">Registro de pedidos</h3>
               <p class="text-sm text-slate-400">
-                Ingreso rapido y estructurado de pedidos, evitando errores asociados al registro manual.
+                Ingreso rapido y estructurado de pedidos, reduciendo errores del registro manual.
               </p>
             </div>
 
@@ -702,7 +351,7 @@ const footerMeta = [
             </div>
 
             <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold">Impresion de comandas</h3>
+              <h3 class="mb-2 text-lg font-semibold">Impresion automatica</h3>
               <p class="text-sm text-slate-400">
                 Envio automatico de pedidos a cocina mediante impresion, reduciendo tiempos de comunicacion.
               </p>
@@ -725,7 +374,7 @@ const footerMeta = [
             <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
               <h3 class="mb-2 text-lg font-semibold">Interfaz accesible</h3>
               <p class="text-sm text-slate-400">
-                Diseno claro, con menos pasos, botones grandes y apoyo visual para distintos niveles de experiencia digital.
+                Diseno claro y facil de usar para distintos niveles de experiencia digital.
               </p>
             </div>
           </div>
@@ -749,28 +398,28 @@ const footerMeta = [
 
           <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold text-green-400">↓ Menos errores</h3>
+              <h3 class="mb-2 text-lg font-semibold text-green-400">Menos errores</h3>
               <p class="text-sm text-slate-400">
                 Disminucion de errores en la toma y registro de pedidos.
               </p>
             </div>
 
             <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold text-green-400">↑ Mayor organizacion</h3>
+              <h3 class="mb-2 text-lg font-semibold text-green-400">Mayor organizacion</h3>
               <p class="text-sm text-slate-400">
                 Mejora en la gestion del flujo de pedidos dentro del local.
               </p>
             </div>
 
             <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold text-green-400">↑ Eficiencia operativa</h3>
+              <h3 class="mb-2 text-lg font-semibold text-green-400">Eficiencia operativa</h3>
               <p class="text-sm text-slate-400">
                 Reduccion de tiempos en el proceso de atencion.
               </p>
             </div>
 
             <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold text-green-400">↑ Adopcion tecnologica</h3>
+              <h3 class="mb-2 text-lg font-semibold text-green-400">Adopcion tecnologica</h3>
               <p class="text-sm text-slate-400">
                 Facilita el uso del sistema para personas con baja experiencia digital.
               </p>
