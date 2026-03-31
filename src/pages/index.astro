@@ -23,6 +23,31 @@ const heroStats = [
   { label: 'Contexto', value: 'Pyme gastronomica' },
   { label: 'Operacion', value: 'Uso interno en local' },
 ];
+
+const problemFlow = [
+  'El pedido se recibe de forma presencial o desde plataformas de delivery.',
+  'La informacion se anota manualmente en comandas o en un block de notas.',
+  'La preparacion y entrega dependen de ese registro manual para continuar.',
+];
+
+const problemIssues = [
+  {
+    title: 'Errores de registro',
+    description: 'La escritura manual aumenta el riesgo de errores, confusiones e interpretaciones incorrectas.',
+  },
+  {
+    title: 'Perdida de informacion',
+    description: 'Sin un sistema centralizado, los pedidos pueden perderse, duplicarse o quedar incompletos.',
+  },
+  {
+    title: 'Desorganizacion operativa',
+    description: 'En alta demanda se vuelve mas dificil mantener el orden de preparacion y entrega.',
+  },
+  {
+    title: 'Sobrecarga al atender',
+    description: 'Quien atiende debe dividir su atencion entre anotar, coordinar y entregar, reduciendo eficiencia.',
+  },
+];
 ---
 
 <BaseLayout
@@ -158,13 +183,65 @@ const heroStats = [
 
       <section class="px-0 py-14 sm:py-18" id="problema">
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
-          <div class="grid max-w-[42rem] gap-3.5">
-            <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Problema</span>
-            <h2 class="m-0 text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">Bloque listo para el contenido del proceso actual</h2>
-            <p class="m-0 text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
-              Aqui desarrollaremos el flujo manual, los errores, la desorganizacion y las
-              dificultades en momentos de alta demanda descritas en la propuesta.
-            </p>
+          <div class="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(320px,1.08fr)] lg:items-start">
+            <div class="grid gap-5">
+              <div class="grid max-w-[42rem] gap-3.5">
+                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/12 px-3.5 py-2 text-[0.88rem] font-bold text-blue-700 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Problema</span>
+                <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-950">
+                  Cuando todo depende del papel, el ritmo se rompe.
+                </h2>
+                <p class="m-0 max-w-[38rem] text-[1.05rem] leading-7 text-slate-500 sm:leading-8">
+                  Segun la propuesta, la gestion actual de pedidos se realiza de manera manual.
+                  Esto sostiene la operacion diaria, pero genera errores, perdida de informacion
+                  y desorden, especialmente en momentos de alta demanda.
+                </p>
+              </div>
+
+              <div class="rounded-[28px] border border-slate-900/8 bg-white/72 p-6">
+                <div class="mb-4 flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Proceso actual</p>
+                    <h3 class="mt-2 text-2xl leading-tight font-bold tracking-[-0.04em] text-slate-950">
+                      Flujo manual de atencion
+                    </h3>
+                  </div>
+                  <span class="rounded-full border border-amber-300/50 bg-amber-100 px-3 py-1 text-xs font-bold text-amber-700">
+                    Alto riesgo en horas punta
+                  </span>
+                </div>
+
+                <div class="grid gap-4">
+                  {
+                    problemFlow.map((step, index) => (
+                      <div class="flex gap-4 rounded-3xl border border-slate-900/6 bg-slate-50/80 p-4">
+                        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-slate-950 text-sm font-bold text-white">
+                          0{index + 1}
+                        </span>
+                        <p class="m-0 text-[0.98rem] leading-7 text-slate-600">{step}</p>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              {
+                problemIssues.map((item) => (
+                  <article class="rounded-[28px] border border-slate-900/8 bg-white/72 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)]">
+                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-red-500/10 text-sm font-bold text-red-600">
+                      !
+                    </div>
+                    <h3 class="text-xl leading-tight font-bold tracking-[-0.04em] text-slate-950">
+                      {item.title}
+                    </h3>
+                    <p class="mt-3 text-[0.98rem] leading-7 text-slate-500">
+                      {item.description}
+                    </p>
+                  </article>
+                ))
+              }
+            </div>
           </div>
         </div>
       </section>
