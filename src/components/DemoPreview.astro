@@ -1,44 +1,46 @@
 <section id="demo-preview" class="py-20 text-white">
   <div class="mx-auto max-w-6xl px-6">
-    <div class="mb-12 text-center">
+    <div class="mb-12 text-center" data-reveal>
       <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
-        Comparacion de uso
+        Comparación conceptual
       </p>
       <h2 class="text-4xl font-bold md:text-5xl">
-        Del proceso actual a una solucion mas clara y accesible
+        Del proceso manual a una propuesta coherente con el prototipo
       </h2>
       <p class="mx-auto mt-4 max-w-3xl text-slate-400">
-        La propuesta reemplaza un proceso manual, menos estructurado y propenso a errores,
-        por una interfaz clara, guiada y accesible para distintos niveles de experiencia tecnologica.
+        Esta comparación resume el cambio principal del proyecto: pasar de un registro manual,
+        disperso y difícil de seguir, a una interfaz interna que organiza la información,
+        muestra estados claros y facilita su uso por adultos mayores.
       </p>
     </div>
 
     <div class="grid gap-6 lg:grid-cols-2">
-      <div class="rounded-[28px] border border-white/10 bg-[#0B1120] p-6 opacity-90 shadow-2xl shadow-black/20">
+      <div class="surface-hover rounded-[28px] border border-white/10 bg-[#0B1120] p-6 opacity-90 shadow-2xl shadow-black/20" data-reveal style="--reveal-delay: 90ms;">
         <div class="mb-4">
           <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
-            Metodo actual
+            Proceso actual
           </p>
           <h3 class="text-2xl font-semibold text-white">
-            Registro poco estructurado
+            Registro manual y seguimiento poco claro
           </h3>
           <p class="mt-2 text-sm text-slate-400">
-            Forma de trabajo mas manual, con menor claridad visual y mayor riesgo de errores.
+            Representación del escenario descrito en el PDF: notas breves, información dispersa
+            y mayor dificultad para mantener orden durante la operación.
           </p>
         </div>
 
         <div class="mb-4 grid gap-3 sm:grid-cols-2">
           <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-            <p class="text-sm font-medium text-white">Informacion dispersa</p>
+            <p class="text-sm font-medium text-white">Notas abreviadas</p>
             <p class="mt-1 text-sm text-slate-500">
-              Datos mezclados en anotaciones breves.
+              Pueden generar dudas de lectura o interpretación.
             </p>
           </div>
 
           <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-            <p class="text-sm font-medium text-white">Menor claridad</p>
+            <p class="text-sm font-medium text-white">Sin seguimiento visible</p>
             <p class="mt-1 text-sm text-slate-500">
-              Estado y observaciones poco visibles.
+              No se ve con claridad en qué estado está cada pedido.
             </p>
           </div>
         </div>
@@ -47,10 +49,10 @@
           <div class="mb-4 flex items-center justify-between">
             <div>
               <p class="text-xs uppercase tracking-wide text-slate-500">Pedido actual</p>
-              <p class="text-base font-semibold text-white">Anotacion manual del pedido</p>
+              <p class="text-base font-semibold text-white">Anotación manual del pedido</p>
             </div>
             <span class="rounded-full bg-white/5 px-3 py-1 text-xs text-slate-400">
-              Sin guia visual
+              Sin apoyo visual
             </span>
           </div>
 
@@ -66,100 +68,87 @@
 
             <div class="rounded-2xl border border-white/5 bg-[#0B1120] p-4">
               <p class="text-xs uppercase tracking-wide text-slate-500">Estado</p>
-              <p class="mt-2 text-sm font-medium text-amber-300">Pendiente</p>
+              <p class="mt-2 text-sm font-medium text-amber-300">No visible con claridad</p>
             </div>
 
             <div class="rounded-2xl border border-white/5 bg-[#0B1120] p-4">
-              <p class="text-xs uppercase tracking-wide text-slate-500">Observaciones</p>
+              <p class="text-xs uppercase tracking-wide text-slate-500">Riesgo operativo</p>
               <p class="mt-2 text-sm text-slate-400">
-                Cliente espera. Posibles dudas en la lectura del pedido durante horas de alta demanda.
+                En horas punta aumenta la posibilidad de confundir pedidos, perder información o retrasar la entrega.
               </p>
             </div>
           </div>
 
           <div class="mt-5 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-4 py-3">
             <p class="text-sm text-slate-400">
-              No existe confirmacion inmediata ni una visualizacion clara del flujo del pedido.
+              El flujo depende de leer, recordar y coordinar información no centralizada.
             </p>
           </div>
         </div>
 
         <div class="mt-5 grid gap-3 sm:grid-cols-3">
           <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-            <p class="text-sm font-semibold text-white">Texto abreviado</p>
+            <p class="text-sm font-semibold text-white">Más memoria</p>
             <p class="mt-1 text-xs text-slate-500">
-              Puede dificultar la interpretacion.
+              El usuario debe recordar el estado del pedido.
             </p>
           </div>
 
           <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-            <p class="text-sm font-semibold text-white">Sin confirmacion</p>
+            <p class="text-sm font-semibold text-white">Más ambigüedad</p>
             <p class="mt-1 text-xs text-slate-500">
-              El usuario no recibe feedback claro.
+              No hay confirmaciones claras tras cada acción.
             </p>
           </div>
 
           <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-            <p class="text-sm font-semibold text-white">Mas confusion</p>
+            <p class="text-sm font-semibold text-white">Más carga cognitiva</p>
             <p class="mt-1 text-xs text-slate-500">
-              Aumenta el riesgo de errores operativos.
+              La información no está ordenada visualmente.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="rounded-[28px] border border-white/10 bg-[#0B1120] p-4 shadow-2xl shadow-black/25">
+      <div class="surface-hover rounded-[28px] border border-white/10 bg-[#0B1120] p-4 shadow-2xl shadow-black/25" data-reveal style="--reveal-delay: 180ms;">
         <div class="rounded-[24px] border border-sky-400/30 bg-[#0a1324] p-5 shadow-[0_0_30px_rgba(56,189,248,0.08)]">
           <div class="mb-4">
             <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-sky-400">
-              Modo accesible activado
+              Propuesta del sistema
             </p>
             <div class="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <p class="text-sm text-slate-400">Demo del sistema</p>
+                <p class="text-sm text-slate-400">Vista coherente con el prototipo principal</p>
                 <h3 class="text-2xl font-semibold text-white">
-                  Ingreso de pedido accesible
+                  Toma de pedido guiada y accesible
                 </h3>
               </div>
               <span class="rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400">
-                Interfaz accesible
+                Enfoque para adultos mayores
               </span>
             </div>
           </div>
 
-          <div class="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <button
-              type="button"
-              class="rounded-full border border-green-400/20 bg-green-500/10 px-4 py-2 text-sm font-medium text-green-300"
-              disabled
-            >
-              Modo accesible: ON
-            </button>
-
-            <div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
-              <span class="text-xs text-slate-400">Texto</span>
-              <span class="rounded-full bg-[#111827] px-3 py-1 text-sm text-white">A-</span>
-              <span class="rounded-full bg-[#111827] px-3 py-1 text-sm text-white">A</span>
-              <span class="rounded-full bg-[#111827] px-3 py-1 text-sm text-white">A+</span>
-            </div>
-          </div>
-
-          <div class="mb-5 grid gap-3 sm:grid-cols-2">
+          <div class="mb-5 grid gap-3 sm:grid-cols-3">
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-              <p class="text-sm font-medium text-white">Botones grandes</p>
-              <p class="mt-1 text-sm text-slate-400">Facilitan la seleccion sin errores.</p>
+              <p class="text-sm font-medium text-white">Acción principal visible</p>
+              <p class="mt-1 text-sm text-slate-400">Seleccionar productos sin distraerse con otras tareas.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-              <p class="text-sm font-medium text-white">Lectura clara</p>
-              <p class="mt-1 text-sm text-slate-400">Texto visible y jerarquia comprensible.</p>
+              <p class="text-sm font-medium text-white">Botones amplios</p>
+              <p class="mt-1 text-sm text-slate-400">Facilitan la interacción y reducen errores de selección.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
+              <p class="text-sm font-medium text-white">Resumen antes de confirmar</p>
+              <p class="mt-1 text-sm text-slate-400">Permite revisar sin depender de memoria ni interpretación.</p>
             </div>
           </div>
 
           <div class="rounded-3xl border border-white/10 bg-[#020617] p-4">
             <div class="mb-4 flex items-center justify-between">
               <div>
-                <p class="text-xs uppercase tracking-wide text-slate-500">Pedido actual</p>
-                <p class="text-base font-semibold text-white">Paso 1 de 2 - Selecciona productos</p>
+                <p class="text-xs uppercase tracking-wide text-slate-500">Pantalla propuesta</p>
+                <p class="text-base font-semibold text-white">Etapa 1 de 5 - Registro del pedido</p>
               </div>
               <span class="rounded-full bg-sky-500/15 px-3 py-1 text-xs text-sky-300">
                 Guiado
@@ -167,54 +156,60 @@
             </div>
 
             <p class="mb-4 text-sm text-slate-400">
-              Modo accesible activo: mayor contraste, botones grandes y lectura mas clara.
+              La vista se organiza igual que el prototipo: acciones grandes, lectura clara y un resumen visible del pedido.
             </p>
 
             <div class="space-y-3">
-              <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-[#273449] px-4 py-4">
+              <div class="flex items-center justify-between rounded-3xl border border-white/10 bg-[#314158] px-4 py-5">
                 <span class="flex items-center gap-3">
                   <span class="text-2xl">🍔</span>
                   <span>
-                    <span class="block text-base font-semibold text-white">Hamburguesa</span>
-                    <span class="block text-sm text-slate-400">Seleccion rapida</span>
+                    <span class="block text-base font-semibold text-white">Hamburguesa clásica</span>
+                    <span class="block text-sm text-slate-300">Selección principal del pedido</span>
                   </span>
                 </span>
-                <span class="text-sm text-slate-300">Agregar al pedido</span>
+                <span class="text-sm text-slate-100">Agregar</span>
               </div>
 
-              <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-[#273449] px-4 py-4">
+              <div class="flex items-center justify-between rounded-3xl border border-white/10 bg-[#314158] px-4 py-5">
                 <span class="flex items-center gap-3">
                   <span class="text-2xl">🥤</span>
                   <span>
                     <span class="block text-base font-semibold text-white">Bebida</span>
-                    <span class="block text-sm text-slate-400">Opcion complementaria</span>
+                    <span class="block text-sm text-slate-300">Complemento opcional</span>
                   </span>
                 </span>
-                <span class="text-sm text-slate-300">Agregar al pedido</span>
+                <span class="text-sm text-slate-100">Agregar</span>
               </div>
             </div>
 
             <div class="mt-5 rounded-2xl border border-white/10 bg-[#0B1120] p-4">
               <div class="mb-3 flex items-start justify-between gap-3">
                 <div>
-                  <p class="text-sm font-medium text-white">Resumen claro del pedido</p>
+                  <p class="text-sm font-medium text-white">Resumen del pedido</p>
                   <p class="mt-1 text-sm text-slate-400">
-                    Pedido facil de revisar antes de confirmar.
+                    Visible antes de confirmar, para detectar errores con anticipación.
                   </p>
                 </div>
                 <span class="rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400">
-                  Sin errores
+                  Revisión clara
                 </span>
               </div>
 
               <div class="space-y-2 text-sm text-slate-300">
-                <p class="text-slate-500">Aun no hay productos seleccionados.</p>
+                <div class="flex items-center justify-between rounded-2xl bg-[#111827] px-4 py-3">
+                  <span>Hamburguesa clásica</span>
+                  <span>1</span>
+                </div>
+                <div class="flex items-center justify-between rounded-2xl bg-[#111827] px-4 py-3">
+                  <span>Bebida</span>
+                  <span>1</span>
+                </div>
               </div>
 
               <button
                 type="button"
-                class="mt-5 w-full rounded-2xl bg-green-500 px-4 py-4 text-base font-semibold text-slate-950"
-                style="box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);"
+                class="mt-5 w-full rounded-3xl bg-green-500 px-4 py-4 text-base font-semibold text-slate-950"
                 disabled
               >
                 Confirmar pedido
@@ -225,15 +220,15 @@
           <div class="mt-5 grid gap-3 sm:grid-cols-3">
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
               <p class="text-sm font-semibold text-white">Menos pasos</p>
-              <p class="mt-1 text-xs text-slate-400">Reduce complejidad y tiempo.</p>
+              <p class="mt-1 text-xs text-slate-400">La tarea se divide para no sobrecargar al usuario.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-              <p class="text-sm font-semibold text-white">Apoyo visual</p>
-              <p class="mt-1 text-xs text-slate-400">Estados y acciones faciles de entender.</p>
+              <p class="text-sm font-semibold text-white">Más claridad</p>
+              <p class="mt-1 text-xs text-slate-400">Productos, estados y resumen tienen jerarquía visual.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-              <p class="text-sm font-semibold text-white">Uso inclusivo</p>
-              <p class="mt-1 text-xs text-slate-400">Disenado para una mayor diversidad de usuarios.</p>
+              <p class="text-sm font-semibold text-white">Más comprensión</p>
+              <p class="mt-1 text-xs text-slate-400">La interfaz acompaña a usuarios con baja alfabetización digital.</p>
             </div>
           </div>
         </div>

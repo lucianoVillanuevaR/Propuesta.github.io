@@ -1,313 +1,1152 @@
-<section id="demo" class="py-20 text-white">
-  <div class="mx-auto max-w-2xl px-6">
-    <div class="mb-12 text-center">
+---
+const prototypeSteps = [
+  {
+    id: 'captura',
+    label: 'Captura',
+    title: '1. Toma de pedido guiada',
+    description:
+      'La primera pantalla reduce pasos y concentra la atención en una sola tarea: seleccionar productos y confirmar visualmente lo elegido.',
+    accessibility: [
+      'Botones de gran tamaño para facilitar la selección.',
+      'Jerarquía visual clara entre producto, apoyo e acción.',
+      'Resumen visible antes de confirmar para reducir errores.',
+    ],
+  },
+  {
+    id: 'seguimiento',
+    label: 'Seguimiento',
+    title: '2. Seguimiento de pedidos en curso',
+    description:
+      'La segunda vista muestra el estado de cada pedido dentro del flujo del negocio, ayudando a mantener orden durante la atención.',
+    accessibility: [
+      'Estados diferenciados por color y texto.',
+      'Tarjetas amplias para lectura rápida.',
+      'Información agrupada por columnas fáciles de recorrer.',
+    ],
+  },
+  {
+    id: 'impresion',
+    label: 'Impresión',
+    title: '3. Confirmación e impresión de comanda',
+    description:
+      'La propuesta incluye una confirmación clara del pedido y una salida visible hacia cocina mediante impresión de comanda.',
+    accessibility: [
+      'Mensajes de éxito inmediatos después de la acción.',
+      'Indicadores de progreso para saber qué ocurrió.',
+      'Reducción de ambigüedad entre confirmar, registrar e imprimir.',
+    ],
+  },
+  {
+    id: 'demanda',
+    label: 'Alta demanda',
+    title: '4. Organización en horas punta',
+    description:
+      'La cuarta vista representa un escenario de alta demanda presencial, donde el sistema ayuda a ordenar varios pedidos activos sin depender de notas dispersas.',
+    accessibility: [
+      'Separación por prioridad y estado para disminuir carga cognitiva.',
+      'Etiquetas grandes y fáciles de identificar.',
+      'Resumen operativo visible sin necesidad de memorizar.',
+    ],
+  },
+];
+---
+
+<section id="demo" class="py-24 text-white md:py-28">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="mb-12 text-center" data-reveal>
       <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
-        Demo interactiva
+        Prototipo funcional del sistema
       </p>
-      <h2 class="text-4xl font-bold md:text-5xl">
-        Asi se veria el sistema en su modo accesible
+      <h2 class="text-4xl font-bold md:text-6xl">
+        Simulación del flujo de pedidos para explicar la solución planteada
       </h2>
-      <p class="mx-auto mt-4 max-w-3xl text-slate-400">
-        Simulacion de un flujo accesible pensado para facilitar la toma de pedidos con mayor claridad, menos errores y mejor comprension.
-      </p>
+      <ul class="mx-auto mt-6 grid max-w-4xl gap-3 text-left text-slate-300 sm:grid-cols-3">
+        <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">Simula el flujo de trabajo real</li>
+        <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">Muestra decisiones de accesibilidad</li>
+        <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">Explica cómo funcionaría la propuesta</li>
+      </ul>
     </div>
 
     <div
-      id="accessible-demo"
-      class="demo-shell rounded-[28px] border border-white/10 bg-[#0B1120] p-4 shadow-2xl shadow-black/25"
+      id="demo-prototypes"
+      class="demo-focus mb-10 rounded-[36px] border border-sky-400/25 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.12),transparent_35%),linear-gradient(180deg,rgba(9,17,32,0.98),rgba(11,17,32,1))] p-7 shadow-[0_30px_90px_rgba(2,6,23,0.45)] md:p-9"
+      data-accessibility-mode="on"
       data-font-size="base"
-      data-accessible="on"
-      data-step="1"
+      data-reveal
     >
-      <div
-        id="accessible-panel"
-        class="demo-panel rounded-[24px] border border-sky-400/30 bg-[#0a1324] p-5 shadow-[0_0_30px_rgba(56,189,248,0.08)] transition-all duration-200"
-      >
-        <div class="mb-4">
-          <p class="demo-kicker mb-2 text-xs font-medium uppercase tracking-[0.2em] text-sky-400">
-            Modo accesible activado
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1.18fr)_360px]">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
+            Enfoque de accesibilidad
           </p>
-          <div class="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <p class="demo-muted text-sm text-slate-400">Demo del sistema</p>
-              <h3 class="demo-title text-2xl font-semibold text-white">
-                Ingreso de pedido accesible
-              </h3>
-            </div>
-            <span
-              id="accessible-badge"
-              class="demo-chip rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400"
-            >
-              Interfaz accesible
-            </span>
-          </div>
+          <h3 class="mt-3 text-3xl font-bold tracking-[-0.03em] text-white md:text-[2.2rem]">
+            Cómo se adapta la propuesta a adultos mayores
+          </h3>
+          <ul class="mt-5 grid gap-3 text-slate-200 sm:grid-cols-2">
+            <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">Acciones únicas por pantalla</li>
+            <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">Botones amplios y visibles</li>
+            <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">Estados fáciles de identificar</li>
+            <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">Confirmaciones claras después de cada acción</li>
+          </ul>
         </div>
 
-        <div class="mb-5 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <button
-            id="toggle-accessible"
-            type="button"
-            aria-pressed="true"
-            class="demo-toggle rounded-full border border-green-400/20 bg-green-500/10 px-4 py-2 text-sm font-medium text-green-300 transition hover:bg-green-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1324]"
-          >
-            Modo accesible: ON
-          </button>
-
-          <div
-            class="flex flex-wrap items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2"
-            role="group"
-            aria-label="Tamano de texto"
-          >
-            <span class="text-xs text-slate-400">Texto</span>
-            <button
-              type="button"
-              data-font="sm"
-              aria-pressed="false"
-              class="font-btn rounded-full bg-[#111827] px-3 py-1 text-sm text-white transition hover:bg-[#1f2937] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
-            >
-              A-
-            </button>
-            <button
-              type="button"
-              data-font="base"
-              aria-pressed="true"
-              class="font-btn rounded-full bg-[#1f2937] px-3 py-1 text-sm text-white transition hover:bg-[#1f2937] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
-            >
-              A
-            </button>
-            <button
-              type="button"
-              data-font="lg"
-              aria-pressed="false"
-              class="font-btn rounded-full bg-[#111827] px-3 py-1 text-sm text-white transition hover:bg-[#1f2937] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
-            >
-              A+
-            </button>
-          </div>
-        </div>
-
-        <div class="mb-5 grid gap-3 sm:grid-cols-2">
-          <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-            <p class="demo-card-title text-sm font-medium text-white">Botones grandes</p>
-            <p class="demo-muted mt-1 text-sm text-slate-400">Facilitan la seleccion sin errores.</p>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-            <p class="demo-card-title text-sm font-medium text-white">Lectura clara</p>
-            <p class="demo-muted mt-1 text-sm text-slate-400">Texto visible y jerarquia comprensible.</p>
-          </div>
-        </div>
-
-        <div class="rounded-3xl border border-white/10 bg-[#020617] p-4">
-          <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <p class="demo-kicker text-xs uppercase tracking-wide text-slate-500">Pedido actual</p>
-              <p id="step-label" class="demo-title text-base font-semibold text-white">Paso 1 de 2 - Selecciona productos</p>
-            </div>
-            <span class="demo-chip rounded-full bg-sky-500/15 px-3 py-1 text-xs text-sky-300">
-              Guiado
-            </span>
-          </div>
-
-          <p id="help-text" class="demo-muted mb-4 text-sm text-slate-400">
-            Modo accesible activo: mayor contraste, botones grandes y lectura mas clara.
-          </p>
-
-          <div id="product-list" class="space-y-3" role="list" aria-label="Productos disponibles">
-            <button
-              type="button"
-              data-product="Hamburguesa"
-              aria-pressed="false"
-              class="product-btn group flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#334155] px-4 py-4 text-left transition hover:bg-[#3b4a61] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
-            >
-              <span class="flex min-w-0 items-center gap-3">
-                <span class="text-2xl" aria-hidden="true">🍔</span>
-                <span class="min-w-0">
-                  <span class="demo-title block text-base font-semibold text-white">Hamburguesa</span>
-                  <span class="demo-muted block text-sm text-slate-300">Seleccion rapida</span>
-                </span>
-              </span>
-              <span class="product-action shrink-0 text-sm text-slate-100">Agregar al pedido</span>
-            </button>
-
-            <button
-              type="button"
-              data-product="Bebida"
-              aria-pressed="false"
-              class="product-btn group flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#334155] px-4 py-4 text-left transition hover:bg-[#3b4a61] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
-            >
-              <span class="flex min-w-0 items-center gap-3">
-                <span class="text-2xl" aria-hidden="true">🥤</span>
-                <span class="min-w-0">
-                  <span class="demo-title block text-base font-semibold text-white">Bebida</span>
-                  <span class="demo-muted block text-sm text-slate-300">Opcion complementaria</span>
-                </span>
-              </span>
-              <span class="product-action shrink-0 text-sm text-slate-100">Agregar al pedido</span>
-            </button>
-          </div>
-
-          <div
-            id="error-box"
-            class="mt-4 hidden rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200"
-            role="alert"
-          >
-            Debes seleccionar al menos un producto antes de confirmar.
-          </div>
-
-          <div class="mt-5 rounded-2xl border border-white/10 bg-[#0B1120] p-4">
-            <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
-              <div>
-                <p class="demo-card-title text-sm font-medium text-white">Resumen claro del pedido</p>
-                <p class="demo-muted mt-1 text-sm text-slate-400">
-                  Pedido facil de revisar antes de confirmar.
-                </p>
-              </div>
-              <span id="status-pill" class="demo-chip rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400">
-                Sin errores
-              </span>
+        <div class="grid gap-3">
+          <div class="rounded-2xl border border-sky-400/20 bg-sky-400/10 p-4">
+            <p class="text-sm font-semibold text-white">Modo de visualización</p>
+            <p id="accessibility-mode-copy" class="mt-2 text-sm text-slate-300">
+              Vista accesible activa: se resaltan botones grandes, contraste alto y mensajes más evidentes.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2" role="group" aria-label="Modo de accesibilidad del prototipo funcional">
+              <button
+                type="button"
+                class="mode-toggle rounded-full border border-green-400/20 bg-green-500/15 px-4 py-2 text-sm font-semibold text-green-200 transition"
+                data-mode="on"
+                aria-pressed="true"
+              >
+                Modo accesible
+              </button>
+              <button
+                type="button"
+                class="mode-toggle rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10"
+                data-mode="off"
+                aria-pressed="false"
+              >
+                Vista estándar
+              </button>
             </div>
 
-            <div id="summary-list" class="demo-summary space-y-2 text-sm text-slate-200" aria-live="polite">
-              <p class="text-slate-500">Aun no hay productos seleccionados.</p>
+            <div class="mt-4 flex flex-wrap items-center gap-2" role="group" aria-label="Tamaño de texto del prototipo funcional">
+              <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">Tamaño</span>
+              <button
+                type="button"
+                class="font-toggle rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white/10"
+                data-font-size="sm"
+                aria-pressed="false"
+              >
+                A-
+              </button>
+              <button
+                type="button"
+                class="font-toggle rounded-full border border-sky-400/30 bg-sky-400/15 px-3 py-2 text-sm font-semibold text-sky-100 transition"
+                data-font-size="base"
+                aria-pressed="true"
+              >
+                A
+              </button>
+              <button
+                type="button"
+                class="font-toggle rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white/10"
+                data-font-size="lg"
+                aria-pressed="false"
+              >
+                A+
+              </button>
             </div>
-
-            <button
-              id="confirm-btn"
-              type="button"
-              class="mt-5 w-full rounded-2xl bg-green-500 px-4 py-4 text-base font-semibold text-slate-950 transition hover:bg-green-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1120]"
-              style="box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);"
-            >
-              Confirmar pedido
-            </button>
-
-            <div
-              id="success-box"
-              class="mt-4 hidden rounded-2xl border border-green-500/20 bg-green-500/10 px-4 py-3 text-sm text-green-200"
-              role="status"
-              aria-live="polite"
-            >
-              Pedido registrado correctamente.
-            </div>
           </div>
-        </div>
-
-        <div class="mt-5 grid gap-3 sm:grid-cols-3">
-          <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-            <p class="demo-card-title text-sm font-semibold text-white">Menos pasos</p>
-            <p class="demo-muted mt-1 text-xs text-slate-400">Reduce complejidad y tiempo.</p>
+          <div class="mode-info-card rounded-2xl border border-white/10 bg-[#0f172a] p-4">
+            <p id="mode-info-1-title" class="text-sm font-semibold text-white">Texto y contraste</p>
+            <p class="mt-2 text-sm text-slate-400">
+              <span id="mode-info-1-copy">Se evita texto pequeño y se destacan títulos, acciones y estados con contraste alto.</span>
+            </p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-            <p class="demo-card-title text-sm font-semibold text-white">Apoyo visual</p>
-            <p class="demo-muted mt-1 text-xs text-slate-400">Estados y acciones faciles de entender.</p>
+          <div class="mode-info-card rounded-2xl border border-white/10 bg-[#0f172a] p-4">
+            <p id="mode-info-2-title" class="text-sm font-semibold text-white">Menos pasos</p>
+            <p class="mt-2 text-sm text-slate-400">
+              <span id="mode-info-2-copy">La interfaz divide tareas para que el usuario no tenga que decidir muchas cosas al mismo tiempo.</span>
+            </p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-            <p class="demo-card-title text-sm font-semibold text-white">Uso inclusivo</p>
-            <p class="demo-muted mt-1 text-xs text-slate-400">Disenado para una mayor diversidad de usuarios.</p>
+          <div class="mode-info-card rounded-2xl border border-white/10 bg-[#0f172a] p-4">
+            <p id="mode-info-3-title" class="text-sm font-semibold text-white">Retroalimentación visible</p>
+            <p class="mt-2 text-sm text-slate-400">
+              <span id="mode-info-3-copy">El sistema informa con claridad cuando un pedido fue registrado, impreso o entregado.</span>
+            </p>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="mb-8 flex flex-wrap gap-3" role="tablist" aria-label="Prototipos disponibles" data-reveal style="--reveal-delay: 120ms;">
+      {
+        prototypeSteps.map((step, index) => (
+          <button
+            type="button"
+            class={`prototype-tab rounded-full border px-5 py-3 text-sm font-semibold transition ${
+              index === 0
+                ? 'border-sky-400/40 bg-sky-400/15 text-sky-200'
+                : 'border-white/10 bg-white/5 text-slate-300 hover:bg-white/10'
+            }`}
+            id={`tab-${step.id}`}
+            data-target={step.id}
+            role="tab"
+            aria-controls={`panel-${step.id}`}
+            aria-selected={index === 0 ? 'true' : 'false'}
+            tabindex={index === 0 ? '0' : '-1'}
+          >
+            {step.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
+      <div>
+        {
+          prototypeSteps.map((step, index) => (
+            <section
+              id={`panel-${step.id}`}
+              class:list={[
+                'prototype-panel rounded-[36px] border border-white/10 bg-[#0B1120] p-6 shadow-2xl shadow-black/25 md:p-8',
+                { hidden: index !== 0 },
+              ]}
+              data-panel={step.id}
+              role="tabpanel"
+              aria-labelledby={`tab-${step.id}`}
+              aria-hidden={index === 0 ? 'false' : 'true'}
+              tabindex={0}
+            >
+              <div class="mb-6">
+                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sky-400">Pantalla propuesta</p>
+                <h3 class="mt-3 text-3xl font-bold tracking-[-0.04em] text-white">{step.title}</h3>
+                <p class="mt-3 max-w-3xl text-slate-400">{step.description}</p>
+              </div>
+
+              {step.id === 'captura' && (
+                <div class="demo-surface rounded-[28px] border border-sky-400/25 bg-[#08111f] p-5">
+                  <div class="mb-5 flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p class="text-sm text-slate-400">Pantalla de uso interno</p>
+                      <h4 class="text-2xl font-semibold text-white">Ingreso de pedido accesible</h4>
+                    </div>
+                    <span id="capture-mode-badge" class="rounded-full bg-green-500/15 px-4 py-2 text-xs font-semibold text-green-300">
+                      Modo accesible activado
+                    </span>
+                  </div>
+
+                  <div class="mb-5 grid gap-3 sm:grid-cols-3">
+                    <div class="feature-card rounded-2xl border border-white/10 bg-[#111827] p-4">
+                      <p id="feature-1-title" class="text-sm font-semibold text-white">Botones grandes</p>
+                      <p id="feature-1-copy" class="mt-2 text-sm text-slate-400">Facilitan la selección y reducen errores de pulso.</p>
+                    </div>
+                    <div class="feature-card rounded-2xl border border-white/10 bg-[#111827] p-4">
+                      <p id="feature-2-title" class="text-sm font-semibold text-white">Texto visible</p>
+                      <p id="feature-2-copy" class="mt-2 text-sm text-slate-400">La lectura se organiza en bloques cortos y claros.</p>
+                    </div>
+                    <div class="feature-card rounded-2xl border border-white/10 bg-[#111827] p-4">
+                      <p id="feature-3-title" class="text-sm font-semibold text-white">Paso único</p>
+                      <p id="feature-3-copy" class="mt-2 text-sm text-slate-400">El usuario se concentra primero en armar el pedido.</p>
+                    </div>
+                  </div>
+
+                  <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
+                    <div class="space-y-3">
+                      <button
+                        type="button"
+                        class="capture-product flex w-full items-center justify-between rounded-3xl border border-white/10 bg-[#314158] px-5 py-5 text-left transition hover:bg-[#39506d]"
+                        data-product="Hamburguesa clásica"
+                        aria-pressed="false"
+                      >
+                        <span class="flex items-center gap-4">
+                          <span class="text-3xl" aria-hidden="true">🍔</span>
+                          <span>
+                            <span class="capture-title block text-lg font-semibold text-white">Hamburguesa clásica</span>
+                            <span class="capture-copy block text-sm text-slate-300">Selección principal del pedido</span>
+                          </span>
+                        </span>
+                        <span class="capture-action text-sm font-medium text-slate-100">Agregar</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="capture-product flex w-full items-center justify-between rounded-3xl border border-white/10 bg-[#314158] px-5 py-5 text-left transition hover:bg-[#39506d]"
+                        data-product="Bebida"
+                        aria-pressed="false"
+                      >
+                        <span class="flex items-center gap-4">
+                          <span class="text-3xl" aria-hidden="true">🥤</span>
+                          <span>
+                            <span class="capture-title block text-lg font-semibold text-white">Bebida</span>
+                            <span class="capture-copy block text-sm text-slate-300">Complemento opcional</span>
+                          </span>
+                        </span>
+                        <span class="capture-action text-sm font-medium text-slate-100">Agregar</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="capture-product flex w-full items-center justify-between rounded-3xl border border-white/10 bg-[#314158] px-5 py-5 text-left transition hover:bg-[#39506d]"
+                        data-product="Papas fritas"
+                        aria-pressed="false"
+                      >
+                        <span class="flex items-center gap-4">
+                          <span class="text-3xl" aria-hidden="true">🍟</span>
+                          <span>
+                            <span class="capture-title block text-lg font-semibold text-white">Papas fritas</span>
+                            <span class="capture-copy block text-sm text-slate-300">Opción complementaria</span>
+                          </span>
+                        </span>
+                        <span class="capture-action text-sm font-medium text-slate-100">Agregar</span>
+                      </button>
+                    </div>
+
+                    <div class="summary-card rounded-3xl border border-white/10 bg-[#0B1120] p-4">
+                      <div class="mb-4 flex items-start justify-between gap-3">
+                        <div>
+                          <p class="text-sm font-semibold text-white">Resumen del pedido</p>
+                          <p id="summary-copy" class="mt-1 text-sm text-slate-400">Revise el pedido antes de confirmar para evitar confusiones.</p>
+                        </div>
+                        <span id="summary-badge" class="rounded-full bg-green-500/15 px-3 py-1 text-xs font-semibold text-green-300">
+                          Revisión clara
+                        </span>
+                      </div>
+
+                      <div
+                        id="capture-guidance"
+                        class="rounded-2xl border border-sky-400/20 bg-sky-400/10 px-4 py-3 text-sm text-sky-100"
+                        role="note"
+                      >
+                        Seleccione uno o más productos a la izquierda. Luego revise este resumen y confirme el pedido.
+                      </div>
+
+                      <div id="capture-summary" class="space-y-2 text-sm text-slate-200" aria-live="polite">
+                        <p class="text-slate-500">Aún no hay productos seleccionados. Elija al menos uno para continuar.</p>
+                      </div>
+
+                      <div
+                        id="capture-error"
+                        class="mt-4 hidden rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200"
+                        role="alert"
+                      >
+                        No se pudo confirmar el pedido porque aún no has seleccionado productos.
+                      </div>
+
+                      <div
+                        id="capture-recovery"
+                        class="mt-4 hidden rounded-2xl border border-sky-400/20 bg-sky-400/10 px-4 py-3 text-sm text-sky-100"
+                        role="status"
+                        aria-live="polite"
+                      >
+                        Para continuar, selecciona uno o más productos usando los botones grandes de la izquierda. Después revisa el resumen y vuelve a confirmar.
+                      </div>
+
+                      <div
+                        id="capture-success"
+                        class="mt-4 hidden rounded-2xl border border-green-500/20 bg-green-500/10 px-4 py-3 text-sm text-green-200"
+                        role="status"
+                        aria-live="polite"
+                      >
+                        Pedido registrado correctamente. Ahora el sistema puede enviarlo a cocina con una confirmación clara para el usuario.
+                      </div>
+
+                      <button
+                        id="capture-confirm"
+                        type="button"
+                        class="mt-5 w-full rounded-3xl bg-green-500 px-4 py-4 text-base font-semibold text-slate-950 transition hover:bg-green-400"
+                      >
+                        Confirmar pedido
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {step.id === 'seguimiento' && (
+                <div class="demo-surface rounded-[28px] border border-sky-400/20 bg-[#08111f] p-5">
+                  <div class="mb-5 flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p class="text-sm text-slate-400">Vista operativa del local</p>
+                      <h4 class="text-2xl font-semibold text-white">Pedidos en curso</h4>
+                    </div>
+                    <span class="tracking-badge rounded-full bg-sky-500/15 px-4 py-2 text-xs font-semibold text-sky-200">
+                      Seguimiento en tiempo real
+                    </span>
+                  </div>
+
+                  <div class="grid gap-4 xl:grid-cols-4">
+                    <div class="tracking-column rounded-3xl border border-amber-400/20 bg-[#111827] p-4">
+                      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">Pendiente</p>
+                      <div class="mt-4 space-y-3">
+                        <article class="rounded-2xl bg-[#1a2435] p-4">
+                          <p class="text-sm font-semibold text-white">Pedido #18</p>
+                          <p class="mt-1 text-sm text-slate-400">Hamburguesa + bebida</p>
+                          <p class="mt-3 text-xs text-amber-300">Recién ingresado</p>
+                        </article>
+                        <article class="rounded-2xl bg-[#1a2435] p-4">
+                          <p class="text-sm font-semibold text-white">Pedido #19</p>
+                          <p class="mt-1 text-sm text-slate-400">Completo familiar</p>
+                          <p class="mt-3 text-xs text-amber-300">Cliente espera</p>
+                        </article>
+                      </div>
+                    </div>
+
+                    <div class="tracking-column rounded-3xl border border-sky-400/20 bg-[#111827] p-4">
+                      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">En preparación</p>
+                      <div class="mt-4 space-y-3">
+                        <article class="rounded-2xl bg-[#1a2435] p-4">
+                          <p class="text-sm font-semibold text-white">Pedido #15</p>
+                          <p class="mt-1 text-sm text-slate-400">2 hamburguesas + papas</p>
+                          <p class="mt-3 text-xs text-sky-300">Cocina trabajando</p>
+                        </article>
+                      </div>
+                    </div>
+
+                    <div class="tracking-column rounded-3xl border border-green-400/20 bg-[#111827] p-4">
+                      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-green-300">Listo</p>
+                      <div class="mt-4 space-y-3">
+                        <article class="rounded-2xl bg-[#1a2435] p-4">
+                          <p class="text-sm font-semibold text-white">Pedido #14</p>
+                          <p class="mt-1 text-sm text-slate-400">Papas + bebida</p>
+                          <p class="mt-3 text-xs text-green-300">Listo para entregar</p>
+                        </article>
+                      </div>
+                    </div>
+
+                    <div class="tracking-column rounded-3xl border border-white/10 bg-[#111827] p-4">
+                      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">Entregado</p>
+                      <div class="mt-4 space-y-3">
+                        <article class="rounded-2xl bg-[#1a2435] p-4">
+                          <p class="text-sm font-semibold text-white">Pedido #13</p>
+                          <p class="mt-1 text-sm text-slate-400">Combo simple</p>
+                          <p class="mt-3 text-xs text-slate-300">Proceso finalizado</p>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-5 rounded-3xl border border-white/10 bg-[#0B1120] p-4">
+                    <p class="text-sm font-semibold text-white">Por qué esta vista ayuda a un adulto mayor</p>
+                    <p class="mt-2 text-sm text-slate-400">
+                      En vez de recordar qué pedidos están pendientes o interpretar notas, el usuario ve el flujo
+                      separado en columnas y puede identificar cada estado de manera inmediata.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {step.id === 'impresion' && (
+                <div class="demo-surface rounded-[28px] border border-sky-400/20 bg-[#08111f] p-5">
+                  <div class="mb-5 flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p class="text-sm text-slate-400">Confirmación del proceso</p>
+                      <h4 class="text-2xl font-semibold text-white">Registro e impresión de comanda</h4>
+                    </div>
+                    <span class="printing-badge rounded-full bg-green-500/15 px-4 py-2 text-xs font-semibold text-green-300">
+                      Retroalimentación inmediata
+                    </span>
+                  </div>
+
+                  <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
+                    <div class="printing-card rounded-3xl border border-white/10 bg-[#0B1120] p-5">
+                      <p class="text-sm font-semibold text-white">Pedido confirmado</p>
+                      <div class="mt-4 space-y-3">
+                        <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
+                          <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Cliente</p>
+                          <p class="mt-2 text-white">Pedido presencial #21</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
+                          <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Detalle</p>
+                          <p class="mt-2 text-white">1 Hamburguesa clásica</p>
+                          <p class="mt-1 text-white">1 Bebida</p>
+                          <p class="mt-1 text-white">Sin cebolla</p>
+                        </div>
+                        <div class="rounded-2xl border border-green-500/25 bg-green-500/10 p-4">
+                          <p class="text-sm font-semibold text-green-200">Pedido guardado correctamente</p>
+                          <p class="mt-2 text-sm text-green-100">
+                            El sistema informa que el registro fue exitoso antes de continuar con la impresión.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="receipt-card rounded-3xl border border-dashed border-white/15 bg-[#f8fafc] p-5 text-slate-900">
+                      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Comanda impresa</p>
+                      <div class="mt-4 space-y-2 text-sm">
+                        <p><strong>Pedido #21</strong></p>
+                        <p>Hamburguesa clásica</p>
+                        <p>Bebida</p>
+                        <p>Obs: Sin cebolla</p>
+                        <p>Hora: 13:24</p>
+                        <p class="pt-3 text-slate-500">Estado: Enviado a cocina</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-5 grid gap-4 md:grid-cols-3">
+                    <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
+                      <p class="text-sm font-semibold text-white">Acción confirmada</p>
+                      <p class="mt-2 text-sm text-slate-400">El usuario sabe que el pedido no se perdió.</p>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
+                      <p class="text-sm font-semibold text-white">Salida visible</p>
+                      <p class="mt-2 text-sm text-slate-400">La comanda muestra el puente entre caja y cocina.</p>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
+                      <p class="text-sm font-semibold text-white">Menos incertidumbre</p>
+                      <p class="mt-2 text-sm text-slate-400">Cada acción deja evidencia clara del estado del pedido.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {step.id === 'demanda' && (
+                <div class="demo-surface rounded-[28px] border border-sky-400/20 bg-[#08111f] p-5">
+                  <div class="mb-5 flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p class="text-sm text-slate-400">Escenario crítico</p>
+                      <h4 class="text-2xl font-semibold text-white">Organización durante alta demanda</h4>
+                    </div>
+                    <span class="demand-badge rounded-full bg-amber-500/15 px-4 py-2 text-xs font-semibold text-amber-200">
+                      Prioridad y orden visibles
+                    </span>
+                  </div>
+
+                  <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_280px]">
+                    <div class="grid gap-4 md:grid-cols-2">
+                      <article class="demand-card rounded-3xl border border-amber-400/20 bg-[#111827] p-5">
+                        <div class="flex items-start justify-between gap-3">
+                          <div>
+                            <p class="text-sm font-semibold text-white">Pedido #25</p>
+                            <p class="mt-1 text-sm text-slate-400">Pedido presencial</p>
+                          </div>
+                          <span class="rounded-full bg-amber-500/15 px-3 py-1 text-xs text-amber-200">Pendiente</span>
+                        </div>
+                        <p class="mt-4 text-sm text-slate-300">2 completos, 1 bebida, sin tomate</p>
+                        <p class="mt-3 text-xs text-slate-500">Ingreso: 13:31</p>
+                        <button
+                          type="button"
+                          class="demand-select mt-4 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-100 transition hover:bg-white/10"
+                          data-order="Pedido #25"
+                          data-status="Pendiente"
+                          data-detail="2 completos, 1 bebida, sin tomate"
+                        >
+                          Ver detalle
+                        </button>
+                      </article>
+
+                      <article class="demand-card rounded-3xl border border-sky-400/20 bg-[#111827] p-5">
+                        <div class="flex items-start justify-between gap-3">
+                          <div>
+                            <p class="text-sm font-semibold text-white">Pedido #26</p>
+                            <p class="mt-1 text-sm text-slate-400">Pedido presencial</p>
+                          </div>
+                          <span class="rounded-full bg-sky-500/15 px-3 py-1 text-xs text-sky-200">En preparación</span>
+                        </div>
+                        <p class="mt-4 text-sm text-slate-300">3 hamburguesas, 2 papas</p>
+                        <p class="mt-3 text-xs text-slate-500">Ingreso: 13:32</p>
+                        <button
+                          type="button"
+                          class="demand-select mt-4 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-100 transition hover:bg-white/10"
+                          data-order="Pedido #26"
+                          data-status="En preparación"
+                          data-detail="3 hamburguesas, 2 papas"
+                        >
+                          Ver detalle
+                        </button>
+                      </article>
+
+                      <article class="demand-card rounded-3xl border border-green-400/20 bg-[#111827] p-5">
+                        <div class="flex items-start justify-between gap-3">
+                          <div>
+                            <p class="text-sm font-semibold text-white">Pedido #27</p>
+                            <p class="mt-1 text-sm text-slate-400">Pedido presencial</p>
+                          </div>
+                          <span class="rounded-full bg-green-500/15 px-3 py-1 text-xs text-green-200">Listo</span>
+                        </div>
+                        <p class="mt-4 text-sm text-slate-300">1 completo italiano</p>
+                        <p class="mt-3 text-xs text-slate-500">Ingreso: 13:34</p>
+                        <button
+                          type="button"
+                          class="demand-select mt-4 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-100 transition hover:bg-white/10"
+                          data-order="Pedido #27"
+                          data-status="Listo"
+                          data-detail="1 completo italiano"
+                        >
+                          Ver detalle
+                        </button>
+                      </article>
+
+                      <article class="demand-card rounded-3xl border border-white/10 bg-[#111827] p-5">
+                        <div class="flex items-start justify-between gap-3">
+                          <div>
+                            <p class="text-sm font-semibold text-white">Pedido #28</p>
+                            <p class="mt-1 text-sm text-slate-400">Pedido presencial</p>
+                          </div>
+                          <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-slate-200">Entregado</span>
+                        </div>
+                        <p class="mt-4 text-sm text-slate-300">2 bebidas, 1 papas</p>
+                        <p class="mt-3 text-xs text-slate-500">Ingreso: 13:20</p>
+                        <button
+                          type="button"
+                          class="demand-select mt-4 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-100 transition hover:bg-white/10"
+                          data-order="Pedido #28"
+                          data-status="Entregado"
+                          data-detail="2 bebidas, 1 papas"
+                        >
+                          Ver detalle
+                        </button>
+                      </article>
+                    </div>
+
+                    <aside class="demand-summary rounded-3xl border border-white/10 bg-[#0B1120] p-5">
+                      <p class="text-sm font-semibold text-white">Resumen operacional</p>
+                      <div class="mt-4 space-y-3 text-sm">
+                        <div class="rounded-2xl bg-[#111827] p-4">
+                          <p class="text-slate-400">Pedidos pendientes</p>
+                          <p class="mt-1 text-2xl font-bold text-white">1</p>
+                        </div>
+                        <div class="rounded-2xl bg-[#111827] p-4">
+                          <p class="text-slate-400">En preparación</p>
+                          <p class="mt-1 text-2xl font-bold text-white">1</p>
+                        </div>
+                        <div class="rounded-2xl bg-[#111827] p-4">
+                          <p class="text-slate-400">Listos para entregar</p>
+                          <p class="mt-1 text-2xl font-bold text-white">1</p>
+                        </div>
+                        <div class="rounded-2xl bg-[#111827] p-4">
+                          <p class="text-slate-400">Entregados</p>
+                          <p class="mt-1 text-2xl font-bold text-white">1</p>
+                        </div>
+                      </div>
+
+                      <div class="mt-4 rounded-2xl border border-sky-400/20 bg-sky-400/10 p-4">
+                        <p class="text-sm font-semibold text-white">Pedido seleccionado</p>
+                        <p id="demand-selected-order" class="mt-3 text-base font-semibold text-sky-100">Pedido #26</p>
+                        <p id="demand-selected-status" class="mt-2 text-sm text-slate-200">Estado: En preparación</p>
+                        <p id="demand-selected-detail" class="mt-2 text-sm text-slate-300">Detalle: 3 hamburguesas, 2 papas</p>
+                      </div>
+                    </aside>
+                  </div>
+
+                  <div class="mt-5 rounded-3xl border border-white/10 bg-[#0B1120] p-4">
+                    <p class="text-sm font-semibold text-white">Por qué este prototipo responde al problema del PDF</p>
+                    <p class="mt-2 text-sm text-slate-400">
+                      En momentos de alta demanda, el mayor riesgo es perder información, duplicar pedidos o romper la secuencia
+                      de trabajo. Esta vista muestra cómo la información podría mantenerse centralizada y ordenada.
+                    </p>
+                  </div>
+                </div>
+              )}
+            </section>
+          ))
+        }
+      </div>
+
+      <aside class="rounded-[36px] border border-white/10 bg-[#091120] p-6 shadow-[0_25px_70px_rgba(2,6,23,0.35)]" data-reveal style="--reveal-delay: 120ms;">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Explicación del prototipo</p>
+        <h3 id="prototype-side-title" class="mt-3 text-2xl font-bold tracking-[-0.03em] text-white">
+          {prototypeSteps[0].title}
+        </h3>
+        <p id="prototype-side-description" class="mt-4 text-sm leading-7 text-slate-400">
+          {prototypeSteps[0].description}
+        </p>
+
+        <div class="mt-6 rounded-3xl border border-white/10 bg-[#0f172a] p-4">
+          <p class="text-sm font-semibold text-white">Criterios de accesibilidad para adultos mayores</p>
+          <ul id="prototype-side-list" class="mt-4 space-y-3 text-sm text-slate-300">
+            {prototypeSteps[0].accessibility.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+
+        <div class="mt-6 rounded-3xl border border-green-500/20 bg-green-500/10 p-4">
+          <p class="text-sm font-semibold text-green-100">Idea central del prototipo</p>
+          <p class="mt-2 text-sm text-green-50/90">
+            No se trata solo de digitalizar, sino de demostrar que la solución planteada puede ser
+            comprendida, aprendida y usada con seguridad por personas mayores dentro del negocio.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-2" data-reveal>
+      <article class="rounded-[28px] border border-white/10 bg-[#0B1120] p-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-400">Comparación conceptual</p>
+        <h3 class="mt-3 text-2xl font-bold text-white">Del registro manual a una interfaz comprensible</h3>
+        <ul class="mt-4 space-y-3 text-slate-300">
+          <li>Menos dependencia de memoria y notas sueltas.</li>
+          <li>Estados visibles para seguir el pedido.</li>
+          <li>Más apoyo al usuario en cada etapa.</li>
+        </ul>
+      </article>
+
+      <article class="rounded-[28px] border border-white/10 bg-[#0B1120] p-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-400">Alcance del prototipo</p>
+        <h3 class="mt-3 text-2xl font-bold text-white">Lo que demuestra este prototipo funcional</h3>
+        <ul class="mt-4 space-y-3 text-slate-300">
+          <li>Registro guiado del pedido.</li>
+          <li>Seguimiento por estados.</li>
+          <li>Impresión y organización operativa.</li>
+        </ul>
+      </article>
+    </div>
+
+    <section class="mt-10 rounded-[32px] border border-sky-400/20 bg-[#091120] p-6 shadow-[0_25px_70px_rgba(2,6,23,0.35)]" data-reveal>
+      <div class="mb-8 text-center">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">Criterios aplicados</p>
+        <h3 class="mt-3 text-3xl font-bold tracking-[-0.03em] text-white">
+          Accesibilidad para adultos mayores y personas con discapacidad
+        </h3>
+        <p class="mx-auto mt-4 max-w-4xl text-slate-400">
+          La propuesta incorpora decisiones orientadas a disminuir barreras visuales, motoras y cognitivas,
+          con especial énfasis en adultos mayores y usuarios con baja alfabetización digital.
+        </p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <article class="rounded-3xl border border-white/10 bg-[#0B1120] p-5">
+          <p class="text-sm font-semibold text-white">Adultos mayores</p>
+          <p class="mt-3 text-sm text-slate-400">
+            Se priorizan botones grandes, mensajes claros, menos pasos y confirmaciones visibles después de cada acción.
+          </p>
+        </article>
+
+        <article class="rounded-3xl border border-white/10 bg-[#0B1120] p-5">
+          <p class="text-sm font-semibold text-white">Discapacidad visual</p>
+          <p class="mt-3 text-sm text-slate-400">
+            Se incorpora control real de tamaño de texto, contraste elevado y estados que no dependen solo del color.
+          </p>
+        </article>
+
+        <article class="rounded-3xl border border-white/10 bg-[#0B1120] p-5">
+          <p class="text-sm font-semibold text-white">Discapacidad motora</p>
+          <p class="mt-3 text-sm text-slate-400">
+            La interfaz amplifica zonas de toque, separa acciones y evita exigir precisión fina en botones pequeños.
+          </p>
+        </article>
+
+        <article class="rounded-3xl border border-white/10 bg-[#0B1120] p-5">
+          <p class="text-sm font-semibold text-white">Discapacidad cognitiva</p>
+          <p class="mt-3 text-sm text-slate-400">
+            El flujo se divide por pasos, el lenguaje es directo y los errores entregan orientación para recuperarse.
+          </p>
+        </article>
+      </div>
+    </section>
   </div>
 </section>
 
 <style>
-  #accessible-demo[data-font-size='sm'] .demo-title,
-  #accessible-demo[data-font-size='sm'] .demo-card-title {
-    font-size: 0.98rem;
+  .demo-focus {
+    position: relative;
+    overflow: hidden;
   }
 
-  #accessible-demo[data-font-size='sm'] .demo-muted,
-  #accessible-demo[data-font-size='sm'] .demo-summary,
-  #accessible-demo[data-font-size='sm'] .product-action,
-  #accessible-demo[data-font-size='sm'] .demo-toggle,
-  #accessible-demo[data-font-size='sm'] .demo-chip {
-    font-size: 0.84rem;
+  #demo-prototypes[data-font-size='sm'] {
+    font-size: 0.94rem;
   }
 
-  #accessible-demo[data-font-size='lg'] .demo-title,
-  #accessible-demo[data-font-size='lg'] .demo-card-title {
-    font-size: 1.16rem;
+  #demo-prototypes[data-font-size='sm'] h4,
+  #demo-prototypes[data-font-size='sm'] .capture-title {
+    font-size: 1rem;
+  }
+
+  #demo-prototypes[data-font-size='lg'] {
+    font-size: 1.06rem;
+  }
+
+  #demo-prototypes[data-font-size='lg'] h4,
+  #demo-prototypes[data-font-size='lg'] .capture-title {
+    font-size: 1.22rem;
     line-height: 1.45;
   }
 
-  #accessible-demo[data-font-size='lg'] .demo-muted,
-  #accessible-demo[data-font-size='lg'] .demo-summary,
-  #accessible-demo[data-font-size='lg'] .product-action,
-  #accessible-demo[data-font-size='lg'] .demo-toggle,
-  #accessible-demo[data-font-size='lg'] .demo-chip {
+  #demo-prototypes[data-font-size='lg'] .capture-copy,
+  #demo-prototypes[data-font-size='lg'] .capture-action,
+  #demo-prototypes[data-font-size='lg'] .summary-card,
+  #demo-prototypes[data-font-size='lg'] .tracking-column,
+  #demo-prototypes[data-font-size='lg'] .printing-card,
+  #demo-prototypes[data-font-size='lg'] .demand-card,
+  #demo-prototypes[data-font-size='lg'] .demand-summary {
     font-size: 1rem;
-    line-height: 1.6;
   }
 
-  #accessible-demo[data-font-size='lg'] .product-btn {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+  #demo-prototypes[data-accessibility-mode='off'] .demo-surface {
+    border-color: rgba(148, 163, 184, 0.16);
+    background: #0b1220;
   }
 
-  #accessible-demo[data-font-size='lg'] #product-list,
-  #accessible-demo[data-font-size='lg'] .demo-summary {
-    row-gap: 0.85rem;
-  }
-
-  #accessible-demo[data-accessible='off'] #accessible-panel {
-    border-color: rgba(148, 163, 184, 0.18);
-    box-shadow: none;
-  }
-
-  #accessible-demo[data-accessible='off'] .product-btn {
+  #demo-prototypes[data-accessibility-mode='off'] .capture-product {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1.2rem;
     background: #273449;
   }
 
-  #accessible-demo[data-accessible='off'] #help-text {
-    color: #94a3b8;
+  #demo-prototypes[data-accessibility-mode='off'] .capture-title {
+    font-size: 1rem;
+  }
+
+  #demo-prototypes[data-accessibility-mode='off'] .capture-copy,
+  #demo-prototypes[data-accessibility-mode='off'] .capture-action {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+  }
+
+  #demo-prototypes[data-accessibility-mode='off'] .feature-card,
+  #demo-prototypes[data-accessibility-mode='off'] .summary-card,
+  #demo-prototypes[data-accessibility-mode='off'] .mode-info-card,
+  #demo-prototypes[data-accessibility-mode='off'] .tracking-column,
+  #demo-prototypes[data-accessibility-mode='off'] .printing-card,
+  #demo-prototypes[data-accessibility-mode='off'] .demand-card,
+  #demo-prototypes[data-accessibility-mode='off'] .demand-summary {
+    background: #101827;
+  }
+
+  #demo-prototypes[data-accessibility-mode='off'] .tracking-column,
+  #demo-prototypes[data-accessibility-mode='off'] .printing-card,
+  #demo-prototypes[data-accessibility-mode='off'] .demand-card,
+  #demo-prototypes[data-accessibility-mode='off'] .demand-summary,
+  #demo-prototypes[data-accessibility-mode='off'] .receipt-card {
+    border-radius: 1.2rem;
+  }
+
+  #demo-prototypes[data-accessibility-mode='off'] .tracking-badge,
+  #demo-prototypes[data-accessibility-mode='off'] .printing-badge,
+  #demo-prototypes[data-accessibility-mode='off'] .demand-badge {
+    background: rgba(148, 163, 184, 0.12);
+    color: #cbd5e1;
+  }
+
+  #demo-prototypes[data-accessibility-mode='off'] .receipt-card {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+
+  #demo-prototypes[data-accessibility-mode='on'] .demo-surface {
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.08);
+  }
+
+  #demo-prototypes[data-accessibility-mode='on'] .capture-product,
+  #demo-prototypes[data-accessibility-mode='on'] .tracking-column,
+  #demo-prototypes[data-accessibility-mode='on'] .printing-card,
+  #demo-prototypes[data-accessibility-mode='on'] .demand-card,
+  #demo-prototypes[data-accessibility-mode='on'] .demand-summary {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  }
+
+  .demand-card {
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .prototype-tab:focus-visible,
+  .mode-toggle:focus-visible,
+  .font-toggle:focus-visible,
+  .capture-product:focus-visible,
+  #capture-confirm:focus-visible,
+  .demand-select:focus-visible,
+  .prototype-panel:focus-visible {
+    outline: 3px solid rgba(56, 189, 248, 0.9);
+    outline-offset: 4px;
+    box-shadow:
+      0 0 0 6px rgba(14, 165, 233, 0.18),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .demand-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(125, 211, 252, 0.4);
+    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.32);
+  }
+
+  .prototype-panel {
+    transition:
+      transform 260ms ease,
+      box-shadow 260ms ease,
+      border-color 260ms ease;
+  }
+
+  .prototype-panel:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.24);
+    box-shadow: 0 28px 60px rgba(2, 6, 23, 0.35);
+  }
+
+  .demand-card.is-active {
+    border-color: rgba(56, 189, 248, 0.55);
+    box-shadow:
+      0 0 0 1px rgba(56, 189, 248, 0.2),
+      0 18px 40px rgba(2, 6, 23, 0.36);
+  }
+
+  #demo-prototypes[data-accessibility-mode='off'] #summary-badge {
+    background: rgba(148, 163, 184, 0.12);
+    color: #cbd5e1;
+  }
+
+  #demo-prototypes[data-accessibility-mode='off'] #capture-mode-badge {
+    background: rgba(148, 163, 184, 0.12);
+    color: #cbd5e1;
+  }
+
+  #demo-prototypes[data-accessibility-mode='off'] .mode-toggle[data-mode='off'] {
+    border-color: rgba(148, 163, 184, 0.24);
+    background: rgba(148, 163, 184, 0.14);
+    color: #f8fafc;
+  }
+
+  #demo-prototypes[data-accessibility-mode='off'] .mode-toggle[data-mode='on'] {
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
   }
 
   @media (max-width: 640px) {
-    #accessible-demo .product-btn {
+    #demo-prototypes .capture-product {
       align-items: flex-start;
       flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .prototype-panel,
+    .demand-card {
+      transition: none;
     }
 
-    #accessible-demo .product-action {
-      padding-left: 2.75rem;
+    .prototype-panel:hover,
+    .demand-card:hover {
+      transform: none;
+      box-shadow: none;
     }
   }
 </style>
 
-<script>
+<script define:vars={{ prototypeSteps }}>
   (() => {
-    const demo = document.getElementById('accessible-demo');
-    if (!demo) return;
+    const TAB_ACTIVE =
+      'prototype-tab rounded-full border border-sky-400/40 bg-sky-400/15 px-5 py-3 text-sm font-semibold text-sky-200 transition';
+    const TAB_INACTIVE =
+      'prototype-tab rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:bg-white/10';
+    const MODE_ON_ACTIVE =
+      'mode-toggle rounded-full border border-green-400/20 bg-green-500/15 px-4 py-2 text-sm font-semibold text-green-200 transition';
+    const MODE_OFF_ACTIVE =
+      'mode-toggle rounded-full border border-slate-400/20 bg-slate-400/15 px-4 py-2 text-sm font-semibold text-slate-100 transition';
+    const MODE_INACTIVE =
+      'mode-toggle rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10';
+    const FONT_ACTIVE =
+      'font-toggle rounded-full border border-sky-400/30 bg-sky-400/15 px-3 py-2 text-sm font-semibold text-sky-100 transition';
+    const FONT_INACTIVE =
+      'font-toggle rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white/10';
 
-    const toggleAccessible = document.getElementById('toggle-accessible');
-    const accessibleBadge = document.getElementById('accessible-badge');
-    const accessiblePanel = document.getElementById('accessible-panel');
-    const stepLabel = document.getElementById('step-label');
-    const helpText = document.getElementById('help-text');
-    const productButtons = Array.from(document.querySelectorAll('.product-btn'));
-    const summaryList = document.getElementById('summary-list');
-    const confirmBtn = document.getElementById('confirm-btn');
-    const successBox = document.getElementById('success-box');
-    const errorBox = document.getElementById('error-box');
-    const fontButtons = Array.from(document.querySelectorAll('.font-btn'));
+    const demoRoot = document.getElementById('demo-prototypes');
+    const tabs = Array.from(document.querySelectorAll('.prototype-tab'));
+    const panels = Array.from(document.querySelectorAll('.prototype-panel'));
+    const sideTitle = document.getElementById('prototype-side-title');
+    const sideDescription = document.getElementById('prototype-side-description');
+    const sideList = document.getElementById('prototype-side-list');
+    const modeButtons = Array.from(document.querySelectorAll('.mode-toggle'));
+    const fontButtons = Array.from(document.querySelectorAll('.font-toggle'));
+    const modeCopy = document.getElementById('accessibility-mode-copy');
+    const captureModeBadge = document.getElementById('capture-mode-badge');
+    const summaryCopy = document.getElementById('summary-copy');
+    const summaryBadge = document.getElementById('summary-badge');
+    const feature1Title = document.getElementById('feature-1-title');
+    const feature1Copy = document.getElementById('feature-1-copy');
+    const feature2Title = document.getElementById('feature-2-title');
+    const feature2Copy = document.getElementById('feature-2-copy');
+    const feature3Title = document.getElementById('feature-3-title');
+    const feature3Copy = document.getElementById('feature-3-copy');
+    const modeInfo1Title = document.getElementById('mode-info-1-title');
+    const modeInfo1Copy = document.getElementById('mode-info-1-copy');
+    const modeInfo2Title = document.getElementById('mode-info-2-title');
+    const modeInfo2Copy = document.getElementById('mode-info-2-copy');
+    const modeInfo3Title = document.getElementById('mode-info-3-title');
+    const modeInfo3Copy = document.getElementById('mode-info-3-copy');
 
+    function setFontSize(size) {
+      if (!demoRoot) return;
+      demoRoot.dataset.fontSize = size;
+
+      fontButtons.forEach((button) => {
+        const active = button.getAttribute('data-font-size') === size;
+        button.setAttribute('aria-pressed', String(active));
+        button.className = active ? FONT_ACTIVE : FONT_INACTIVE;
+      });
+    }
+
+    function setAccessibilityMode(mode) {
+      if (!demoRoot) return;
+
+      const accessible = mode === 'on';
+      demoRoot.dataset.accessibilityMode = mode;
+
+      modeButtons.forEach((button) => {
+        const active = button.getAttribute('data-mode') === mode;
+        button.setAttribute('aria-pressed', String(active));
+        button.className = active ? (accessible ? MODE_ON_ACTIVE : MODE_OFF_ACTIVE) : MODE_INACTIVE;
+      });
+
+      if (modeCopy) {
+        modeCopy.textContent = accessible
+          ? 'Vista accesible activa: se resaltan botones grandes, contraste alto y mensajes más evidentes.'
+          : 'Vista estándar activa: se reduce el apoyo visual para mostrar por qué la propuesta accesible resulta más clara.';
+      }
+
+      if (captureModeBadge) {
+        captureModeBadge.textContent = accessible ? 'Modo accesible activado' : 'Vista estándar';
+      }
+
+      if (summaryCopy) {
+        summaryCopy.textContent = accessible
+          ? 'Revise el pedido antes de confirmar para evitar confusiones.'
+          : 'El resumen sigue presente, pero con menor énfasis visual.';
+      }
+
+      if (summaryBadge) {
+        summaryBadge.textContent = accessible ? 'Revisión clara' : 'Revisión básica';
+      }
+
+      if (feature1Title) feature1Title.textContent = accessible ? 'Botones grandes' : 'Botones estándar';
+      if (feature1Copy) {
+        feature1Copy.textContent = accessible
+          ? 'Facilitan la selección y reducen errores de pulso.'
+          : 'La selección sigue siendo posible, pero requiere más precisión visual.';
+      }
+
+      if (feature2Title) feature2Title.textContent = accessible ? 'Texto visible' : 'Texto regular';
+      if (feature2Copy) {
+        feature2Copy.textContent = accessible
+          ? 'La lectura se organiza en bloques cortos y claros.'
+          : 'La información conserva el contenido, pero con menor apoyo para lectura rápida.';
+      }
+
+      if (feature3Title) feature3Title.textContent = accessible ? 'Paso único' : 'Menor apoyo guiado';
+      if (feature3Copy) {
+        feature3Copy.textContent = accessible
+          ? 'El usuario se concentra primero en armar el pedido.'
+          : 'La tarea mantiene el flujo, aunque se siente menos acompañada visualmente.';
+      }
+
+      if (modeInfo1Title) modeInfo1Title.textContent = accessible ? 'Texto y contraste' : 'Texto regular';
+      if (modeInfo1Copy) {
+        modeInfo1Copy.textContent = accessible
+          ? 'Se evita texto pequeño y se destacan títulos, acciones y estados con contraste alto.'
+          : 'La vista conserva la información, pero con menor apoyo visual para lectura rápida.';
+      }
+
+      if (modeInfo2Title) modeInfo2Title.textContent = accessible ? 'Menos pasos' : 'Guía más limitada';
+      if (modeInfo2Copy) {
+        modeInfo2Copy.textContent = accessible
+          ? 'La interfaz divide tareas para que el usuario no tenga que decidir muchas cosas al mismo tiempo.'
+          : 'La estructura sigue presente, pero con menos énfasis en acompañar cada paso.';
+      }
+
+      if (modeInfo3Title) modeInfo3Title.textContent = accessible ? 'Retroalimentación visible' : 'Retroalimentación básica';
+      if (modeInfo3Copy) {
+        modeInfo3Copy.textContent = accessible
+          ? 'El sistema informa con claridad cuando un pedido fue registrado, impreso o entregado.'
+          : 'Los mensajes existen, pero se perciben con menos fuerza dentro de la interfaz.';
+      }
+    }
+
+    function setActivePanel(id) {
+      tabs.forEach((tab) => {
+        const active = tab.getAttribute('data-target') === id;
+        tab.setAttribute('aria-selected', String(active));
+        tab.setAttribute('tabindex', active ? '0' : '-1');
+        tab.className = active ? TAB_ACTIVE : TAB_INACTIVE;
+      });
+
+      panels.forEach((panel) => {
+        const active = panel.getAttribute('data-panel') === id;
+        panel.classList.toggle('hidden', !active);
+        panel.setAttribute('aria-hidden', String(!active));
+      });
+
+      const selectedStep = prototypeSteps.find((step) => step.id === id);
+      if (!selectedStep) return;
+
+      if (sideTitle) sideTitle.textContent = selectedStep.title;
+      if (sideDescription) sideDescription.textContent = selectedStep.description;
+      if (sideList) {
+        sideList.innerHTML = selectedStep.accessibility.map((item) => `<li>${item}</li>`).join('');
+      }
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-target');
+        if (target) setActivePanel(target);
+      });
+
+      tab.addEventListener('keydown', (event) => {
+        const currentIndex = tabs.indexOf(tab);
+        if (currentIndex === -1) return;
+
+        let nextIndex = currentIndex;
+
+        if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = tabs.length - 1;
+
+        if (nextIndex !== currentIndex) {
+          event.preventDefault();
+          const nextTab = tabs[nextIndex];
+          const target = nextTab?.getAttribute('data-target');
+          if (nextTab && target) {
+            setActivePanel(target);
+            nextTab.focus();
+          }
+        }
+      });
+    });
+
+    modeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const mode = button.getAttribute('data-mode');
+        if (mode) setAccessibilityMode(mode);
+      });
+    });
+
+    fontButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const size = button.getAttribute('data-font-size');
+        if (size) setFontSize(size);
+      });
+    });
+
+    const products = Array.from(document.querySelectorAll('.capture-product'));
+    const demandButtons = Array.from(document.querySelectorAll('.demand-select'));
+    const summary = document.getElementById('capture-summary');
+    const errorBox = document.getElementById('capture-error');
+    const recoveryBox = document.getElementById('capture-recovery');
+    const successBox = document.getElementById('capture-success');
+    const confirmBtn = document.getElementById('capture-confirm');
+    const selectedOrder = document.getElementById('demand-selected-order');
+    const selectedStatus = document.getElementById('demand-selected-status');
+    const selectedDetail = document.getElementById('demand-selected-detail');
     let selectedProducts = [];
-    let accessibleMode = true;
+
+    function setDemandSelection(button) {
+      demandButtons.forEach((item) => {
+        const card = item.closest('.demand-card');
+        card?.classList.toggle('is-active', item === button);
+      });
+
+      const order = button.getAttribute('data-order');
+      const status = button.getAttribute('data-status');
+      const detail = button.getAttribute('data-detail');
+
+      if (selectedOrder && order) selectedOrder.textContent = order;
+      if (selectedStatus && status) selectedStatus.textContent = `Estado: ${status}`;
+      if (selectedDetail && detail) selectedDetail.textContent = `Detalle: ${detail}`;
+    }
 
     function renderSummary() {
-      if (!summaryList) return;
+      if (!summary) return;
 
       if (selectedProducts.length === 0) {
-        summaryList.innerHTML = '<p class="text-slate-500">Aun no hay productos seleccionados.</p>';
-        if (stepLabel) stepLabel.textContent = 'Paso 1 de 2 - Selecciona productos';
+        summary.innerHTML = '<p class="text-slate-500">Aún no hay productos seleccionados. Elija al menos uno para continuar.</p>';
         return;
       }
 
-      if (stepLabel) stepLabel.textContent = 'Paso 2 de 2 - Revisa y confirma';
-      summaryList.innerHTML = selectedProducts
+      summary.innerHTML = selectedProducts
         .map(
           (product) => `
-            <div class="flex justify-between gap-4">
+            <div class="flex items-center justify-between rounded-2xl bg-[#111827] px-4 py-3">
               <span>${product}</span>
               <span>1</span>
             </div>
@@ -316,69 +1155,28 @@
         .join('');
     }
 
-    function updateProductStyles() {
-      productButtons.forEach((btn) => {
-        const product = btn.getAttribute('data-product');
-        const action = btn.querySelector('.product-action');
-        const isSelected = product ? selectedProducts.includes(product) : false;
+    function updateProducts() {
+      products.forEach((button) => {
+        const product = button.getAttribute('data-product');
+        const selected = product ? selectedProducts.includes(product) : false;
+        const action = button.querySelector('.capture-action');
 
-        btn.classList.toggle('border-green-500/50', isSelected);
-        btn.classList.toggle('bg-green-500/20', isSelected);
-        btn.classList.toggle('hover:bg-green-500/25', isSelected);
-        btn.classList.toggle('bg-[#334155]', !isSelected);
-        btn.classList.toggle('hover:bg-[#3b4a61]', !isSelected);
-        btn.classList.toggle('ring-2', isSelected);
-        btn.classList.toggle('ring-green-400/20', isSelected);
-        btn.setAttribute('aria-pressed', String(isSelected));
+        button.setAttribute('aria-pressed', String(selected));
+        button.classList.toggle('border-green-500/40', selected);
+        button.classList.toggle('bg-green-500/15', selected);
+        button.classList.toggle('hover:bg-green-500/20', selected);
+        button.classList.toggle('bg-[#314158]', !selected);
+        button.classList.toggle('hover:bg-[#39506d]', !selected);
 
         if (action) {
-          action.textContent = isSelected ? 'Agregado' : 'Agregar al pedido';
+          action.textContent = selected ? 'Agregado' : 'Agregar';
         }
       });
     }
 
-    function setAccessibleMode(on) {
-      accessibleMode = on;
-      demo.dataset.accessible = on ? 'on' : 'off';
-
-      if (toggleAccessible) {
-        toggleAccessible.textContent = on ? 'Modo accesible: ON' : 'Modo accesible: OFF';
-        toggleAccessible.setAttribute('aria-pressed', String(on));
-        toggleAccessible.className = on
-          ? 'demo-toggle rounded-full border border-green-400/20 bg-green-500/10 px-4 py-2 text-sm font-medium text-green-300 transition hover:bg-green-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1324]'
-          : 'demo-toggle rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1324]';
-      }
-
-      if (accessibleBadge) {
-        accessibleBadge.textContent = on ? 'Interfaz accesible' : 'Vista estandar';
-      }
-
-      if (helpText) {
-        helpText.textContent = on
-          ? 'Modo accesible activo: mayor contraste, botones grandes y lectura mas clara.'
-          : 'Vista estandar: mantiene el flujo simple, pero con menos apoyo visual.';
-      }
-
-      if (accessiblePanel) {
-        accessiblePanel.classList.toggle('ring-2', on);
-        accessiblePanel.classList.toggle('ring-sky-400/20', on);
-      }
-    }
-
-    function setFontSize(size) {
-      demo.dataset.fontSize = size;
-
-      fontButtons.forEach((btn) => {
-        const isActive = btn.getAttribute('data-font') === size;
-        btn.setAttribute('aria-pressed', String(isActive));
-        btn.classList.toggle('bg-[#1f2937]', isActive);
-        btn.classList.toggle('bg-[#111827]', !isActive);
-      });
-    }
-
-    productButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const product = btn.getAttribute('data-product');
+    products.forEach((button) => {
+      button.addEventListener('click', () => {
+        const product = button.getAttribute('data-product');
         if (!product) return;
 
         if (selectedProducts.includes(product)) {
@@ -387,43 +1185,40 @@
           selectedProducts.push(product);
         }
 
-        if (successBox) successBox.classList.add('hidden');
         if (errorBox) errorBox.classList.add('hidden');
-
+        if (recoveryBox) recoveryBox.classList.add('hidden');
+        if (successBox) successBox.classList.add('hidden');
         renderSummary();
-        updateProductStyles();
+        updateProducts();
       });
     });
 
-    fontButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const size = btn.getAttribute('data-font');
-        setFontSize(size || 'base');
+    demandButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        setDemandSelection(button);
       });
     });
-
-    if (toggleAccessible) {
-      toggleAccessible.addEventListener('click', () => {
-        setAccessibleMode(!accessibleMode);
-      });
-    }
 
     if (confirmBtn) {
       confirmBtn.addEventListener('click', () => {
         if (selectedProducts.length === 0) {
           if (errorBox) errorBox.classList.remove('hidden');
+          if (recoveryBox) recoveryBox.classList.remove('hidden');
           if (successBox) successBox.classList.add('hidden');
           return;
         }
 
         if (errorBox) errorBox.classList.add('hidden');
+        if (recoveryBox) recoveryBox.classList.add('hidden');
         if (successBox) successBox.classList.remove('hidden');
       });
     }
 
     renderSummary();
-    updateProductStyles();
+    updateProducts();
+    setActivePanel('captura');
+    setAccessibilityMode('on');
     setFontSize('base');
-    setAccessibleMode(true);
+    if (demandButtons[1]) setDemandSelection(demandButtons[1]);
   })();
 </script>

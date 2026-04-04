@@ -1,0 +1,40 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id = 'scroll-to-top' } = Astro.props;
+---
+
+<button
+  id={id}
+  type="button"
+  class="pointer-events-none fixed right-5 bottom-5 z-20 rounded-full border border-white/10 bg-sky-400/90 px-4 py-3 text-sm font-semibold text-slate-950 opacity-0 shadow-[0_18px_45px_rgba(2,6,23,0.35)] transition hover:bg-sky-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
+  aria-label="Volver arriba"
+>
+  Ir arriba
+</button>
+
+<script define:vars={{ id }}>
+  (() => {
+    const button = document.getElementById(id);
+    if (!button) return;
+
+    function updateVisibility() {
+      const show = window.scrollY > 500;
+      button.classList.toggle('pointer-events-none', !show);
+      button.classList.toggle('opacity-0', !show);
+      button.classList.toggle('translate-y-2', !show);
+      button.classList.toggle('pointer-events-auto', show);
+      button.classList.toggle('opacity-100', show);
+      button.classList.toggle('translate-y-0', show);
+    }
+
+    button.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    updateVisibility();
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+  })();
+</script>

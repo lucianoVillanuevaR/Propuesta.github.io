@@ -1,12 +1,13 @@
 ---
 import InteractiveDemo from '../components/InteractiveDemo.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ScrollToTopButton from '../components/ScrollToTopButton.astro';
 import '../styles/global.css';
 ---
 
 <BaseLayout
   title="Demo interactiva del sistema accesible"
-  description="Demo interactiva del sistema web de gestion de pedidos con enfoque en accesibilidad."
+  description="Demo interactiva del sistema web de gestión de pedidos con enfoque en accesibilidad."
 >
   <div class="min-h-screen">
     <header class="sticky top-0 z-10 border-b border-white/8 bg-[#0f172acc] backdrop-blur-xl">
@@ -22,7 +23,7 @@ import '../styles/global.css';
           href="/Propuesta.github.io/"
           class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white/10"
         >
-          Volver a la landing
+          Volver a la página principal
         </a>
       </div>
     </header>
@@ -30,5 +31,7 @@ import '../styles/global.css';
     <main class="pt-6">
       <InteractiveDemo />
     </main>
+
+    <ScrollToTopButton id="scroll-to-top-demo" />
   </div>
 </BaseLayout>

@@ -1,98 +1,155 @@
 ---
 import DemoPreview from '../components/DemoPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ScrollToTopButton from '../components/ScrollToTopButton.astro';
 import '../styles/global.css';
 
 const sections = [
   { id: 'inicio', label: 'Inicio' },
+  { id: 'contexto-negocio', label: 'Contexto' },
   { id: 'problema', label: 'Problema' },
-  { id: 'solucion', label: 'Solucion' },
+  { id: 'propuesta', label: 'Propuesta' },
+  { id: 'relacion-problema', label: 'Relación' },
+  { id: 'flujo-sistema', label: 'Flujo' },
   { id: 'demo-preview', label: 'Demo', href: '/Propuesta.github.io/demo/' },
-  { id: 'funciones', label: 'Funciones' },
-  { id: 'impacto', label: 'Impacto' },
-  { id: 'estado', label: 'Estado' },
+  { id: 'accesibilidad', label: 'Accesibilidad' },
+  { id: 'viabilidad', label: 'Viabilidad' },
+  { id: 'validacion', label: 'Validación' },
+  { id: 'cierre', label: 'Cierre' },
 ];
 
 const problemFlow = [
   'El pedido se recibe de forma presencial o desde plataformas de delivery.',
-  'La informacion se anota manualmente en comandas o en un block de notas.',
-  'La preparacion y entrega dependen de ese registro manual para continuar.',
+  'La información se anota manualmente en comandas o en un block de notas.',
+  'La preparación y entrega dependen de ese registro manual para continuar.',
 ];
 
 const problemIssues = [
   {
-    title: 'Errores de registro',
+    title: 'Registro manual poco claro',
     description: 'La escritura manual aumenta el riesgo de errores, confusiones e interpretaciones incorrectas.',
   },
   {
-    title: 'Perdida de informacion',
+    title: 'Información dispersa',
     description: 'Sin un sistema centralizado, los pedidos pueden perderse, duplicarse o quedar incompletos.',
   },
   {
-    title: 'Desorganizacion operativa',
-    description: 'En alta demanda se vuelve mas dificil mantener el orden de preparacion y entrega.',
+    title: 'Falta de seguimiento',
+    description: 'En alta demanda se vuelve más difícil mantener el orden de preparación y entrega.',
   },
   {
     title: 'Sobrecarga al atender',
-    description: 'Quien atiende debe dividir su atencion entre anotar, coordinar y entregar, reduciendo eficiencia.',
+    description: 'Quien atiende debe dividir su atención entre anotar, coordinar y entregar, reduciendo eficiencia.',
   },
 ];
 
-const solutionSteps = [
-  'Ingreso rapido de pedidos desde una interfaz web interna y clara.',
-  'Registro automatico para mantener seguimiento en tiempo real.',
-  'Organizacion del flujo de preparacion y entrega en un mismo sistema.',
-  'Envio de comandas a impresion para mejorar la coordinacion con cocina.',
+const proposalSteps = [
+  'Ingreso rápido de pedidos desde una interfaz web interna y clara.',
+  'Registro automático para mantener seguimiento en tiempo real.',
+  'Organización del flujo de preparación y entrega en un mismo sistema.',
+  'Envío de comandas a impresión para mejorar la coordinación con cocina.',
 ];
 
-const solutionBenefits = [
+const proposalAxes = [
   {
-    title: 'Registro digital',
-    description: 'Reemplaza la toma manual por una plataforma de uso interno orientada al trabajo diario del local.',
+    title: 'Digitalización del registro',
+    description: 'El sistema reemplaza el método manual por un registro centralizado y comprensible dentro del local.',
   },
   {
-    title: 'Seguimiento en tiempo real',
-    description: 'Cada pedido queda registrado automaticamente para mantener control claro de lo que esta en curso.',
+    title: 'Seguimiento del pedido',
+    description: 'Cada pedido queda visible durante su proceso de preparación y entrega, favoreciendo el orden operativo.',
   },
   {
-    title: 'Operacion mas ordenada',
-    description: 'Ayuda a mantener la secuencia de preparacion y entrega con menos confusion entre tareas.',
+    title: 'Apoyo a la coordinación interna',
+    description: 'La información se mantiene disponible para atención y cocina, reduciendo confusiones entre tareas.',
   },
   {
-    title: 'Impresion de comandas',
-    description: 'Integra el sistema con impresoras para enviar pedidos al area de cocina de forma automatica.',
+    title: 'Impresión de comandas',
+    description: 'Se contempla integración con impresoras para facilitar el traspaso del pedido al área de preparación.',
   },
 ];
 
-const statusItems = [
+const accessibilityPrinciples = [
   {
-    phase: 'Propuesta definida',
-    description: 'El problema, los objetivos y el alcance del sistema ya fueron establecidos en el proyecto de titulo.',
+    title: 'Botones grandes y fácilmente identificables',
+    description: 'Uso de botones grandes y fácilmente identificables.',
   },
   {
-    phase: 'Diseno en progreso',
-    description: 'La interfaz se desarrolla con foco en simplicidad, accesibilidad y uso real dentro del local.',
+    title: 'Reducción de pasos',
+    description: 'Reducción de pasos en el flujo de interacción.',
   },
   {
-    phase: 'Desarrollo proximo',
-    description: 'La siguiente etapa considera implementar el sistema web, la logica de pedidos y el almacenamiento de datos.',
+    title: 'Mensajes claros',
+    description: 'Mensajes claros y confirmaciones visibles.',
   },
   {
-    phase: 'Evaluacion con usuarios',
-    description: 'Se contemplan pruebas con usuarios reales, incluyendo adultos mayores, para validar facilidad de uso y adopcion.',
+    title: 'Alto contraste',
+    description: 'Alto contraste para mejorar la legibilidad.',
   },
+];
+
+const comparisonRows = [
+  { current: 'Registro manual', proposed: 'Registro digital guiado' },
+  { current: 'Errores frecuentes', proposed: 'Control visible del pedido' },
+  { current: 'Información dispersa', proposed: 'Información centralizada' },
+  { current: 'Confusión en horas punta', proposed: 'Estados claros y seguimiento' },
+  { current: 'Mayor carga cognitiva', proposed: 'Interfaz accesible y simple' },
+];
+
+const responseItems = [
+  'Centraliza la información de pedidos en un solo sistema',
+  'Reduce errores asociados al registro manual',
+  'Permite un seguimiento claro del estado de cada pedido',
+  'Mejora la usabilidad para adultos mayores mediante una interfaz accesible',
+];
+
+const flowItems = [
+  {
+    title: 'Registro del pedido',
+    description: 'Selección guiada de productos mediante una interfaz simple y visual.',
+  },
+  {
+    title: 'Confirmación del pedido',
+    description: 'Validación del contenido antes de su envío, reduciendo errores.',
+  },
+  {
+    title: 'Preparación',
+    description: 'El pedido pasa a estado “en preparación”, permitiendo su seguimiento.',
+  },
+  {
+    title: 'Entrega',
+    description: 'El sistema indica cuándo el pedido está listo para ser entregado.',
+  },
+  {
+    title: 'Cierre del pedido',
+    description: 'Registro final del pedido como completado.',
+  },
+];
+
+const viabilityItems = [
+  'Acceso desde distintos dispositivos (PC, tablet)',
+  'Bajo costo de implementación',
+  'Escalabilidad según el crecimiento del negocio',
+  'Adaptabilidad a distintos contextos de pymes gastronómicas',
+];
+
+const validationItems = [
+  'Facilidad de uso',
+  'Claridad de la interfaz',
+  'Reducción de errores',
+  'Comprensión del flujo de trabajo',
 ];
 
 const footerMeta = [
-  'Luciano Villanueva Ramirez',
-  'Ingenieria en Ejecucion en Computacion e Informatica',
-  'Universidad del Bio-Bio',
+  'Luciano Villanueva Ramírez',
+  'Ingeniería en Ejecución en Computación e Informática',
+  'Universidad del Bío-Bío',
 ];
 ---
 
 <BaseLayout
-  title="Sistema web de gestion de pedidos accesible"
-  description="Landing page del proyecto de titulo sobre gestion de pedidos accesible para pymes del rubro gastronomico."
+  title="Sistema de pedidos accesible para pymes gastronómicas"
+  description="Sistema de pedidos accesible que reduce errores y mejora la atención en pymes gastronómicas."
 >
   <div class="relative overflow-hidden">
     <header class="sticky top-0 z-10 border-b border-white/8 bg-[#0f172acc] backdrop-blur-xl">
@@ -121,61 +178,68 @@ const footerMeta = [
     </header>
 
     <main>
-      <section id="inicio" class="relative overflow-hidden text-white">
+      <section id="inicio" class="relative overflow-hidden text-white" data-reveal>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(34,197,94,0.06),transparent_30%)]"></div>
 
         <div class="relative mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-28">
           <div class="max-w-4xl">
             <p class="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-1 text-sm text-sky-300">
-              Proyecto de titulo - Sistema web accesible
+              Proyecto de título - Presentación de propuesta
             </p>
 
             <p class="mb-4 text-sm font-medium text-sky-400 md:text-base">
-              Disenado para personas reales, no expertos en tecnologia
+              Diseñado para adultos mayores y entornos de alta demanda
             </p>
 
             <h1 class="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
-              Sistema de gestion de pedidos
+              Sistema de pedidos
               <span class="text-sky-400"> accesible</span>
-              para pymes gastronomicas
+              que reduce errores y mejora la atención
             </h1>
 
             <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              Interfaz clara y facil de usar, disenada para adultos mayores y usuarios con baja experiencia digital.
+              Una propuesta de sistema digital de uso interno para organizar pedidos, hacer seguimiento
+              claro y facilitar la operación diaria en pymes gastronómicas con usuarios de distintos niveles tecnológicos.
             </p>
 
-            <div class="mt-8 flex flex-wrap gap-4">
+            <div class="mt-8 flex flex-wrap gap-4" data-reveal style="--reveal-delay: 120ms;">
+              <a
+                href="#problema"
+                class="button-lift rounded-full bg-green-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-green-400"
+              >
+                Revisar propuesta
+              </a>
               <a
                 href="/Propuesta.github.io/demo/"
-                class="rounded-full bg-green-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-green-400"
+                class="button-lift rounded-full border border-white/10 bg-white/5 px-6 py-3 font-semibold text-slate-100 transition hover:bg-white/10"
               >
-                Ver accesibilidad aplicada
+                Ver prototipo
               </a>
             </div>
 
             <div class="mt-5 text-sm text-slate-400">
-              + Facil de aprender en minutos - + Reduce errores - + Mejora la organizacion del local
+              Propuesta centrada en la digitalización del proceso, la accesibilidad y la adopción real del sistema.
             </div>
 
             <div class="mt-10 grid gap-4 md:grid-cols-3">
-              <div class="rounded-2xl border border-white/10 bg-[#0B1120] p-5 transition hover:border-sky-400/30">
-                <p class="text-sm font-semibold text-white">Interfaz simple y guiada</p>
+              <div class="surface-hover rounded-2xl border border-white/10 bg-[#0B1120] p-5 hover:border-sky-400/30" data-reveal style="--reveal-delay: 180ms;">
+                <p class="text-sm font-semibold text-white">Menos errores</p>
                 <p class="mt-2 text-sm text-slate-400">
-                  Menos pasos y menos decisiones por accion.
+                  El sistema ayuda a reducir equivocaciones en el registro y la entrega de pedidos.
                 </p>
               </div>
 
-              <div class="rounded-2xl border border-white/10 bg-[#0B1120] p-5 transition hover:border-sky-400/30">
-                <p class="text-sm font-semibold text-white">Pensado para usuarios con poca experiencia digital</p>
+              <div class="surface-hover rounded-2xl border border-white/10 bg-[#0B1120] p-5 hover:border-sky-400/30" data-reveal style="--reveal-delay: 240ms;">
+                <p class="text-sm font-semibold text-white">Más claridad</p>
                 <p class="mt-2 text-sm text-slate-400">
-                  Uso facil para adultos mayores y nuevos usuarios.
+                  Cada pedido mantiene un estado visible y un flujo más comprensible para atención y cocina.
                 </p>
               </div>
 
-              <div class="rounded-2xl border border-white/10 bg-[#0B1120] p-5 transition hover:border-sky-400/30">
-                <p class="text-sm font-semibold text-white">Estado claro en todo momento</p>
+              <div class="surface-hover rounded-2xl border border-white/10 bg-[#0B1120] p-5 hover:border-sky-400/30" data-reveal style="--reveal-delay: 300ms;">
+                <p class="text-sm font-semibold text-white">Uso accesible</p>
                 <p class="mt-2 text-sm text-slate-400">
-                  El usuario siempre sabe que esta pasando.
+                  La interfaz se adapta mejor a adultos mayores y usuarios con baja experiencia digital.
                 </p>
               </div>
             </div>
@@ -183,24 +247,40 @@ const footerMeta = [
         </div>
       </section>
 
-      <section class="px-0 py-14 sm:py-18" id="problema">
+      <section id="contexto-negocio" class="py-16 text-white" data-reveal>
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="rounded-[32px] border border-white/10 bg-[#0B1120] p-8 shadow-[0_24px_80px_rgba(2,6,23,0.28)]">
+            <p class="text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
+              Contexto del negocio
+            </p>
+            <h2 class="mt-3 text-3xl font-bold md:text-4xl">
+              Una propuesta pensada para una pyme gastronómica real
+            </h2>
+            <p class="mt-4 max-w-4xl text-slate-300">
+              El proyecto se desarrolla en el contexto de una pyme del rubro gastronómico, donde el
+              proceso de toma de pedidos se realiza actualmente de forma manual, generando dificultades
+              en la organización, especialmente en horarios de alta demanda.
+            </p>
+            <p class="mt-4 max-w-4xl text-slate-400">
+              Además, el sistema debe considerar usuarios con distintos niveles de experiencia digital,
+              incluyendo adultos mayores.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-0 py-14 sm:py-18" id="problema" data-reveal>
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
           <div class="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(320px,1.08fr)] lg:items-start">
             <div class="grid gap-5">
               <div class="grid max-w-[42rem] gap-3.5">
                 <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Problema</span>
                 <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
-                  Cuando todo depende del papel, el ritmo se rompe.
+                  El sistema actual genera errores y desorden en horas punta.
                 </h2>
                 <p class="m-0 max-w-[38rem] text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
-                  Segun la propuesta, la gestion actual de pedidos se realiza de manera manual.
-                  Esto sostiene la operacion diaria, pero genera errores, perdida de informacion
-                  y desorden, especialmente en momentos de alta demanda.
-                </p>
-                <p class="m-0 max-w-[38rem] text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
-                  Ademas del desorden operativo, la empresa necesita una solucion que pueda
-                  ser utilizada por personas con distintos niveles de manejo tecnologico,
-                  especialmente adultos mayores o usuarios con baja alfabetizacion digital.
+                  Según el levantamiento del proyecto, el proceso manual permite operar el local, pero pierde claridad,
+                  aumenta la carga de trabajo y dificulta mantener el control cuando crece la demanda.
                 </p>
               </div>
 
@@ -209,7 +289,7 @@ const footerMeta = [
                   <div>
                     <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Proceso actual</p>
                     <h3 class="mt-2 text-2xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
-                      Flujo manual de atencion
+                      Flujo manual de atención
                     </h3>
                   </div>
                   <span class="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
@@ -220,7 +300,7 @@ const footerMeta = [
                 <div class="grid gap-4">
                   {
                     problemFlow.map((step, index) => (
-                      <div class="flex gap-4 rounded-3xl border border-white/8 bg-white/4 p-4">
+                      <div class="surface-hover flex gap-4 rounded-3xl border border-white/8 bg-white/4 p-4">
                         <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-slate-50 text-sm font-bold text-slate-950">
                           0{index + 1}
                         </span>
@@ -235,10 +315,7 @@ const footerMeta = [
             <div class="grid gap-4 sm:grid-cols-2">
               {
                 problemIssues.map((item) => (
-                  <article class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.28)]">
-                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-400/10 text-sm font-bold text-cyan-300">
-                      !
-                    </div>
+                  <article class="surface-hover rounded-[28px] border border-white/8 bg-[#0b1120] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.28)] hover:border-cyan-300/30">
                     <h3 class="text-xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
                       {item.title}
                     </h3>
@@ -253,28 +330,56 @@ const footerMeta = [
         </div>
       </section>
 
-      <section class="px-0 py-14 sm:py-18" id="solucion">
+      <section class="py-20 text-white" id="comparacion" data-reveal>
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mb-12 text-center">
+            <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
+              ¿Por qué esta solución es mejor?
+            </p>
+            <h2 class="text-3xl font-bold md:text-4xl">
+              Una propuesta más clara, controlada y viable que el método actual
+            </h2>
+          </div>
+
+          <div class="overflow-hidden rounded-[32px] border border-white/10 bg-[#0B1120] shadow-[0_24px_80px_rgba(2,6,23,0.3)]">
+            <div class="grid grid-cols-2 border-b border-white/10 bg-[#08111f]">
+              <div class="px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Método actual</div>
+              <div class="px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">Propuesta del sistema</div>
+            </div>
+            {
+              comparisonRows.map((row) => (
+                <div class="grid grid-cols-2 border-b border-white/6 last:border-b-0">
+                  <div class="px-6 py-5 text-slate-300">{row.current}</div>
+                  <div class="px-6 py-5 font-medium text-slate-50">{row.proposed}</div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section class="px-0 py-14 sm:py-18" id="propuesta" data-reveal>
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
           <div class="grid gap-8 lg:grid-cols-[minmax(0,0.98fr)_minmax(320px,1.02fr)] lg:items-start">
             <div class="grid gap-5">
               <div class="grid max-w-[44rem] gap-3.5">
-                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Solucion</span>
+                <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Propuesta</span>
                 <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
-                  Un sistema interno para ordenar cada pedido desde el primer clic.
+                  La solución plantea digitalizar el proceso de toma y seguimiento de pedidos.
                 </h2>
                 <p class="m-0 max-w-[40rem] text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
-                  La propuesta plantea un sistema web de uso interno para registrar pedidos
-                  presenciales, hacer seguimiento en tiempo real y organizar mejor la operacion
-                  del local, integrando tambien la impresion de comandas.
+                  La propuesta consiste en un sistema web de uso interno, pensado para registrar pedidos
+                  presenciales, mantener seguimiento del flujo de atención y apoyar la coordinación con cocina
+                  mediante impresión de comandas.
                 </p>
               </div>
 
               <div class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6 text-white shadow-[0_24px_70px_rgba(2,6,23,0.32)]">
                 <div class="mb-5 flex items-center justify-between gap-4">
                   <div>
-                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Como funciona</p>
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Alcance funcional</p>
                     <h3 class="mt-2 text-2xl leading-tight font-bold tracking-[-0.04em]">
-                      Flujo digital propuesto
+                      Flujo general del sistema propuesto
                     </h3>
                   </div>
                   <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300">
@@ -284,8 +389,8 @@ const footerMeta = [
 
                 <div class="grid gap-4">
                   {
-                    solutionSteps.map((step, index) => (
-                      <div class="flex gap-4 rounded-3xl border border-white/10 bg-white/5 p-4">
+                    proposalSteps.map((step, index) => (
+                      <div class="surface-hover flex gap-4 rounded-3xl border border-white/10 bg-white/5 p-4">
                         <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-emerald-500 text-sm font-bold text-slate-950">
                           0{index + 1}
                         </span>
@@ -299,8 +404,8 @@ const footerMeta = [
 
             <div class="grid gap-4 sm:grid-cols-2">
               {
-                solutionBenefits.map((item) => (
-                  <article class="rounded-[28px] border border-white/8 bg-[#0b1120] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.28)]">
+                proposalAxes.map((item) => (
+                  <article class="surface-hover rounded-[28px] border border-white/8 bg-[#0b1120] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.28)]">
                     <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/12 text-sm font-bold text-emerald-400">
                       +
                     </div>
@@ -318,147 +423,186 @@ const footerMeta = [
         </div>
       </section>
 
-      <DemoPreview />
-
-      <section id="funciones" class="py-20 text-white">
+      <section id="relacion-problema" class="py-20 text-white" data-reveal>
         <div class="mx-auto max-w-6xl px-6">
-          <div class="mb-14 text-center">
+          <div class="mb-12 text-center">
             <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
-              Funcionalidades
+              Relación con el problema
             </p>
             <h2 class="text-3xl font-bold md:text-4xl">
-              Funciones disenadas para simplificar la operacion
+              Cómo esta propuesta responde al problema identificado
             </h2>
-            <p class="mx-auto mt-4 max-w-3xl text-slate-400">
-              El sistema propone un conjunto de funcionalidades orientadas a mejorar el registro,
-              seguimiento y organizacion de pedidos en contextos reales de trabajo.
+            <p class="mx-auto mt-4 max-w-4xl text-slate-400">
+              A partir del análisis del proceso actual, la solución propuesta responde a cuatro necesidades centrales del negocio.
             </p>
           </div>
 
-          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold">Registro de pedidos</h3>
-              <p class="text-sm text-slate-400">
-                Ingreso rapido y estructurado de pedidos, reduciendo errores del registro manual.
-              </p>
-            </div>
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {
+              responseItems.map((item) => (
+                <article class="surface-hover rounded-3xl border border-white/10 bg-[#0B1120] p-6 hover:border-sky-300/30">
+                  <p class="text-sm leading-7 text-slate-300">{item}</p>
+                </article>
+              ))
+            }
+          </div>
 
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold">Seguimiento en tiempo real</h3>
-              <p class="text-sm text-slate-400">
-                Visualizacion clara del estado del pedido durante todo el proceso de atencion.
-              </p>
-            </div>
+          <p class="mx-auto mt-8 max-w-4xl text-center text-slate-300">
+            De esta forma, el sistema no solo digitaliza el proceso, sino que lo optimiza y lo hace más comprensible para sus usuarios.
+          </p>
+        </div>
+      </section>
 
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold">Impresion automatica</h3>
-              <p class="text-sm text-slate-400">
-                Envio automatico de pedidos a cocina mediante impresion, reduciendo tiempos de comunicacion.
-              </p>
-            </div>
+      <section id="flujo-sistema" class="py-20 text-white" data-reveal>
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mb-12 text-center">
+            <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
+              Flujo del sistema
+            </p>
+            <h2 class="text-3xl font-bold md:text-4xl">
+              Flujo del sistema propuesto
+            </h2>
+            <p class="mx-auto mt-4 max-w-4xl text-slate-400">
+              El sistema organiza el proceso de gestión de pedidos en etapas claras y secuenciales, facilitando su comprensión y ejecución incluso en contextos de alta demanda.
+            </p>
+          </div>
 
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold">Historial de pedidos</h3>
-              <p class="text-sm text-slate-400">
-                Registro organizado de ventas realizadas para facilitar el control y consulta posterior.
-              </p>
-            </div>
-
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold">Control basico de inventario</h3>
-              <p class="text-sm text-slate-400">
-                Apoyo en la gestion de productos disponibles dentro de la operacion diaria del negocio.
-              </p>
-            </div>
-
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold">Interfaz accesible</h3>
-              <p class="text-sm text-slate-400">
-                Diseno claro y facil de usar para distintos niveles de experiencia digital.
-              </p>
-            </div>
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {
+              flowItems.map((item) => (
+                <article class="surface-hover rounded-3xl border border-white/10 bg-[#0B1120] p-6">
+                  <p class="text-sm font-semibold text-sky-300">{item.title}</p>
+                  <p class="mt-3 text-sm text-slate-400">{item.description}</p>
+                </article>
+              ))
+            }
           </div>
         </div>
       </section>
 
-      <section id="impacto" class="py-20 text-white">
+      <section id="accesibilidad" class="py-20 text-white" data-reveal>
         <div class="mx-auto max-w-6xl px-6">
           <div class="mb-14 text-center">
             <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
-              Impacto esperado
+              Enfoque en accesibilidad
             </p>
             <h2 class="text-3xl font-bold md:text-4xl">
-              Beneficios en la operacion diaria del negocio
+              Accesibilidad como eje central del sistema
             </h2>
             <p class="mx-auto mt-4 max-w-3xl text-slate-400">
-              La implementacion del sistema busca mejorar la eficiencia operativa,
-              reducir errores y facilitar el uso de tecnologia en entornos reales de trabajo.
+              La propuesta traduce la accesibilidad en decisiones concretas de interfaz para adultos mayores y usuarios con baja experiencia digital.
             </p>
           </div>
 
           <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold text-green-400">Menos errores</h3>
-              <p class="text-sm text-slate-400">
-                Disminucion de errores en la toma y registro de pedidos.
-              </p>
-            </div>
+            {
+              accessibilityPrinciples.map((item) => (
+                <article class="surface-hover rounded-3xl border border-white/10 bg-[#0B1120] p-6">
+                  <h3 class="mb-2 text-lg font-semibold">{item.title}</h3>
+                  <p class="text-sm text-slate-400">{item.description}</p>
+                </article>
+              ))
+            }
+          </div>
 
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold text-green-400">Mayor organizacion</h3>
-              <p class="text-sm text-slate-400">
-                Mejora en la gestion del flujo de pedidos dentro del local.
-              </p>
-            </div>
+        </div>
+      </section>
 
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold text-green-400">Eficiencia operativa</h3>
-              <p class="text-sm text-slate-400">
-                Reduccion de tiempos en el proceso de atencion.
-              </p>
-            </div>
+      <section id="viabilidad" class="py-20 text-white" data-reveal>
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mb-14 text-center">
+            <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
+              Viabilidad
+            </p>
+            <h2 class="text-3xl font-bold md:text-4xl">
+              Viabilidad de la solución propuesta
+            </h2>
+            <p class="mx-auto mt-4 max-w-3xl text-slate-400">
+              La solución planteada es técnicamente viable, ya que se basa en una aplicación web que puede ser implementada sin necesidad de infraestructura compleja.
+            </p>
+          </div>
 
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 text-lg font-semibold text-green-400">Adopcion tecnologica</h3>
-              <p class="text-sm text-slate-400">
-                Facilita el uso del sistema para personas con baja experiencia digital.
-              </p>
-            </div>
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {
+              viabilityItems.map((item) => (
+                <article class="surface-hover rounded-3xl border border-white/10 bg-[#0B1120] p-6">
+                  <p class="text-sm text-slate-300">{item}</p>
+                </article>
+              ))
+            }
           </div>
 
           <div class="mt-14 text-center">
             <p class="mx-auto max-w-3xl text-lg text-slate-300">
-              El sistema no solo mejora la gestion de pedidos, sino que permite incorporar tecnologia
-              de forma accesible y comprensible en pequenos negocios.
+              Esto permite que la propuesta no solo sea conceptual, sino también aplicable en un entorno real.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="px-0 py-14 sm:py-18" id="estado">
+      <section id="validacion" class="py-20 text-white" data-reveal>
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mb-12 text-center">
+            <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
+              Validación y evaluación
+            </p>
+            <h2 class="text-3xl font-bold md:text-4xl">
+              Validación y criterios de evaluación
+            </h2>
+            <p class="mx-auto mt-4 max-w-3xl text-slate-400">
+              La propuesta considera criterios de usabilidad y accesibilidad para evaluar si el sistema
+              resulta comprensible y utilizable dentro de un contexto real.
+            </p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {
+              validationItems.map((item) => (
+                <article class="surface-hover rounded-3xl border border-white/10 bg-[#0B1120] p-6">
+                  <p class="text-sm text-slate-300">{item}</p>
+                </article>
+              ))
+            }
+          </div>
+
+          <p class="mx-auto mt-8 max-w-3xl text-center text-slate-300">
+            Estos criterios permiten validar que la solución planteada sea clara, accesible y aplicable
+            para sus usuarios.
+          </p>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6" data-reveal>
+        <div class="rounded-[36px] border border-sky-400/20 bg-[linear-gradient(180deg,rgba(8,17,31,0.9),rgba(11,17,32,0.98))] p-2 shadow-[0_30px_90px_rgba(2,6,23,0.38)]">
+          <DemoPreview />
+        </div>
+      </div>
+
+      <section class="px-0 py-14 sm:py-18" id="cierre" data-reveal>
         <div class="relative z-[1] mx-auto w-[min(calc(100%-2rem),1180px)]">
           <div class="rounded-[32px] border border-white/8 bg-[#0b1120] p-6 shadow-soft md:p-8 lg:p-10">
             <div class="mb-8 grid max-w-[45rem] gap-3.5">
-              <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Estado del proyecto</span>
+              <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Cierre</span>
               <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
-                El proyecto ya tiene direccion clara y siguientes pasos definidos.
+                Una solución accesible, clara y aplicable en contextos reales
               </h2>
               <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
-                El documento ya establece el problema, la solucion propuesta y la estrategia
-                de evaluacion. Sobre esa base, el proyecto avanza desde el diseno hacia la
-                implementacion y validacion con usuarios reales.
+                La propuesta desarrollada permite transformar un proceso manual propenso a errores en un sistema digital estructurado, comprensible y accesible.
               </p>
-            </div>
-
-            <div class="grid gap-4 md:grid-cols-2">
-              {
-                statusItems.map((item) => (
-                  <article class="rounded-[28px] border border-white/8 bg-[#0f172a] p-6">
-                    <p class="text-xs uppercase tracking-[0.24em] text-cyan-300">{item.phase}</p>
-                    <p class="mt-4 text-[1rem] leading-7 text-slate-300">{item.description}</p>
-                  </article>
-                ))
-              }
+              <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
+                A través de una interfaz centrada en el usuario y un flujo de trabajo claro, se logra mejorar la gestión de pedidos, reducir errores y facilitar la adopción del sistema por parte de distintos perfiles de usuario.
+              </p>
+              <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
+                De esta manera, el proyecto no solo responde a una necesidad operativa, sino que también incorpora criterios de accesibilidad que amplían su impacto dentro del entorno organizacional.
+              </p>
+              <div class="pt-2">
+                <a
+                  href="/Propuesta.github.io/demo/"
+                  class="button-lift inline-flex rounded-full bg-green-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-green-400"
+                >
+                  Ver demo interactiva
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -469,14 +613,14 @@ const footerMeta = [
       <div class="relative z-[1] mx-auto grid w-[min(calc(100%-2rem),1180px)] gap-6 border-t border-white/8 pt-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
         <div class="grid gap-3">
           <p class="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
-            Proyecto de titulo
+            Proyecto de título
           </p>
           <h2 class="max-w-[14ch] text-3xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
             Sistema de Gestion de Pedidos Accesible
           </h2>
           <p class="max-w-[40rem] text-[1rem] leading-7 text-slate-400">
-            Landing informativa del proyecto enfocado en digitalizar la gestion de pedidos
-            para pymes gastronomicas con accesibilidad como eje principal.
+            Presentación web del proyecto de título enfocado en digitalizar la gestión de pedidos
+            para una pyme gastronómica, incorporando accesibilidad como eje principal.
           </p>
         </div>
 
@@ -489,5 +633,7 @@ const footerMeta = [
         </div>
       </div>
     </footer>
+
+    <ScrollToTopButton id="scroll-to-top-home" />
   </div>
 </BaseLayout>
