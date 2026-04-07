@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = 'Sistema web de gestion de pedidos accesible',
-  description = 'Proyecto de titulo sobre un sistema web de gestion de pedidos para pymes gastronomicas con enfoque en accesibilidad y facilidad de uso.',
+  title = 'Sistema web de gestión de pedidos accesible',
+  description = 'Proyecto de título sobre un sistema web de gestión de pedidos para pymes gastronómicas con enfoque en accesibilidad y facilidad de uso.',
 } = Astro.props;
 ---
 
@@ -31,3 +31,41 @@ const {
     <slot />
   </body>
 </html>
+
+<script>
+  (() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function setupReveal() {
+      const elements = Array.from(document.querySelectorAll('[data-reveal]'));
+      if (elements.length === 0) return;
+
+      if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+        elements.forEach((element) => element.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.18,
+          rootMargin: '0px 0px -8% 0px',
+        }
+      );
+
+      elements.forEach((element) => observer.observe(element));
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupReveal, { once: true });
+    } else {
+      setupReveal();
+    }
+  })();
+</script>
