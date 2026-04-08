@@ -5,16 +5,16 @@
         Comparacion de uso
       </p>
       <h2 class="text-4xl font-bold md:text-5xl">
-        Del proceso actual a una solucion mas clara y accesible
+        Del proceso actual a una solución más clara y accesible
       </h2>
       <p class="mx-auto mt-4 max-w-3xl text-slate-400">
         La propuesta reemplaza un proceso manual, menos estructurado y propenso a errores,
-        por una interfaz clara, guiada y accesible para distintos niveles de experiencia tecnologica.
+        por una interfaz clara, guiada y accesible para distintos niveles de experiencia tecnológica.
       </p>
     </div>
 
-    <div class="grid gap-6 lg:grid-cols-2">
-      <div class="rounded-[28px] border border-white/10 bg-[#0B1120] p-6 opacity-90 shadow-2xl shadow-black/20">
+    <div class="comparison-shell grid gap-6 lg:grid-cols-2">
+      <div class="comparison-card flex h-full flex-col rounded-[28px] border border-white/10 bg-[#0B1120] p-6 opacity-90 shadow-2xl shadow-black/20">
         <div class="mb-4">
           <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
             Metodo actual
@@ -23,7 +23,7 @@
             Registro poco estructurado
           </h3>
           <p class="mt-2 text-sm text-slate-400">
-            Forma de trabajo mas manual, con menor claridad visual y mayor riesgo de errores.
+            Forma de trabajo más manual, con menor claridad visual y mayor riesgo de errores.
           </p>
         </div>
 
@@ -79,7 +79,7 @@
 
           <div class="mt-5 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] px-4 py-3">
             <p class="text-sm text-slate-400">
-              No existe confirmacion inmediata ni una visualizacion clara del flujo del pedido.
+              No existe confirmación inmediata ni una visualización clara del flujo del pedido.
             </p>
           </div>
         </div>
@@ -93,7 +93,7 @@
           </div>
 
           <div class="rounded-2xl border border-white/5 bg-[#111827] p-4">
-            <p class="text-sm font-semibold text-white">Sin confirmacion</p>
+            <p class="text-sm font-semibold text-white">Sin confirmación</p>
             <p class="mt-1 text-xs text-slate-500">
               El usuario no recibe feedback claro.
             </p>
@@ -108,8 +108,16 @@
         </div>
       </div>
 
-      <div class="rounded-[28px] border border-white/10 bg-[#0B1120] p-4 shadow-2xl shadow-black/25">
-        <div class="rounded-[24px] border border-sky-400/30 bg-[#0a1324] p-5 shadow-[0_0_30px_rgba(56,189,248,0.08)]">
+      <div
+        id="accessible-preview"
+        class="comparison-card h-full rounded-[28px] border border-white/10 bg-[#0B1120] p-4 shadow-2xl shadow-black/25"
+        data-font-size="base"
+        data-accessible="on"
+      >
+        <div
+          id="accessible-preview-panel"
+          class="flex h-full flex-col rounded-[24px] border border-sky-400/30 bg-[#0a1324] p-5 shadow-[0_0_30px_rgba(56,189,248,0.08)] transition-all duration-200"
+        >
           <div class="mb-4">
             <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-sky-400">
               Modo accesible activado
@@ -121,7 +129,10 @@
                   Ingreso de pedido accesible
                 </h3>
               </div>
-              <span class="rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400">
+              <span
+                id="accessible-preview-badge"
+                class="rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400"
+              >
                 Interfaz accesible
               </span>
             </div>
@@ -129,111 +140,223 @@
 
           <div class="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <button
+              id="toggle-accessible-preview"
               type="button"
-              class="rounded-full border border-green-400/20 bg-green-500/10 px-4 py-2 text-sm font-medium text-green-300"
-              disabled
+              aria-pressed="true"
+              class="rounded-full border border-green-400/20 bg-green-500/10 px-4 py-2 text-sm font-medium text-green-300 transition hover:bg-green-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1324]"
             >
               Modo accesible: ON
             </button>
 
             <div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
               <span class="text-xs text-slate-400">Texto</span>
-              <span class="rounded-full bg-[#111827] px-3 py-1 text-sm text-white">A-</span>
-              <span class="rounded-full bg-[#111827] px-3 py-1 text-sm text-white">A</span>
-              <span class="rounded-full bg-[#111827] px-3 py-1 text-sm text-white">A+</span>
+              <button
+                type="button"
+                data-font="sm"
+                aria-pressed="false"
+                class="font-btn-preview rounded-full bg-[#111827] px-3 py-1 text-sm text-white transition hover:bg-[#1f2937] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+              >
+                A-
+              </button>
+              <button
+                type="button"
+                data-font="base"
+                aria-pressed="true"
+                class="font-btn-preview rounded-full bg-[#1f2937] px-3 py-1 text-sm text-white transition hover:bg-[#1f2937] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+              >
+                A
+              </button>
+              <button
+                type="button"
+                data-font="lg"
+                aria-pressed="false"
+                class="font-btn-preview rounded-full bg-[#111827] px-3 py-1 text-sm text-white transition hover:bg-[#1f2937] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+              >
+                A+
+              </button>
             </div>
           </div>
 
           <div class="mb-5 grid gap-3 sm:grid-cols-2">
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-              <p class="text-sm font-medium text-white">Botones grandes</p>
-              <p class="mt-1 text-sm text-slate-400">Facilitan la seleccion sin errores.</p>
+              <p class="preview-card-title text-sm font-medium text-white">Flujo guiado por pasos</p>
+              <p class="preview-muted mt-1 text-sm text-slate-400">Indica que hacer primero y que sigue despues.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-              <p class="text-sm font-medium text-white">Lectura clara</p>
-              <p class="mt-1 text-sm text-slate-400">Texto visible y jerarquia comprensible.</p>
+              <p class="preview-card-title text-sm font-medium text-white">Confirmacion asistida</p>
+              <p class="preview-muted mt-1 text-sm text-slate-400">Evita errores antes de enviar el pedido.</p>
             </div>
           </div>
 
           <div class="rounded-3xl border border-white/10 bg-[#020617] p-4">
-            <div class="mb-4 flex items-center justify-between">
+            <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p class="text-xs uppercase tracking-wide text-slate-500">Pedido actual</p>
-                <p class="text-base font-semibold text-white">Paso 1 de 2 - Selecciona productos</p>
+                <p id="preview-step-label" class="preview-title text-base font-semibold text-white">Paso 1 de 2 - Selecciona productos</p>
               </div>
               <span class="rounded-full bg-sky-500/15 px-3 py-1 text-xs text-sky-300">
                 Guiado
               </span>
             </div>
 
-            <p class="mb-4 text-sm text-slate-400">
-              Modo accesible activo: mayor contraste, botones grandes y lectura mas clara.
+            <p id="preview-help-text" class="preview-muted mb-4 text-sm text-slate-400">
+              Modo accesible activo: mayor contraste, botones grandes y lectura más clara.
             </p>
 
-            <div class="space-y-3">
-              <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-[#273449] px-4 py-4">
-                <span class="flex items-center gap-3">
-                  <span class="text-2xl">🍔</span>
-                  <span>
-                    <span class="block text-base font-semibold text-white">Hamburguesa</span>
-                    <span class="block text-sm text-slate-400">Seleccion rapida</span>
-                  </span>
-                </span>
-                <span class="text-sm text-slate-300">Agregar al pedido</span>
+            <div id="preview-guide-box" class="mb-4 rounded-2xl border border-sky-400/20 bg-sky-500/5 p-3">
+              <div class="mb-2 flex items-center justify-between gap-3">
+                <p id="preview-guide-text" class="preview-muted text-sm text-sky-200">
+                  Paso 1: toca uno o más productos y luego presiona "Siguiente".
+                </p>
+                <button
+                  id="preview-help-toggle"
+                  type="button"
+                  class="rounded-full border border-sky-300/30 bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-200 transition hover:bg-sky-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+                  aria-expanded="false"
+                >
+                  Necesito ayuda
+                </button>
               </div>
+              <div class="h-2 rounded-full bg-slate-800/80">
+                <div
+                  id="preview-progress-bar"
+                  class="h-2 rounded-full bg-sky-400 transition-all duration-300"
+                  style="width: 50%;"
+                ></div>
+              </div>
+              <div
+                id="preview-help-panel"
+                class="mt-3 hidden rounded-xl border border-sky-300/20 bg-slate-900/50 px-3 py-2 text-xs text-sky-100"
+              >
+                1. Selecciona productos con un toque. 2. Revisa el resumen. 3. Confirma el pedido en el boton verde.
+              </div>
+            </div>
 
-              <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-[#273449] px-4 py-4">
-                <span class="flex items-center gap-3">
-                  <span class="text-2xl">🥤</span>
-                  <span>
-                    <span class="block text-base font-semibold text-white">Bebida</span>
-                    <span class="block text-sm text-slate-400">Opcion complementaria</span>
+            <div id="preview-product-list" class="space-y-3" role="list" aria-label="Productos disponibles">
+              <button
+                type="button"
+                data-product="Hamburguesa"
+                aria-pressed="false"
+                class="product-btn-preview group flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#334155] px-4 py-4 text-left transition hover:bg-[#3b4a61] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
+              >
+                <span class="flex min-w-0 items-center gap-3">
+                  <span class="text-2xl">🍔</span>
+                  <span class="min-w-0">
+                    <span class="preview-title block text-base font-semibold text-white">Hamburguesa</span>
+                    <span class="preview-muted block text-sm text-slate-300">Selección rápida</span>
                   </span>
                 </span>
-                <span class="text-sm text-slate-300">Agregar al pedido</span>
-              </div>
+                <span class="preview-action shrink-0 text-sm text-slate-100">Agregar al pedido</span>
+              </button>
+
+              <button
+                type="button"
+                data-product="Bebida"
+                aria-pressed="false"
+                class="product-btn-preview group flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#334155] px-4 py-4 text-left transition hover:bg-[#3b4a61] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
+              >
+                <span class="flex min-w-0 items-center gap-3">
+                  <span class="text-2xl">🥤</span>
+                  <span class="min-w-0">
+                    <span class="preview-title block text-base font-semibold text-white">Bebida</span>
+                    <span class="preview-muted block text-sm text-slate-300">Opcion complementaria</span>
+                  </span>
+                </span>
+                <span class="preview-action shrink-0 text-sm text-slate-100">Agregar al pedido</span>
+              </button>
+            </div>
+
+            <div id="preview-add-another-row" class="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2">
+              <p class="preview-muted text-xs text-slate-300">¿Quieres agregar otro producto?</p>
+              <button
+                id="preview-add-another-btn"
+                type="button"
+                class="rounded-full border border-sky-300/30 bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-200 transition hover:bg-sky-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+              >
+                Elegir otro
+              </button>
+            </div>
+
+            <div
+              id="preview-error-box"
+              class="mt-4 hidden rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200"
+              role="alert"
+            >
+              Debes seleccionar al menos un producto antes de confirmar.
             </div>
 
             <div class="mt-5 rounded-2xl border border-white/10 bg-[#0B1120] p-4">
               <div class="mb-3 flex items-start justify-between gap-3">
                 <div>
-                  <p class="text-sm font-medium text-white">Resumen claro del pedido</p>
-                  <p class="mt-1 text-sm text-slate-400">
-                    Pedido facil de revisar antes de confirmar.
+                  <p class="preview-card-title text-sm font-medium text-white">Resumen claro del pedido</p>
+                  <p class="preview-muted mt-1 text-sm text-slate-400">
+                    Pedido fácil de revisar antes de confirmar.
                   </p>
                 </div>
-                <span class="rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400">
+                <span
+                  id="preview-status-pill"
+                  class="rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400"
+                >
                   Sin errores
                 </span>
               </div>
 
-              <div class="space-y-2 text-sm text-slate-300">
+              <div id="preview-summary-list" class="preview-summary space-y-2 text-sm text-slate-300" aria-live="polite">
                 <p class="text-slate-500">Aun no hay productos seleccionados.</p>
               </div>
 
+              <div class="mt-4 grid grid-cols-2 gap-3">
+                <button
+                  id="preview-back-btn"
+                  type="button"
+                  class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 disabled:cursor-not-allowed disabled:opacity-50"
+                  disabled
+                >
+                  Volver
+                </button>
+                <button
+                  id="preview-next-btn"
+                  type="button"
+                  class="rounded-xl border border-sky-400/30 bg-sky-500/10 px-4 py-3 text-sm font-medium text-sky-200 transition hover:bg-sky-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 disabled:cursor-not-allowed disabled:opacity-50"
+                  disabled
+                >
+                  Siguiente
+                </button>
+              </div>
+
               <button
+                id="preview-confirm-btn"
                 type="button"
-                class="mt-5 w-full rounded-2xl bg-green-500 px-4 py-4 text-base font-semibold text-slate-950"
+                class="mt-4 hidden w-full rounded-2xl bg-green-500 px-4 py-4 text-base font-semibold text-slate-950 transition hover:bg-green-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1120] disabled:cursor-not-allowed disabled:opacity-60"
                 style="box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);"
                 disabled
               >
                 Confirmar pedido
               </button>
+
+              <div
+                id="preview-success-box"
+                class="mt-4 hidden rounded-2xl border border-green-500/20 bg-green-500/10 px-4 py-3 text-sm text-green-200"
+                role="status"
+                aria-live="polite"
+              >
+                Pedido registrado correctamente.
+              </div>
             </div>
           </div>
 
           <div class="mt-5 grid gap-3 sm:grid-cols-3">
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-              <p class="text-sm font-semibold text-white">Menos pasos</p>
-              <p class="mt-1 text-xs text-slate-400">Reduce complejidad y tiempo.</p>
+              <p class="preview-card-title text-sm font-semibold text-white">Menos pasos</p>
+              <p class="preview-muted mt-1 text-xs text-slate-400">Reduce complejidad y tiempo.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-              <p class="text-sm font-semibold text-white">Apoyo visual</p>
-              <p class="mt-1 text-xs text-slate-400">Estados y acciones faciles de entender.</p>
+              <p class="preview-card-title text-sm font-semibold text-white">Apoyo visual</p>
+              <p class="preview-muted mt-1 text-xs text-slate-400">Estados y acciones faciles de entender.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-[#111827] p-4">
-              <p class="text-sm font-semibold text-white">Uso inclusivo</p>
-              <p class="mt-1 text-xs text-slate-400">Disenado para una mayor diversidad de usuarios.</p>
+              <p class="preview-card-title text-sm font-semibold text-white">Uso inclusivo</p>
+              <p class="preview-muted mt-1 text-xs text-slate-400">Diseñado para una mayor diversidad de usuarios.</p>
             </div>
           </div>
         </div>
@@ -241,3 +364,397 @@
     </div>
   </div>
 </section>
+
+<style>
+  .comparison-card {
+    backdrop-filter: blur(2px);
+  }
+
+  .comparison-shell {
+    align-items: stretch;
+  }
+
+  #accessible-preview .preview-action {
+    font-size: 0.82rem;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  #accessible-preview[data-font-size='sm'] .preview-title,
+  #accessible-preview[data-font-size='sm'] .preview-card-title {
+    font-size: 0.94rem;
+    line-height: 1.35;
+  }
+
+  #accessible-preview[data-font-size='sm'] .preview-muted,
+  #accessible-preview[data-font-size='sm'] .preview-summary {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  #accessible-preview[data-font-size='sm'] .product-btn-preview {
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  #accessible-preview[data-font-size='lg'] .preview-title,
+  #accessible-preview[data-font-size='lg'] .preview-card-title {
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  #accessible-preview[data-font-size='lg'] .preview-muted,
+  #accessible-preview[data-font-size='lg'] .preview-summary {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  #accessible-preview[data-font-size='lg'] .product-btn-preview {
+    padding-top: 1.05rem;
+    padding-bottom: 1.05rem;
+  }
+
+  #accessible-preview[data-accessible='off'] #accessible-preview-panel {
+    border-color: rgba(148, 163, 184, 0.22);
+    background: #0b1220;
+    box-shadow: none;
+  }
+
+  #accessible-preview[data-accessible='off'] .product-btn-preview {
+    background: #263244;
+    border-color: rgba(148, 163, 184, 0.2);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  #accessible-preview[data-accessible='off'] #preview-help-text {
+    color: #94a3b8;
+  }
+
+  #accessible-preview[data-accessible='off'] #preview-guide-box {
+    border-color: rgba(148, 163, 184, 0.25);
+    background: rgba(148, 163, 184, 0.06);
+  }
+
+  #accessible-preview[data-accessible='off'] #preview-progress-bar {
+    background: #64748b;
+    width: 35% !important;
+  }
+
+  #accessible-preview[data-accessible='off'] #preview-add-another-row {
+    border-color: rgba(148, 163, 184, 0.22);
+    background: rgba(148, 163, 184, 0.06);
+  }
+
+  #accessible-preview[data-accessible='off'] #preview-confirm-btn {
+    box-shadow: none !important;
+  }
+
+  @media (min-width: 1280px) {
+    #demo-preview h2 {
+      max-width: 20ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    #accessible-preview .product-btn-preview {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    #accessible-preview .preview-action {
+      padding-left: 2.75rem;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const demo = document.getElementById('accessible-preview');
+    if (!demo) return;
+
+    const toggleAccessible = document.getElementById('toggle-accessible-preview');
+    const accessibleBadge = document.getElementById('accessible-preview-badge');
+    const stepLabel = document.getElementById('preview-step-label');
+    const helpText = document.getElementById('preview-help-text');
+    const guideText = document.getElementById('preview-guide-text');
+    const progressBar = document.getElementById('preview-progress-bar');
+    const helpToggle = document.getElementById('preview-help-toggle');
+    const helpPanel = document.getElementById('preview-help-panel');
+    const addAnotherBtn = document.getElementById('preview-add-another-btn');
+    const summaryList = document.getElementById('preview-summary-list');
+    const confirmBtn = document.getElementById('preview-confirm-btn');
+    const nextBtn = document.getElementById('preview-next-btn');
+    const backBtn = document.getElementById('preview-back-btn');
+    const successBox = document.getElementById('preview-success-box');
+    const errorBox = document.getElementById('preview-error-box');
+    const statusPill = document.getElementById('preview-status-pill');
+    const productButtons = Array.from(demo.querySelectorAll('.product-btn-preview'));
+    const fontButtons = Array.from(demo.querySelectorAll('.font-btn-preview'));
+
+    let selectedProducts = [];
+    let accessibleMode = true;
+    let currentStep = 1;
+    let awaitingFinalConfirm = false;
+
+    function renderSummary() {
+      if (!summaryList) return;
+
+      if (selectedProducts.length === 0) {
+        summaryList.innerHTML = '<p class="text-slate-500">Aun no hay productos seleccionados.</p>';
+        return;
+      }
+
+      summaryList.innerHTML = selectedProducts
+        .map(
+          (product) => `
+            <div class="flex justify-between gap-4">
+              <span>${product}</span>
+              <span>1</span>
+            </div>
+          `
+        )
+        .join('');
+    }
+
+    function updateStepUI() {
+      const hasProducts = selectedProducts.length > 0;
+
+      if (stepLabel) {
+        stepLabel.textContent = currentStep === 1 ? 'Paso 1 de 2 - Selecciona productos' : 'Paso 2 de 2 - Revisa y confirma';
+      }
+
+      if (guideText) {
+        guideText.textContent =
+          currentStep === 1
+            ? 'Paso 1: toca uno o más productos y luego presiona "Siguiente".'
+            : 'Paso 2: revisa el resumen y confirma el pedido.';
+      }
+
+      if (progressBar) {
+        progressBar.style.width = currentStep === 1 ? '50%' : '100%';
+      }
+
+      if (helpText) {
+        helpText.textContent =
+          currentStep === 1
+            ? 'Selecciona los productos con botones grandes y visibles.'
+            : 'Revisa el resumen. Si está correcto, confirma en el botón verde.';
+      }
+
+      if (backBtn) {
+        backBtn.disabled = currentStep === 1;
+      }
+
+      if (nextBtn) {
+        nextBtn.disabled = currentStep === 2 || !hasProducts;
+      }
+
+      if (confirmBtn) {
+        confirmBtn.disabled = currentStep !== 2 || !hasProducts;
+        confirmBtn.classList.toggle('hidden', currentStep !== 2);
+      }
+
+      if (statusPill) {
+        if (!hasProducts) statusPill.textContent = 'Sin errores';
+        if (hasProducts && currentStep === 1) statusPill.textContent = 'Listo para revisar';
+        if (hasProducts && currentStep === 2) statusPill.textContent = 'Listo para confirmar';
+      }
+    }
+
+    function updateProductStyles() {
+      productButtons.forEach((button) => {
+        const product = button.getAttribute('data-product');
+        const action = button.querySelector('.preview-action');
+        const isSelected = product ? selectedProducts.includes(product) : false;
+
+        button.classList.toggle('border-green-500/50', isSelected);
+        button.classList.toggle('bg-green-500/20', isSelected);
+        button.classList.toggle('hover:bg-green-500/25', isSelected);
+        button.classList.toggle('ring-2', isSelected);
+        button.classList.toggle('ring-green-400/20', isSelected);
+        button.classList.toggle('bg-[#334155]', !isSelected);
+        button.classList.toggle('hover:bg-[#3b4a61]', !isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+
+        if (action) {
+          action.textContent = isSelected ? 'Agregado' : 'Agregar al pedido';
+        }
+      });
+    }
+
+    function setAccessibleMode(on) {
+      accessibleMode = on;
+      demo.dataset.accessible = on ? 'on' : 'off';
+
+      if (toggleAccessible) {
+        toggleAccessible.textContent = on ? 'Modo accesible: ON' : 'Modo accesible: OFF';
+        toggleAccessible.setAttribute('aria-pressed', String(on));
+        toggleAccessible.className = on
+          ? 'rounded-full border border-green-400/20 bg-green-500/10 px-4 py-2 text-sm font-medium text-green-300 transition hover:bg-green-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1324]'
+          : 'rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1324]';
+      }
+
+      if (accessibleBadge) {
+        accessibleBadge.textContent = on ? 'Interfaz accesible' : 'Vista estándar';
+        accessibleBadge.className = on
+          ? 'rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400'
+          : 'rounded-full bg-slate-500/20 px-3 py-1 text-xs font-medium text-slate-300';
+      }
+
+      if (helpText) {
+        helpText.textContent = on
+          ? 'Modo accesible activo: mayor contraste, botones grandes y lectura más clara.'
+          : 'Vista estándar: mantiene el flujo simple, pero con menos apoyo visual.';
+      }
+
+      if (guideText && currentStep === 1) {
+        guideText.textContent = on
+          ? 'Paso 1: toca uno o más productos y luego presiona "Siguiente".'
+          : 'Paso 1: selecciona productos para continuar.';
+      }
+
+      if (helpToggle) {
+        helpToggle.disabled = !on;
+        helpToggle.classList.toggle('opacity-50', !on);
+        helpToggle.classList.toggle('cursor-not-allowed', !on);
+      }
+
+      if (!on && helpPanel) {
+        helpPanel.classList.add('hidden');
+        if (helpToggle) helpToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      fontButtons.forEach((button) => {
+        button.disabled = !on;
+        button.classList.toggle('opacity-50', !on);
+        button.classList.toggle('cursor-not-allowed', !on);
+      });
+    }
+
+    function setFontSize(size) {
+      demo.dataset.fontSize = size;
+
+      fontButtons.forEach((button) => {
+        const isActive = button.getAttribute('data-font') === size;
+        button.setAttribute('aria-pressed', String(isActive));
+        button.classList.toggle('bg-[#1f2937]', isActive);
+        button.classList.toggle('bg-[#111827]', !isActive);
+      });
+    }
+
+    productButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const product = button.getAttribute('data-product');
+        if (!product) return;
+
+        if (selectedProducts.includes(product)) {
+          selectedProducts = selectedProducts.filter((item) => item !== product);
+        } else {
+          selectedProducts.push(product);
+        }
+
+        if (errorBox) errorBox.classList.add('hidden');
+        if (successBox) successBox.classList.add('hidden');
+        awaitingFinalConfirm = false;
+        if (confirmBtn) confirmBtn.textContent = 'Confirmar pedido';
+
+        renderSummary();
+        updateProductStyles();
+        updateStepUI();
+      });
+    });
+
+    fontButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const size = button.getAttribute('data-font') || 'base';
+        setFontSize(size);
+      });
+    });
+
+    if (toggleAccessible) {
+      toggleAccessible.addEventListener('click', () => {
+        setAccessibleMode(!accessibleMode);
+        updateStepUI();
+      });
+    }
+
+    if (helpToggle && helpPanel) {
+      helpToggle.addEventListener('click', () => {
+        const opened = !helpPanel.classList.contains('hidden');
+        helpPanel.classList.toggle('hidden', opened);
+        helpToggle.setAttribute('aria-expanded', String(!opened));
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (selectedProducts.length === 0) return;
+        currentStep = 2;
+        awaitingFinalConfirm = false;
+        if (confirmBtn) confirmBtn.textContent = 'Confirmar pedido';
+        if (errorBox) errorBox.classList.add('hidden');
+        if (successBox) successBox.classList.add('hidden');
+        updateStepUI();
+      });
+    }
+
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        currentStep = 1;
+        awaitingFinalConfirm = false;
+        if (confirmBtn) confirmBtn.textContent = 'Confirmar pedido';
+        if (errorBox) errorBox.classList.add('hidden');
+        if (successBox) successBox.classList.add('hidden');
+        updateStepUI();
+      });
+    }
+
+    if (addAnotherBtn) {
+      addAnotherBtn.addEventListener('click', () => {
+        currentStep = 1;
+        awaitingFinalConfirm = false;
+        if (confirmBtn) confirmBtn.textContent = 'Confirmar pedido';
+        if (errorBox) errorBox.classList.add('hidden');
+        if (successBox) successBox.classList.add('hidden');
+        updateStepUI();
+        const firstProduct = productButtons[0];
+        if (firstProduct instanceof HTMLElement) firstProduct.focus();
+      });
+    }
+
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        if (currentStep !== 2 || selectedProducts.length === 0) {
+          if (errorBox) errorBox.classList.remove('hidden');
+          if (successBox) successBox.classList.add('hidden');
+          if (statusPill) statusPill.textContent = 'Falta seleccionar';
+          return;
+        }
+
+        if (!awaitingFinalConfirm) {
+          awaitingFinalConfirm = true;
+          if (confirmBtn) confirmBtn.textContent = 'Presiona de nuevo para confirmar';
+          if (errorBox) errorBox.classList.add('hidden');
+          if (successBox) successBox.classList.add('hidden');
+          if (statusPill) statusPill.textContent = 'Confirmacion asistida';
+          return;
+        }
+
+        awaitingFinalConfirm = false;
+        if (confirmBtn) confirmBtn.textContent = 'Confirmar pedido';
+        if (errorBox) errorBox.classList.add('hidden');
+        if (successBox) successBox.classList.remove('hidden');
+        if (statusPill) statusPill.textContent = 'Sin errores';
+      });
+    }
+
+    renderSummary();
+    updateProductStyles();
+    setFontSize('base');
+    setAccessibleMode(true);
+    updateStepUI();
+  })();
+</script>
