@@ -207,7 +207,7 @@ const footerMeta = [
 
     <main>
       <section id="inicio" class="relative overflow-hidden text-white">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(34,197,94,0.06),transparent_30%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.08),transparent_38%)]"></div>
 
         <div class="relative mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-28">
           <div class="max-w-4xl">
@@ -503,10 +503,10 @@ const footerMeta = [
             <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
               Impacto esperado
             </p>
-            <h2 class="text-3xl font-bold md:text-4xl">
-              Beneficios en la operacion diaria del negocio
+            <h2 class="text-3xl font-bold tracking-[-0.03em] md:text-5xl">
+              Beneficios en la operación diaria del negocio
             </h2>
-            <p class="mx-auto mt-4 max-w-3xl text-slate-400">
+            <p class="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-300">
               La implementación del sistema busca mejorar la eficiencia operativa,
               reducir errores y facilitar el uso de tecnología en entornos reales de trabajo.
             </p>
@@ -515,70 +515,57 @@ const footerMeta = [
           <div class="mb-8 grid gap-6 md:grid-cols-3">
             {
               impactMetrics.map((item) => (
-                <article class="rounded-3xl border border-cyan-400/20 bg-[#071125] p-6">
-                  <p class="text-3xl font-extrabold tracking-[-0.04em] text-cyan-300">{item.value}</p>
-                  <p class="mt-2 text-sm font-semibold text-white">{item.label}</p>
-                  <p class="mt-2 text-sm text-slate-400">{item.detail}</p>
+                <article class="rounded-3xl border border-cyan-400/25 bg-gradient-to-b from-[#07142a] to-[#071125] p-6 shadow-[0_18px_50px_rgba(2,8,23,0.34)]">
+                  <p class="text-4xl font-extrabold tracking-[-0.04em] text-cyan-300">{item.value}</p>
+                  <p class="mt-2 text-base font-semibold leading-7 text-white">{item.label}</p>
+                  <p class="mt-2 text-[0.96rem] leading-7 text-slate-300">{item.detail}</p>
                 </article>
               ))
             }
           </div>
 
           <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 flex min-h-[3.25rem] items-start gap-2 text-lg font-semibold text-green-400">
-                <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500/15 text-sm leading-none text-green-300">↓</span>
+            <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-[#0b1120] to-[#0a0f1f] p-6">
+              <h3 class="mb-2 flex min-h-[3.25rem] items-start gap-2 text-lg font-semibold text-green-300">
+                <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-sm leading-none text-emerald-300">↓</span>
                 Menos errores
               </h3>
-              <p class="text-sm text-slate-400">
-                Disminucion de errores en la toma y registro de pedidos.
+              <p class="text-[1rem] leading-7 text-slate-300">
+                Disminución de errores en la toma y registro de pedidos.
               </p>
             </div>
 
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 flex min-h-[3.25rem] items-start gap-2 text-lg font-semibold text-green-400">
-                <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/15 text-sm leading-none text-cyan-300">↑</span>
+            <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-[#0b1120] to-[#0a0f1f] p-6">
+              <h3 class="mb-2 flex min-h-[3.25rem] items-start gap-2 text-lg font-semibold text-cyan-200">
+                <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-sm leading-none text-cyan-300">↑</span>
                 Mayor organización
               </h3>
-              <p class="text-sm text-slate-400">
+              <p class="text-[1rem] leading-7 text-slate-300">
                 Mejora en la gestión del flujo de pedidos dentro del local.
               </p>
             </div>
 
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 flex min-h-[3.25rem] items-start gap-2 text-lg font-semibold text-green-400">
-                <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500/15 text-sm leading-none text-green-300">↓</span>
-                Eficiencia operativa
+            <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-[#0b1120] to-[#0a0f1f] p-6">
+              <h3 class="mb-2 flex min-h-[3.25rem] items-start gap-2 text-lg font-semibold text-cyan-200">
+                <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-sm leading-none text-cyan-300">↑</span>
+                Mayor eficiencia operativa
               </h3>
-              <p class="text-sm text-slate-400">
+              <p class="text-[1rem] leading-7 text-slate-300">
                 Reducción de tiempos en el proceso de atención.
               </p>
             </div>
 
-            <div class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-              <h3 class="mb-2 flex min-h-[3.25rem] items-start gap-2 text-lg font-semibold text-green-400">
-                <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/15 text-sm leading-none text-cyan-300">↑</span>
+            <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-[#0b1120] to-[#0a0f1f] p-6">
+              <h3 class="mb-2 flex min-h-[3.25rem] items-start gap-2 text-lg font-semibold text-cyan-200">
+                <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-sm leading-none text-cyan-300">↑</span>
                 Adopción tecnológica
               </h3>
-              <p class="text-sm text-slate-400">
+              <p class="text-[1rem] leading-7 text-slate-300">
                 Facilita el uso del sistema para personas con baja experiencia digital.
               </p>
             </div>
           </div>
 
-          <div class="mt-14 text-center">
-            <p class="mx-auto max-w-3xl text-lg text-slate-300">
-              El sistema no solo mejora la gestión de pedidos, sino que permite incorporar tecnología
-              de forma accesible y comprensible en pequeños negocios.
-            </p>
-            <p class="mx-auto mt-3 max-w-3xl text-sm text-slate-400">
-              La evaluación se realizará con indicadores comparables antes y después de la implementación,
-              midiendo errores de registro, tiempo de atención y trazabilidad operativa.
-            </p>
-            <p class="mx-auto mt-2 max-w-3xl text-xs text-slate-500">
-              Estimaciones basadas en pruebas funcionales iniciales y validación con usuarios.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -599,11 +586,23 @@ const footerMeta = [
 
           <div class="grid gap-6 md:grid-cols-2">
             {
-              foundationCards.map((card) => (
-                <article class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-                  <p class="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">{card.subtitle}</p>
+              foundationCards.map((card, index) => (
+                <article
+                  class={`rounded-3xl border p-6 ${
+                    index % 2 === 0
+                      ? 'border-cyan-400/20 bg-gradient-to-b from-[#0b152b] to-[#0b1120]'
+                      : 'border-emerald-400/20 bg-gradient-to-b from-[#0b1a21] to-[#0b1120]'
+                  }`}
+                >
+                  <p
+                    class={`mb-2 text-xs font-semibold uppercase tracking-[0.2em] ${
+                      index % 2 === 0 ? 'text-cyan-300' : 'text-emerald-300'
+                    }`}
+                  >
+                    {card.subtitle}
+                  </p>
                   <h3 class="text-xl font-semibold text-white">{card.title}</h3>
-                  <p class="mt-3 text-sm leading-7 text-slate-400">{card.description}</p>
+                  <p class="mt-3 text-[0.98rem] leading-7 text-slate-300">{card.description}</p>
                 </article>
               ))
             }
@@ -615,7 +614,7 @@ const footerMeta = [
         <div class="mx-auto max-w-6xl px-6">
           <div class="mb-10 text-center">
             <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-amber-300">
-              Diferenciacion
+              Diferenciación
             </p>
             <h2 class="text-3xl font-bold md:text-4xl">
               ¿Por qué no usar sistemas existentes?
@@ -624,10 +623,24 @@ const footerMeta = [
 
           <div class="grid gap-6 md:grid-cols-3">
             {
-              existingSystemsLimitations.map((item) => (
-                <article class="rounded-3xl border border-white/10 bg-[#0B1120] p-6">
-                  <h3 class="text-lg font-semibold text-white">{item.title}</h3>
-                  <p class="mt-3 text-sm text-slate-400">{item.description}</p>
+              existingSystemsLimitations.map((item, index) => (
+                <article
+                  class={`rounded-3xl border p-6 ${
+                    index === 0
+                      ? 'border-amber-400/25 bg-gradient-to-b from-[#20160b] to-[#0b1120]'
+                      : index === 1
+                        ? 'border-cyan-400/20 bg-gradient-to-b from-[#0b152b] to-[#0b1120]'
+                        : 'border-rose-400/20 bg-gradient-to-b from-[#24101a] to-[#0b1120]'
+                  }`}
+                >
+                  <h3
+                    class={`text-lg font-semibold ${
+                      index === 0 ? 'text-amber-300' : index === 1 ? 'text-cyan-300' : 'text-rose-300'
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p class="mt-3 text-[0.98rem] leading-7 text-slate-300">{item.description}</p>
                 </article>
               ))
             }
@@ -641,7 +654,7 @@ const footerMeta = [
             <div class="mb-8 grid max-w-[45rem] gap-3.5">
               <span class="inline-flex w-fit items-center gap-2 rounded-full bg-cyan-400/12 px-3.5 py-2 text-[0.88rem] font-bold text-cyan-300 before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-current before:content-['']">Estado del proyecto</span>
               <h2 class="m-0 max-w-[12ch] text-[clamp(2rem,4vw,3.4rem)] leading-[0.98] font-extrabold tracking-[-0.045em] text-slate-50">
-                El proyecto ya tiene direccion clara y siguientes pasos definidos.
+                El proyecto ya tiene dirección clara y siguientes pasos definidos.
               </h2>
               <p class="m-0 text-[1.05rem] leading-7 text-slate-400 sm:leading-8">
                 El documento ya establece el problema, la solución propuesta y la estrategia
@@ -652,9 +665,15 @@ const footerMeta = [
 
             <div class="grid gap-4 md:grid-cols-2">
               {
-                statusItems.map((item) => (
-                  <article class="rounded-[28px] border border-white/8 bg-[#0f172a] p-6">
-                    <p class="text-xs uppercase tracking-[0.24em] text-cyan-300">{item.phase}</p>
+                statusItems.map((item, index) => (
+                  <article
+                    class={`rounded-[28px] border p-6 ${
+                      index % 2 === 0
+                        ? 'border-cyan-400/20 bg-gradient-to-b from-[#0b152b] to-[#0f172a]'
+                        : 'border-emerald-400/20 bg-gradient-to-b from-[#0b1a21] to-[#0f172a]'
+                    }`}
+                  >
+                    <p class={`text-xs uppercase tracking-[0.24em] ${index % 2 === 0 ? 'text-cyan-300' : 'text-emerald-300'}`}>{item.phase}</p>
                     <p class="mt-4 text-[1rem] leading-7 text-slate-300">{item.description}</p>
                   </article>
                 ))
@@ -672,7 +691,7 @@ const footerMeta = [
             Proyecto de título
           </p>
           <h2 class="max-w-[14ch] text-3xl leading-tight font-bold tracking-[-0.04em] text-slate-50">
-            Sistema de Gestión de Pedidos Accesible
+            Sistema de Gestión de Pedidos <span class="text-cyan-300">Accesible</span>
           </h2>
           <p class="max-w-[40rem] text-[1rem] leading-7 text-slate-400">
             Landing informativa del proyecto enfocado en digitalizar la gestión de pedidos

@@ -26,12 +26,12 @@
     min-width: 320px;
     font-family: var(--font-sans);
     color: var(--color-ink);
-    background: linear-gradient(
-      180deg,
-      #030712 0%,
-      #0b1324 48%,
-      #020617 100%
-    );
+    background-color: #060b14;
+    background-image:
+      radial-gradient(1200px 620px at 50% -22%, rgba(56, 189, 248, 0.18), transparent 62%),
+      linear-gradient(180deg, #0b1220 0%, #0a111d 44%, #070c15 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow-x: hidden;
   }
 
